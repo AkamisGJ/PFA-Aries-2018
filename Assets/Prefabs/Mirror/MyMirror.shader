@@ -1,11 +1,11 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Custom/MirrorOld"
+Shader "FX/MirrorReflection"
 {
 	Properties
 	{
-		_DetailTex ("Base (RGB)", 2D) = "white" {}
-		[HideInInspector] _MainTex ("", 2D) = "white" {}
+		_MainTex ("Base (RGB)", 2D) = "white" {}
+		[HideInInspector] _ReflectionTex ("", 2D) = "white" {}
 	}
 	SubShader
 	{
@@ -23,22 +23,21 @@ Shader "Custom/MirrorOld"
 				float4 refl : TEXCOORD1;
 				float4 pos : SV_POSITION;
 			};
-			float4 _DetailTex_ST;
+			float4 _MainTex_ST;
 			v2f vert(float4 pos : POSITION, float2 uv : TEXCOORD0)
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos (pos);
-				o.uv = TRANSFORM_TEX(uv, _DetailTex);
+				o.uv = TRANSFORM_TEX(uv, _MainTex);
 				o.refl = ComputeScreenPos (o.pos);
 				return o;
 			}
 			sampler2D _MainTex;
-			sampler2D _DetailTex;
+			sampler2D _ReflectionTex;
 			fixed4 frag(v2f i) : SV_Target
 			{
-				fixed4 tex = tex2D(_DetailTex, i.uv);
-				i.refl.w = max(0.001, i.refl.w);
-				fixed4 refl = tex2Dproj(_MainTex, UNITY_PROJ_COORD(i.refl));
+				fixed4 tex = tex2D(_MainTex, i.uv);
+				fixed4 refl = tex2Dproj(_ReflectionTex, UNITY_PROJ_COORD(i.refl));
 				return tex * refl;
 			}
 			ENDCG
