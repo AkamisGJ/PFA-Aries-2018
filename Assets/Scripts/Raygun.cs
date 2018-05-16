@@ -14,20 +14,15 @@ public class Raygun : MonoBehaviour {
 	//public LayerMask m_layerMask;
 	public float cooldown_delay;
 	private float cooldown = 0;
-	private LineRenderer m_lineRenderer;
-	private CharacterController m_characterController;
-	private Rigidbody m_rigidbody;
 	private FirstPersonController m_FPS_script;
 	public Camera Guncamera;
 	public Camera MainCamera;
+	public LayerMask RaygunLayer;
 
 	public GameObject m_TrailGenerator;
 
 	// Use this for initialization
 	void Start () {
-		m_lineRenderer = GetComponent<LineRenderer>();
-		m_characterController = player.GetComponent<CharacterController>();
-		m_rigidbody = player.GetComponent<Rigidbody>();
 		m_FPS_script = player.GetComponent<FirstPersonController>();
 		//m_TrailGenerator.SetActive(false);
 	}
@@ -39,7 +34,7 @@ public class Raygun : MonoBehaviour {
 
 		if(Input.GetMouseButtonDown(0) && cooldown > cooldown_delay){
 			RaycastHit hit_info;
-			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance)){
+			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 				m_TrailGenerator.SetActive(false);
@@ -67,7 +62,7 @@ public class Raygun : MonoBehaviour {
 					print("AngleY = " + angleY);
 
 					RaycastHit hit_info_reflexion;
-					if(Physics.Raycast(hit_info.point, reflexion, out hit_info_reflexion ,maxDistance)){
+					if(Physics.Raycast(hit_info.point, reflexion, out hit_info_reflexion ,maxDistance, RaygunLayer.value)){
 						
 						//Si le joueur tir sur une surface téléportable
 						layer = LayerMask.NameToLayer("CanTeleport");
@@ -85,52 +80,48 @@ public class Raygun : MonoBehaviour {
 	}
 
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
-		//Direct Way
-			//player.position = EndPoint;
-
-		//With distance
 		
-			Vector3 distance = EndPoint - StartPoint;
-			//print("Distance = " + distance.sqrMagnitude);
-			m_FPS_script.m_Active = false;
+		Vector3 distance = EndPoint - StartPoint;
+		//print("Distance = " + distance.sqrMagnitude);
+		m_FPS_script.m_Active = false;
 
-			float time = 0f;
-			int point;
-			if(distance.sqrMagnitude < 800f){
-				point = 6; //La distance est courte 16
-			}else{
-				point = 16; //La distance est longue 30
+		float time = 0f;
+		int point;
+		if(distance.sqrMagnitude < 800f){
+			point = 6; //La distance est courte 16
+		}else{
+			point = 16; //La distance est longue 30
+		}
+
+		for(int i = point; i > 0; i--){
+			//Mouvement
+			player.position += (distance/i);
+			distance = EndPoint - player.position;
+
+			//Field Of View
+			if(i > point/2.5){
+				//1er partie du TP
+				Guncamera.fieldOfView ++;
+				MainCamera.fieldOfView++;
 			}
 
-			for(int i = point; i > 0; i--){
-				//Mouvement
-				player.position += (distance/i);
-				distance = EndPoint - player.position;
-	
-				//Field Of View
-				if(i > point/2.5){
-					//1er partie du TP
-					Guncamera.fieldOfView ++;
-					MainCamera.fieldOfView++;
+			time += Time.deltaTime;
+			yield return new WaitForFixedUpdate();
+		}
+		Guncamera.fieldOfView = 60;
+		MainCamera.fieldOfView = 60;
+
+		if(m_TrailGenerator.activeSelf == true){
+			foreach (Transform Trail in m_TrailGenerator.transform)
+				{
+					Trail.localPosition = new Vector3(0,0,0);
+					print("Reste to 0");
 				}
+		}
+		//m_TrailGenerator.SetActive(false);
 
-				time += Time.deltaTime;
-				yield return new WaitForFixedUpdate();
-			}
-			Guncamera.fieldOfView = 60;
-			MainCamera.fieldOfView = 60;
-
-			if(m_TrailGenerator.activeSelf == true){
-				foreach (Transform Trail in m_TrailGenerator.transform)
-					{
-						Trail.localPosition = new Vector3(0,0,0);
-						print("Reste to 0");
-					}
-			}
-			//m_TrailGenerator.SetActive(false);
-
-			m_FPS_script.m_Active = true;
-			//print("Temps = " + time);
+		m_FPS_script.m_Active = true;
+		//print("Temps = " + time);
 	}
 
 	//Teleportation avec un mirroir

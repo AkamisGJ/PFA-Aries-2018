@@ -47,6 +47,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Camera m_gunCamera;
         public bool m_Active = true;
 
+        public int lastCheckPoint = 0;
+
+
         // Use this for initialization
         private void Start()
         {
@@ -141,6 +144,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 m_MouseLook.UpdateCursorLock();
             }
+
         }
 
 
@@ -264,6 +268,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        /// <summary>
+        /// OnTriggerEnter is called when the Collider other enters the trigger.
+        /// </summary>
+        /// <param name="other">The other Collider involved in this collision.</param>
+        void OnTriggerEnter(Collider other)
+        {
+            if(other.tag == "Checkpoint"){
+                if(other.GetComponent<Checkpoint_Script>().CheckPoint_value > lastCheckPoint){
+                    lastCheckPoint = other.GetComponent<Checkpoint_Script>().CheckPoint_value;
+                }
+            }
+            
+            if(other.tag == "DeathZone"){
+                foreach (var checkpoins in GameObject.FindGameObjectsWithTag("Checkpoint"))
+                {
+                    int value = checkpoins.GetComponent<Checkpoint_Script>().CheckPoint_value;
+                    if(value == lastCheckPoint){
+                        transform.position = checkpoins.transform.position;
+                        break;
+                    }
+                }
+            }
         }
     }
 }
