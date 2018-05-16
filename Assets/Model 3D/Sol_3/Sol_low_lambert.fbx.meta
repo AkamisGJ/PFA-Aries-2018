@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e811e1ceef1249e45afc206f8405a9ae
+guid: 6d6aa711dfc43af4486fd5b94cb0ad4d
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -11,22 +11,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Sol_low
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: eda495e45606a2f4793832807c4f56b1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 5f5025b00e535c643bc2efb1635a15e0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 94c5e53ec0e52c04cbfc414e41aad669, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -57,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 200
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
