@@ -14,6 +14,7 @@ public class Raygun : MonoBehaviour {
 	//public LayerMask m_layerMask;
 	public float cooldown_delay;
 	private float cooldown = 0;
+	private float cooldown_2 = 0;
 	private FirstPersonController m_FPS_script;
 	public Camera Guncamera;
 	public Camera MainCamera;
@@ -31,8 +32,9 @@ public class Raygun : MonoBehaviour {
 	void Update () {
 
 		cooldown += Time.deltaTime;
+		cooldown_2 += Time.deltaTime;
 
-		if(Input.GetMouseButtonDown(0) && cooldown > cooldown_delay){
+		if(Input.GetButtonDown("Fire1") && cooldown > cooldown_delay){
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 
@@ -75,6 +77,24 @@ public class Raygun : MonoBehaviour {
 				
 			}else{
 				Debug.DrawRay(cursor.position, cursor.forward * 1000, Color.black, 2.0f);
+			}
+		}
+
+		//Tir Secondaire
+		if(Input.GetButtonDown("Fire2") && cooldown_2 > cooldown_delay){
+			RaycastHit hit_info;
+			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
+				
+				//Si le joueur tir sur un élément activable
+				int layer = LayerMask.NameToLayer("Useable");
+				if( hit_info.collider.gameObject.layer == layer){
+					var script = hit_info.collider.GetComponent<Useable>();
+					if(script.Dropdown.ToString() == "ON_OFF"){
+						script.Toogle();
+						script.connection.Activate();
+						cooldown_2 = 0; //Reset le cooldown
+					}
+				}
 			}
 		}
 	}
