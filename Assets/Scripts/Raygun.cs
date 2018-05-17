@@ -89,11 +89,9 @@ public class Raygun : MonoBehaviour {
 				int layer = LayerMask.NameToLayer("Useable");
 				if( hit_info.collider.gameObject.layer == layer){
 					var script = hit_info.collider.GetComponent<Useable>();
-					if(script.Dropdown.ToString() == "ON_OFF"){
 						script.Toogle();
-						script.connection.Activate();
+						
 						cooldown_2 = 0; //Reset le cooldown
-					}
 				}
 			}
 		}

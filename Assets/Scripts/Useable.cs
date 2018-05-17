@@ -11,6 +11,8 @@ public class Useable : MonoBehaviour {
 		Cooldown
 	}
 	public fonctionnement Dropdown;
+	public float delay_cooldown = 5f;
+	private float cooldown = 0f;
 	private MeshRenderer m_mesh;
 	private Color m_color = Color.red;
 
@@ -25,12 +27,17 @@ public class Useable : MonoBehaviour {
 
 
 	public void Toogle(){
-		activate = !activate;
 
-		if(activate == true)
-		m_color = Color.green;
-		else
-		m_color = Color.red;
+		if(Dropdown.ToString() == "ON_OFF"){
+			activate = !activate;
+			connection.Activate();
+		}
+
+		if(Dropdown.ToString() == "Cooldown"){
+			cooldown = 0f;
+			activate = !activate;
+			connection.Activate();
+		}
 	}
 
 	/// <summary>
@@ -38,6 +45,21 @@ public class Useable : MonoBehaviour {
 	/// </summary>
 	void Update()
 	{
+		if(activate == true)
+		m_color = Color.green;
+		else
+		m_color = Color.red;
+
 		m_mesh.material.color = m_color;
+
+		if(Dropdown.ToString() == "Cooldown" && activate == true){
+			cooldown += Time.deltaTime;
+		}
+
+		if(cooldown > delay_cooldown){
+			activate = false;
+			connection.Activate();
+			cooldown = 0f;
+		}
 	}
 }
