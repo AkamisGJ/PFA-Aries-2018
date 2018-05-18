@@ -5,7 +5,7 @@ using UnityEngine;
 public class Useable : MonoBehaviour {
 
 	public bool activate = false;
-	public Useable_output connection;
+	public Useable_output[] connections;
 	public enum fonctionnement{
 		ON_OFF,
 		Cooldown
@@ -30,13 +30,19 @@ public class Useable : MonoBehaviour {
 
 		if(Dropdown.ToString() == "ON_OFF"){
 			activate = !activate;
-			connection.Activate();
+			foreach (var connection in connections)
+			{
+				connection.Activate();
+			}
 		}
 
 		if(Dropdown.ToString() == "Cooldown"){
 			cooldown = 0f;
 			activate = !activate;
-			connection.Activate();
+			foreach (var connection in connections)
+			{
+				connection.Activate();
+			}
 		}
 	}
 
@@ -58,8 +64,11 @@ public class Useable : MonoBehaviour {
 
 		if(cooldown > delay_cooldown){
 			activate = false;
-			connection.Activate();
 			cooldown = 0f;
+			foreach (var connection in connections)
+			{
+				connection.Activate();
+			}
 		}
 	}
 }
