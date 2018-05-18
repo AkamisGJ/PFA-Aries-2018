@@ -23,10 +23,10 @@ public class Useable_output: MonoBehaviour {
 		activate = !activate;
 
 		if(activate == true){
-			m_animator.Play("open_door", -1);	
+			m_animator.Play("buttonrotate", -1);	
 		}
 		else{
-			m_animator.Play("close_door", -1);
+			m_animator.Play("buttonrotate", -1);
 		}
 
 	}
