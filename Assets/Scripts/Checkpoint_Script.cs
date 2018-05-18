@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Checkpoint_Script : MonoBehaviour {
 
+	[TextArea(5,20)]
+	public string Information;
+	
 	[Header("Gizmos")]
 	public Color color_checkpoint;
 	public Color color_respawnpoint;
@@ -12,9 +15,11 @@ public class Checkpoint_Script : MonoBehaviour {
 	
 	[Header("Checkpoint")]
 	public int CheckPoint_value;
+	[HideInInspector] public Quaternion rotation;
 
 	void Start () {
 		cubePosition = GetComponent<BoxCollider>();
+		rotation = transform.rotation;
 	}
 
 	/// <summary>
