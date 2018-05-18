@@ -21,6 +21,7 @@ public class Raygun : MonoBehaviour {
 	public LayerMask RaygunLayer;
 
 	public GameObject m_TrailGenerator;
+	public GameObject m_FXShoot;
 
 	// Use this for initialization
 	void Start () {
@@ -82,6 +83,9 @@ public class Raygun : MonoBehaviour {
 
 		//Tir Secondaire
 		if(Input.GetButtonDown("Fire2") && cooldown_2 > cooldown_delay){
+			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
+			Instantiate(m_FXShoot, firepoint.position, rotation);
+			
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 				
