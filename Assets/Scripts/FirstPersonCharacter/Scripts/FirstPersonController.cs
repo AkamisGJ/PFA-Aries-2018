@@ -48,6 +48,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool m_Active = true;
 
         public int lastCheckPoint = 0;
+        private Quaternion lastRotation;
 
 
         // Use this for initialization
@@ -279,6 +280,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if(other.tag == "Checkpoint"){
                 if(other.GetComponent<Checkpoint_Script>().CheckPoint_value > lastCheckPoint){
                     lastCheckPoint = other.GetComponent<Checkpoint_Script>().CheckPoint_value;
+                    lastRotation = other.GetComponent<Checkpoint_Script>().rotation;
                 }
             }
             
@@ -288,6 +290,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     int value = checkpoins.GetComponent<Checkpoint_Script>().CheckPoint_value;
                     if(value == lastCheckPoint){
                         transform.position = checkpoins.transform.position;
+                        m_MouseLook.m_CharacterTargetRot = lastRotation;
+                        m_MouseLook.m_CameraTargetRot = Quaternion.identity;
                         break;
                     }
                 }
