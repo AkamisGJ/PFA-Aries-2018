@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerPillar : MonoBehaviour {
+public class GroundTrigger : MonoBehaviour
+{
 
     private Animator animator;
     public GameObject Target;
-    
-    
 
     private void Awake()
     {
@@ -18,21 +17,9 @@ public class TriggerPillar : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            animator.SetBool("Up", true);
-            
+            animator.SetBool("Fall", true);
+
         }
 
     }
-
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.tag == "Player")
-            {
-                animator.SetBool("Up", false);
-
-            }
-
-        }
-
 }
