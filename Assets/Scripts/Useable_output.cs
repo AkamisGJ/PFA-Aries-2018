@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Animator))]
-public class Useable_output_button: MonoBehaviour {
+public class Useable_output: MonoBehaviour {
 
 	public bool activate = false;
 	private Animator m_animator;
