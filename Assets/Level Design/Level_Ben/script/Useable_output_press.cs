@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Animator))]
-public class Useable_output: MonoBehaviour {
+public class Useable_output_press: MonoBehaviour {
 
 	public bool activate = false;
 	private Animator m_animator;
@@ -23,10 +23,10 @@ public class Useable_output: MonoBehaviour {
 		activate = !activate;
 
 		if(activate == true){
-			m_animator.Play("open_door", -1);	
+			m_animator.Play("presse1", -1);	
 		}
 		else{
-			m_animator.Play("close_door", -1);
+            m_animator.StopPlayback();
 		}
 
 	}

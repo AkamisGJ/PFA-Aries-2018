@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 5d19f124249f2a343919523b3f4bc662
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Back
+    100002: Back 1
+    100004: Barrel
+    100006: Barrel 1
+    100008: Bras
+    100010: Bras 1
+    100012: Cartouche
+    100014: Chien
+    100016: First_joint
+    100018: Fixed_part
+    100020: Gachette
+    100022: Hand
+    100024: Hand 1
+    100026: //RootNode
+    100028: Petit
+    100030: Second_joint
+    400000: Back
+    400002: Back 1
+    400004: Barrel
+    400006: Barrel 1
+    400008: Bras
+    400010: Bras 1
+    400012: Cartouche
+    400014: Chien
+    400016: First_joint
+    400018: Fixed_part
+    400020: Gachette
+    400022: Hand
+    400024: Hand 1
+    400026: //RootNode
+    400028: Petit
+    400030: Second_joint
+    2100000: lambert1
+    2300000: Back 1
+    2300002: Barrel 1
+    2300004: Bras 1
+    2300006: Cartouche
+    2300008: Chien
+    2300010: First_joint
+    2300012: Fixed_part
+    2300014: Gachette
+    2300016: Hand 1
+    2300018: Petit
+    2300020: Second_joint
+    3300000: Back 1
+    3300002: Barrel 1
+    3300004: Bras 1
+    3300006: Cartouche
+    3300008: Chien
+    3300010: First_joint
+    3300012: Fixed_part
+    3300014: Gachette
+    3300016: Hand 1
+    3300018: Petit
+    3300020: Second_joint
+    4300000: Hand
+    4300002: Gachette
+    4300004: Petit
+    4300006: Bras
+    4300008: Cartouche
+    4300010: Second_joint
+    4300012: First_joint
+    4300014: Barrel
+    4300016: Fixed_part
+    4300018: Back
+    4300020: Chien
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 9
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

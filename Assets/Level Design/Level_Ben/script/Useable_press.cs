@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Useable : MonoBehaviour {
+public class Useable_press : MonoBehaviour {
 
 	public bool activate = false;
 	public GameObject[] connections;
@@ -32,7 +32,7 @@ public class Useable : MonoBehaviour {
 			activate = !activate;
 			foreach (var connection in connections)
 			{
-				connection.GetComponent<Useable_output>().Activate();
+				connection.GetComponent<Useable_output_press>().Activate();
 			}
 		}
 
@@ -41,7 +41,7 @@ public class Useable : MonoBehaviour {
 			activate = !activate;
 			foreach (var connection in connections)
 			{
-				connection.GetComponent<Useable_output>().Activate();
+				connection.GetComponent<Useable_output_press>().Activate();
 			}
 		}
 	}
@@ -67,7 +67,7 @@ public class Useable : MonoBehaviour {
 			cooldown = 0f;
 			foreach (var connection in connections)
 			{
-				connection.GetComponent<Useable_output>().Activate();
+				connection.GetComponent<Useable_output_press>().Activate();
 			}
 		}
 	}
