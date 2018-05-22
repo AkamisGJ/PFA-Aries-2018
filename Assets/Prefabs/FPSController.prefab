@@ -326,6 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4738088012462454}
   - component: {fileID: 20208677654545962}
+  - component: {fileID: 114757987307343030}
   m_Layer: 10
   m_Name: GunCamera
   m_TagString: Untagged
@@ -869,6 +870,7 @@ GameObject:
   - component: {fileID: 20601588698232970}
   - component: {fileID: 81620714741318386}
   - component: {fileID: 124336550459101180}
+  - component: {fileID: 114946000421181348}
   m_Layer: 17
   m_Name: Camera
   m_TagString: MainCamera
@@ -2198,14 +2200,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.8, y: 17.43, z: -6.56}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.25488973, y: -1, z: -22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4726340414773152}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4698609942490914
 Transform:
   m_ObjectHideFlags: 1
@@ -6334,6 +6336,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114757987307343030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192787062630466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 8f478db5914903146afc4e4315d310e4, type: 2}
 --- !u!114 &114812309494872010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6357,6 +6371,18 @@ MonoBehaviour:
     m_Bits: 4294832127
   m_TrailGenerator: {fileID: 1639501052000772}
   m_FXShoot: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0, type: 2}
+--- !u!114 &114946000421181348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605575037703808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 8f478db5914903146afc4e4315d310e4, type: 2}
 --- !u!124 &124336550459101180
 Behaviour:
   m_ObjectHideFlags: 1
