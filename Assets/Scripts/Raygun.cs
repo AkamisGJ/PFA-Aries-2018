@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
 public class Raygun : MonoBehaviour {
@@ -23,9 +24,13 @@ public class Raygun : MonoBehaviour {
 	public GameObject m_TrailGenerator;
 	public GameObject m_FXShoot;
 
+	private PostProcessingBehaviour PostProd;
+
 	// Use this for initialization
 	void Start () {
 		m_FPS_script = player.GetComponent<FirstPersonController>();
+		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
+		//PostProd.profile.chromaticAberration.enabled = false;
 		//m_TrailGenerator.SetActive(false);
 	}
 	
@@ -102,6 +107,10 @@ public class Raygun : MonoBehaviour {
 	}
 
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
+
+		ChromaticAberrationModel.Settings setting = PostProd.profile.chromaticAberration.settings;
+
+		setting.intensity = 1f;
 		
 		Vector3 distance = EndPoint - StartPoint;
 		//print("Distance = " + distance.sqrMagnitude);
@@ -143,6 +152,7 @@ public class Raygun : MonoBehaviour {
 		//m_TrailGenerator.SetActive(false);
 
 		m_FPS_script.m_Active = true;
+		PostProd.profile.chromaticAberration.enabled = false;
 		//print("Temps = " + time);
 	}
 

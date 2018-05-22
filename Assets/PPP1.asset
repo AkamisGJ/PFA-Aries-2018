@@ -71,7 +71,7 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 10
+      focusDistance: 8.47
       aperture: 5.6
       focalLength: 50
       useCameraFov: 0
@@ -85,9 +85,9 @@ MonoBehaviour:
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
-      lowPercent: 25.053099
+      lowPercent: 45
       highPercent: 95
-      minLuminance: -5.03
+      minLuminance: -5
       maxLuminance: 1
       keyValue: 0.25
       dynamicKeyValue: 1
@@ -308,7 +308,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0
+      intensity: 0.365
   grain:
     m_Enabled: 0
     m_Settings:
