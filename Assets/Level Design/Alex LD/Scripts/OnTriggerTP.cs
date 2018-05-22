@@ -5,11 +5,13 @@ using UnityEngine;
 public class OnTriggerTP : MonoBehaviour
 {
     private Animator animator;
+    private MeshCollider NewCollider;
     public GameObject Target;
 
     private void Awake()
     {
         animator = Target.GetComponent<Animator>();
+        NewCollider = Target.GetComponent<MeshCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +20,7 @@ public class OnTriggerTP : MonoBehaviour
         {
             animator.SetBool("Turn", true);
             Target.layer = LayerMask.NameToLayer("CanTeleport");
+            NewCollider.enabled = true;
         }
 
     }
@@ -28,6 +31,7 @@ public class OnTriggerTP : MonoBehaviour
         {
             animator.SetBool("Turn", false);
             Target.layer = LayerMask.NameToLayer("Default");
+            NewCollider.enabled = false;
         }
     }
 }
