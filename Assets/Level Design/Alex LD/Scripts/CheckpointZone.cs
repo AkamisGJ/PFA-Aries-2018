@@ -14,5 +14,4 @@ public class CheckpointZone : MonoBehaviour {
             other.transform.rotation = pointToTP.rotation;
         }
     }
-
 }

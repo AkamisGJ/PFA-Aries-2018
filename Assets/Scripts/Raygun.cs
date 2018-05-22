@@ -106,11 +106,14 @@ public class Raygun : MonoBehaviour {
 		}
 	}
 
+	private int m_point_TP_court = 10;
+	private int m_point_TP_long = 21;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
 
 		ChromaticAberrationModel.Settings setting = PostProd.profile.chromaticAberration.settings;
+		PostProd.profile.chromaticAberration.settings = setting;
 
-		setting.intensity = 1f;
+		setting.intensity = 0f;
 		
 		Vector3 distance = EndPoint - StartPoint;
 		//print("Distance = " + distance.sqrMagnitude);
@@ -119,9 +122,9 @@ public class Raygun : MonoBehaviour {
 		float time = 0f;
 		int point;
 		if(distance.sqrMagnitude < 800f){
-			point = 6; //La distance est courte 16
+			point = m_point_TP_court; //La distance est courte 16
 		}else{
-			point = 16; //La distance est longue 30
+			point = m_point_TP_long; //La distance est longue 30
 		}
 
 		for(int i = point; i > 0; i--){
@@ -135,6 +138,12 @@ public class Raygun : MonoBehaviour {
 				Guncamera.fieldOfView ++;
 				MainCamera.fieldOfView++;
 			}
+
+			//Aberation Chromatique
+			float value = (float) i/point;
+			setting.intensity = value;
+			print("Value = " + value + "Setting = " + setting.intensity);
+			PostProd.profile.chromaticAberration.settings = setting;
 
 			time += Time.deltaTime;
 			yield return new WaitForFixedUpdate();
@@ -151,8 +160,10 @@ public class Raygun : MonoBehaviour {
 		}
 		//m_TrailGenerator.SetActive(false);
 
+		setting.intensity = 0f;
+		PostProd.profile.chromaticAberration.settings = setting;
+
 		m_FPS_script.m_Active = true;
-		PostProd.profile.chromaticAberration.enabled = false;
 		//print("Temps = " + time);
 	}
 
@@ -171,9 +182,9 @@ public class Raygun : MonoBehaviour {
 			float time = 0f;
 			int point;
 			if(distance.sqrMagnitude < 800f){
-				point = 10; //La distance est courte 16
+				point = m_point_TP_court; //La distance est courte 16
 			}else{
-				point = 20; //La distance est longue 30
+				point = m_point_TP_long; //La distance est longue 30
 			}
 
 			for(int i = point; i > 0; i--){
@@ -204,9 +215,9 @@ public class Raygun : MonoBehaviour {
 			distance = EndPoint_2 - transform.position;
 			time = 0f;
 			if(distance.sqrMagnitude < 800f){
-				point = 10; //La distance est courte 16
+				point = m_point_TP_court; //La distance est courte 16
 			}else{
-				point = 22; //La distance est longue 30
+				point = m_point_TP_long; //La distance est longue 30
 			}
 
 			for(int i = point; i > 0; i--){
