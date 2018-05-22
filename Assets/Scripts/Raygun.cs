@@ -83,19 +83,19 @@ public class Raygun : MonoBehaviour {
 
 		//Tir Secondaire
 		if(Input.GetButtonDown("Fire2") && cooldown_2 > cooldown_delay){
-			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
-			Instantiate(m_FXShoot, firepoint.position, rotation);
 			
 			RaycastHit hit_info;
-			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
-				
+			bool Raycast = Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value);
+			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
+			float additionalRoot = Vector3.SignedAngle(firepoint.position, cursor.position, cursor.forward);
+			print(additionalRoot);
+			Instantiate(m_FXShoot, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
+
+			if(Raycast){				
 				//Si le joueur tir sur un élément activable
 				int layer = LayerMask.NameToLayer("Useable");
 				if( hit_info.collider.gameObject.layer == layer){
-					var script = hit_info.collider.GetComponent<Useable>();
-						script.Toogle();
-						
-						cooldown_2 = 0; //Reset le cooldown
+					cooldown_2 = 0; //Reset le cooldown
 				}
 			}
 		}

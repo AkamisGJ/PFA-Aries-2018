@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4352586411485192}
   - component: {fileID: 198476861686754460}
   - component: {fileID: 199478913991907922}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4869143130574532}
   - component: {fileID: 198601131045748432}
   - component: {fileID: 199497831698317844}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: shock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4253069876124554}
   - component: {fileID: 198681345382450878}
   - component: {fileID: 199851156661735682}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4893860157818352}
   - component: {fileID: 198636475308577500}
   - component: {fileID: 199171927025281324}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: shock (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18700,7 +18700,7 @@ ParticleSystemRenderer:
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1
-  m_RenderAlignment: 0
+  m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4924369879693992}
   - component: {fileID: 198932813166524124}
   - component: {fileID: 199425496301000418}
-  m_Layer: 15
+  m_Layer: 25
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4910588224219534}
   - component: {fileID: 198246486179576816}
   - component: {fileID: 199585397253953040}
-  m_Layer: 15
+  m_Layer: 25
   m_Name: shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114945496783640944}
   - component: {fileID: 135878687863427748}
   - component: {fileID: 54943832044555758}
-  m_Layer: 15
+  m_Layer: 25
   m_Name: FX Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,6 +133,7 @@ MonoBehaviour:
   speed: 0.5
   time_before_die: 10
   hitfx: {fileID: 1697983956073682, guid: 48f7829f57ce7b146874d0070c58999c, type: 2}
+  FX: {fileID: 1883272022623142}
 --- !u!135 &135878687863427748
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -143,7 +144,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.23
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: -0.33}
 --- !u!198 &198246486179576816
 ParticleSystem:
