@@ -169,11 +169,11 @@ public class Raygun : MonoBehaviour {
 
 	//Teleportation avec un mirroir
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint, Vector3 EndPoint_2, float angleY){
-		//Direct Way
-			//player.position = EndPoint;
-
-		//With distance
 		
+		ChromaticAberrationModel.Settings setting = PostProd.profile.chromaticAberration.settings;
+		PostProd.profile.chromaticAberration.settings = setting;
+
+		setting.intensity = 0f;
 			//Première TP
 			Vector3 distance = EndPoint - StartPoint;
 			//print("Distance = " + distance.sqrMagnitude);
@@ -198,6 +198,12 @@ public class Raygun : MonoBehaviour {
 					Guncamera.fieldOfView ++;
 					MainCamera.fieldOfView++;
 				}
+
+				//Aberation Chromatique
+				float value = (float) i/point;
+				setting.intensity = value;
+				print("Value = " + value + "Setting = " + setting.intensity);
+				PostProd.profile.chromaticAberration.settings = setting;
 
 				time += Time.deltaTime;
 				yield return new WaitForFixedUpdate();
@@ -225,6 +231,12 @@ public class Raygun : MonoBehaviour {
 				player.position += (distance/i);
 				distance = EndPoint_2 - player.position;
 
+				//Aberation Chromatique
+				float value = (float) i/point;
+				setting.intensity = value;
+				print("Value = " + value + "Setting = " + setting.intensity);
+				PostProd.profile.chromaticAberration.settings = setting;
+
 				time += Time.deltaTime;
 				yield return new WaitForFixedUpdate();
 			}
@@ -240,6 +252,9 @@ public class Raygun : MonoBehaviour {
 					}
 			}
 			//m_TrailGenerator.SetActive(false);
+
+			setting.intensity = 0f;
+			PostProd.profile.chromaticAberration.settings = setting;
 			player.GetComponent<FirstPersonController>().m_MouseLook.smooth = false;
 			m_FPS_script.m_Active = true;
 
