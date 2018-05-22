@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4405311218305232}
   - component: {fileID: 198571775527663678}
   - component: {fileID: 199106873011331280}
+  - component: {fileID: 135443791610996336}
   m_Layer: 0
   m_Name: shoot
   m_TagString: Untagged
@@ -65,13 +66,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182081799226176}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.809, y: 7.582, z: -16.553}
+  m_LocalPosition: {x: -14.558, y: 10.63, z: -1.734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4056203058759604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!135 &135443791610996336
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182081799226176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.44
+  m_Center: {x: 0.68, y: 0, z: 0}
 --- !u!198 &198447710245668676
 ParticleSystem:
   m_ObjectHideFlags: 1
