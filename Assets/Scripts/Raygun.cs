@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
 public class Raygun : MonoBehaviour {
@@ -23,9 +24,13 @@ public class Raygun : MonoBehaviour {
 	public GameObject m_TrailGenerator;
 	public GameObject m_FXShoot;
 
+	private PostProcessingBehaviour PostProd;
+
 	// Use this for initialization
 	void Start () {
 		m_FPS_script = player.GetComponent<FirstPersonController>();
+		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
+		//PostProd.profile.chromaticAberration.enabled = false;
 		//m_TrailGenerator.SetActive(false);
 	}
 	
@@ -83,25 +88,29 @@ public class Raygun : MonoBehaviour {
 
 		//Tir Secondaire
 		if(Input.GetButtonDown("Fire2") && cooldown_2 > cooldown_delay){
-			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
-			Instantiate(m_FXShoot, firepoint.position, rotation);
 			
 			RaycastHit hit_info;
-			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
-				
+			bool Raycast = Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value);
+			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
+			float additionalRoot = Vector3.SignedAngle(firepoint.position, cursor.position, cursor.forward);
+			print(additionalRoot);
+			Instantiate(m_FXShoot, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
+
+			if(Raycast){				
 				//Si le joueur tir sur un élément activable
 				int layer = LayerMask.NameToLayer("Useable");
 				if( hit_info.collider.gameObject.layer == layer){
-					var script = hit_info.collider.GetComponent<Useable>();
-						script.Toogle();
-						
-						cooldown_2 = 0; //Reset le cooldown
+					cooldown_2 = 0; //Reset le cooldown
 				}
 			}
 		}
 	}
 
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
+
+		ChromaticAberrationModel.Settings setting = PostProd.profile.chromaticAberration.settings;
+
+		setting.intensity = 1f;
 		
 		Vector3 distance = EndPoint - StartPoint;
 		//print("Distance = " + distance.sqrMagnitude);
@@ -143,6 +152,7 @@ public class Raygun : MonoBehaviour {
 		//m_TrailGenerator.SetActive(false);
 
 		m_FPS_script.m_Active = true;
+		PostProd.profile.chromaticAberration.enabled = false;
 		//print("Temps = " + time);
 	}
 
