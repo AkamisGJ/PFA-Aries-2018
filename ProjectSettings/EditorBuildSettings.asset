@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Level Design/Alex LD/01 Scene/AlexScene01.unity
+    guid: dcdedb8fff4303a469f15f42c5f465a2
+  - enabled: 1
+    path: Assets/Level Design/Alex LD/02 Scene/AlexScene02.unity
+    guid: 70bd1968a35043241a66bb3be79e94b7
+  - enabled: 1
+    path: Assets/Level Design/Alex LD/03 Scene/AlexScene03.unity
+    guid: 5a3ea3f543090124686666b438febb1c
   m_configObjects: {}
