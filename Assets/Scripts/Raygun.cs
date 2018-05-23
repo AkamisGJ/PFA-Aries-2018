@@ -50,6 +50,8 @@ public class Raygun : MonoBehaviour {
 				m_lineRenderer.SetPosition(0, firepoint.position);
 				m_lineRenderer.SetPosition(1, hit_info.point);
 
+                print(hit_info.transform.name);
+
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 				m_TrailGenerator.SetActive(false);
 
