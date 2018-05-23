@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894705366515160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.8, y: 18.7, z: -6.8}
+  m_LocalPosition: {x: 44.8, y: 18.7, z: -6.7000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4910588224219534}
@@ -133,7 +133,7 @@ MonoBehaviour:
   speed: 0.5
   time_before_die: 10
   hitfx: {fileID: 1697983956073682, guid: 48f7829f57ce7b146874d0070c58999c, type: 2}
-  FX: {fileID: 1883272022623142}
+  FX: {fileID: 0}
 --- !u!135 &135878687863427748
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -9280,8 +9280,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3f8d3697140a70c41b6902c6d8437d43, type: 2}
-  - {fileID: 2100000, guid: 3f8d3697140a70c41b6902c6d8437d43, type: 2}
+  - {fileID: 2100000, guid: 28ae8d09365c34849b102821a0c8d625, type: 2}
+  - {fileID: 2100000, guid: 28ae8d09365c34849b102821a0c8d625, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
