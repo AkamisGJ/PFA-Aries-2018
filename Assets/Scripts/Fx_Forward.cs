@@ -6,7 +6,7 @@ public class Fx_Forward : MonoBehaviour
 {
 
 	// Use this for initialization
-	public float speed = 20f;
+	public float speed = 0.5f;
 	public float time_before_die = 10f;
 	public GameObject hitfx;
 
@@ -27,7 +27,7 @@ public class Fx_Forward : MonoBehaviour
 			print("Tir secondaire touche : " + other.transform.name);
 			int layer = LayerMask.NameToLayer("Useable");
 			if( other.gameObject.layer == layer){
-				var script = other.transform.GetComponent<Useable>();
+				Useable script = other.gameObject.GetComponent<Useable>();
 				script.Toogle();
 			}
 			

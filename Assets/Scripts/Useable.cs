@@ -5,7 +5,7 @@ using UnityEngine;
 public class Useable : MonoBehaviour {
 
 	public bool activate = false;
-	public GameObject[] connections;
+	public Animator[] connections;
 	public enum fonctionnement{
 		ON_OFF,
 		Cooldown
