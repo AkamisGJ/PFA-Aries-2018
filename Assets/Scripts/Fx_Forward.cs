@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fx_Forward : MonoBehaviour {
+public class Fx_Forward : MonoBehaviour
+{
 
 	// Use this for initialization
 	public float speed = 20f;
@@ -10,12 +11,14 @@ public class Fx_Forward : MonoBehaviour {
 	public GameObject hitfx;
 
 	public GameObject FX;
-	void Start () {
-		Destroy(gameObject, time_before_die);
+	void Start ()
+    {
+		Destroy( gameObject, time_before_die);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		transform.position += transform.forward * speed;
 	}
 
@@ -28,7 +31,7 @@ public class Fx_Forward : MonoBehaviour {
 				script.Toogle();
 			}
 			
-			Instantiate(hitfx, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));
+			Instantiate( hitfx, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));
 			Destroy(gameObject);
 		}
 }
