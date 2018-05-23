@@ -10,6 +10,7 @@ public class Raygun : MonoBehaviour {
 
 	[Header("RayCast")]
 	public Transform firepoint;
+	public Transform firepoint_FX;
 	public Transform cursor;
 	public float maxDistance;
 	//public LayerMask m_layerMask;
@@ -23,6 +24,7 @@ public class Raygun : MonoBehaviour {
 
 	public GameObject m_TrailGenerator;
 	public GameObject m_FXShoot;
+	public GameObject m_Sparck_shoot;
 
 	private PostProcessingBehaviour PostProd;
 
@@ -43,6 +45,8 @@ public class Raygun : MonoBehaviour {
 		cooldown_2 += Time.deltaTime;
 
 		if(Input.GetButtonDown("Fire1") && cooldown > cooldown_delay){
+
+			
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 
@@ -96,12 +100,14 @@ public class Raygun : MonoBehaviour {
 
 		//Tir Secondaire
 		if(Input.GetButtonDown("Fire2") && cooldown_2 > cooldown_delay){
+
+			//Effect de particule
+			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
 			
 			RaycastHit hit_info;
 			bool Raycast = Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value);
 			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
 			float additionalRoot = Vector3.SignedAngle(firepoint.position, cursor.position, cursor.forward);
-			print(additionalRoot);
 			Instantiate(m_FXShoot, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
 
 			if(Raycast){				
@@ -150,7 +156,6 @@ public class Raygun : MonoBehaviour {
 			//Aberation Chromatique
 			float value = (float) i/point;
 			setting.intensity = value;
-			print("Value = " + value + "Setting = " + setting.intensity);
 			PostProd.profile.chromaticAberration.settings = setting;
 
 			time += Time.deltaTime;
@@ -210,7 +215,6 @@ public class Raygun : MonoBehaviour {
 				//Aberation Chromatique
 				float value = (float) i/point;
 				setting.intensity = value;
-				print("Value = " + value + "Setting = " + setting.intensity);
 				PostProd.profile.chromaticAberration.settings = setting;
 
 				time += Time.deltaTime;
@@ -242,7 +246,7 @@ public class Raygun : MonoBehaviour {
 				//Aberation Chromatique
 				float value = (float) i/point;
 				setting.intensity = value;
-				print("Value = " + value + "Setting = " + setting.intensity);
+				//print("Value = " + value + "Setting = " + setting.intensity);
 				PostProd.profile.chromaticAberration.settings = setting;
 
 				time += Time.deltaTime;

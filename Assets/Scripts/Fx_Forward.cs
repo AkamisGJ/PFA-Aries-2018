@@ -27,7 +27,7 @@ public class Fx_Forward : MonoBehaviour
 			print("Tir secondaire touche : " + other.transform.name);
 			int layer = LayerMask.NameToLayer("Useable");
 			if( other.gameObject.layer == layer){
-				var script = other.transform.GetComponent<Useable>();
+				Useable script = other.gameObject.GetComponent<Useable>();
 				script.Toogle();
 			}
 			
