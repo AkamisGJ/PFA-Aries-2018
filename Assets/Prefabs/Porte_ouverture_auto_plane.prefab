@@ -37,11 +37,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4027979513696896}
-  - component: {fileID: 111069493612002324}
   - component: {fileID: 65694013355551834}
+  - component: {fileID: 95532811604806392}
   - component: {fileID: 114978848884828934}
   m_Layer: 0
-  m_Name: Porte_ouverture_auto
+  m_Name: Porte_ouverture_auto_plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100005988658436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.5, y: 0.1, z: -3.3}
+  m_LocalPosition: {x: 9.5, y: 0, z: -12.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4540443741891132}
@@ -406,22 +406,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.081336, y: 5.0279045, z: 7.9455585}
   m_Center: {x: 0.024380207, y: 2.5, z: 3.7204103}
---- !u!111 &111069493612002324
-Animation:
+--- !u!95 &95532811604806392
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100005988658436}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ffc4f2f0a994883488ff1e1e622e55c3, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: ffc4f2f0a994883488ff1e1e622e55c3, type: 2}
-  - {fileID: 7400000, guid: 8ecc4bdb2b2cb5848bc60c4bd970ed79, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbf5124f54592e24d8de2ccd0184e034, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114978848884828934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,4 +435,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b02a5850490645499cacccfc243f98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_animation: {fileID: 111069493612002324}
+  m_animationComponnent: {fileID: 95532811604806392}
