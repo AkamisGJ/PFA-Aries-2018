@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1262804522190536}
+  m_RootGameObject: {fileID: 1712580943309616}
   m_IsPrefabParent: 1
---- !u!1 &1262804522190536
+--- !u!1 &1712580943309616
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4227367660957658}
-  - component: {fileID: 198739384219604366}
-  - component: {fileID: 199284025374231676}
+  - component: {fileID: 4158929749821338}
+  - component: {fileID: 198022436998944364}
+  - component: {fileID: 199226013952762132}
   m_Layer: 0
   m_Name: spark_weapon_sec
   m_TagString: Untagged
@@ -28,12 +28,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4227367660957658
+--- !u!4 &4158929749821338
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1262804522190536}
+  m_GameObject: {fileID: 1712580943309616}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.70710677}
   m_LocalPosition: {x: 6.2000003, y: 3.6, z: -23.300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,17 +41,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
---- !u!198 &198739384219604366
+--- !u!198 &198022436998944364
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1262804522190536}
+  m_GameObject: {fileID: 1712580943309616}
   serializedVersion: 5
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 2
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4629,13 +4629,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199284025374231676
+--- !u!199 &199226013952762132
 ParticleSystemRenderer:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1262804522190536}
+  m_GameObject: {fileID: 1712580943309616}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0

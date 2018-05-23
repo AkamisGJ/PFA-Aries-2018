@@ -40,9 +40,9 @@ GameObject:
   - component: {fileID: 33670096548262454}
   - component: {fileID: 23420726987861560}
   - component: {fileID: 65894575397377202}
-  - component: {fileID: 114460497713440030}
-  m_Layer: 0
-  m_Name: Button
+  - component: {fileID: 114317051164330584}
+  m_Layer: 13
+  m_Name: Button code
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974999095341732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1100006, y: 10.49, z: -7.0370884}
+  m_LocalPosition: {x: -24.655052, y: 2.63097, z: 11.40341}
   m_LocalScale: {x: 1, y: 1, z: 0.1297216}
   m_Children:
   - {fileID: 4330706189341934}
@@ -212,7 +212,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114460497713440030
+--- !u!114 &114317051164330584
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -220,11 +220,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417304166172382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afc92215629dd0f49a95d04981dc6172, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b83f6eda6f2f0f4abc87be9a1a2ef8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activate: 0
-  connections:
-  - {fileID: 0}
+  connections: []
   Dropdown: 0
   delay_cooldown: 5
