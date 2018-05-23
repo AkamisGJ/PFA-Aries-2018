@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33406530845749092}
   - component: {fileID: 23910150904326306}
   m_Layer: 0
-  m_Name: Stair_low
+  m_Name: Escalier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
