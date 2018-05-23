@@ -5,14 +5,17 @@ using UnityEngine;
 public class open_door : MonoBehaviour {
 
 
-	public Animation m_animation;
+	public Animator m_animationComponnent;
+
 	/// <summary>
 	/// OnTriggerEnter is called when the Collider other enters the trigger.
 	/// </summary>
 	/// <param name="other">The other Collider involved in this collision.</param>
 	void OnTriggerEnter(Collider other)
 	{
-		m_animation.Play("OpenDoor");
+		if(other.tag == "Player"){
+			m_animationComponnent.SetBool("InFrontDoor", true);
+		}
 		
 	}
 
@@ -22,6 +25,8 @@ public class open_door : MonoBehaviour {
 	/// <param name="other">The other Collider involved in this collision.</param>
 	void OnTriggerExit(Collider other)
 	{
-		m_animation.Play("CloseDoor");
+		if(other.tag == "Player"){
+			m_animationComponnent.SetBool("InFrontDoor", false);
+		}
 	}
 }
