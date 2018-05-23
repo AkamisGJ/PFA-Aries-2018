@@ -6,7 +6,7 @@ public class Fx_Forward : MonoBehaviour
 {
 
 	// Use this for initialization
-	public float speed = 20f;
+	public float speed = 0.5f;
 	public float time_before_die = 10f;
 	public GameObject hitfx;
 
