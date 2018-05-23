@@ -26,6 +26,8 @@ public class Raygun : MonoBehaviour {
 
 	private PostProcessingBehaviour PostProd;
 
+	public LineRenderer m_lineRenderer;
+
 	// Use this for initialization
 	void Start () {
 		m_FPS_script = player.GetComponent<FirstPersonController>();
@@ -43,6 +45,10 @@ public class Raygun : MonoBehaviour {
 		if(Input.GetButtonDown("Fire1") && cooldown > cooldown_delay){
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
+
+				//Line renderer
+				m_lineRenderer.SetPosition(0, firepoint.position);
+				m_lineRenderer.SetPosition(1, hit_info.point);
 
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 				m_TrailGenerator.SetActive(false);
