@@ -6373,7 +6373,7 @@ MonoBehaviour:
   m_FXShoot: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0, type: 2}
   m_Sparck_shoot: {fileID: 1712580943309616, guid: 14a068f0f21474b4aad11ec38e316287,
     type: 2}
-  m_lineRenderer: {fileID: 120447758923362356, guid: daeaa5b12431a8e4883aba8651095152,
+  m_lineRendererPrefab: {fileID: 120447758923362356, guid: daeaa5b12431a8e4883aba8651095152,
     type: 2}
 --- !u!114 &114965405747700638
 MonoBehaviour:

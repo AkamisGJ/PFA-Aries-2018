@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 120498225350249956}
   m_Layer: 25
   m_Name: "Laser T\xE9l\xE9portation"
-  m_TagString: Untagged
+  m_TagString: LaserTP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

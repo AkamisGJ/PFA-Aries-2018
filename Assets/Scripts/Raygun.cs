@@ -28,7 +28,7 @@ public class Raygun : MonoBehaviour {
 
 	private PostProcessingBehaviour PostProd;
 
-	public LineRenderer m_lineRenderer;
+	public LineRenderer m_lineRendererPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +36,16 @@ public class Raygun : MonoBehaviour {
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
 		//PostProd.profile.chromaticAberration.enabled = false;
 		//m_TrailGenerator.SetActive(false);
+
+		//Ajoute le laser si il n'es pas déja dans la scene
+		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
+		if(m_laser == null){
+			LineRenderer laser = Instantiate(m_lineRendererPrefab, new Vector3(-2000, -2000, 2000), Quaternion.identity);
+			m_lineRendererPrefab = laser;
+		}
+		else{
+			m_lineRendererPrefab = m_laser.GetComponent<LineRenderer>();
+		}
 	}
 	
 	// Update is called once per frame
@@ -51,10 +61,8 @@ public class Raygun : MonoBehaviour {
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 
 				//Line renderer
-				m_lineRenderer.SetPosition(0, firepoint.position);
-				m_lineRenderer.SetPosition(1, hit_info.point);
-
-                print(hit_info.transform.name);
+				m_lineRendererPrefab.SetPosition(0, firepoint.position);
+				m_lineRendererPrefab.SetPosition(1, hit_info.point);
 
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 				m_TrailGenerator.SetActive(false);
