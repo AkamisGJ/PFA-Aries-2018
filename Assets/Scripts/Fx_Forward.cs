@@ -24,7 +24,7 @@ public class Fx_Forward : MonoBehaviour
 
 	void OnCollisionEnter(Collision other)
 	{
-			print("Tir secondaire touche : " + other.transform.name);
+			//print("Tir secondaire touche : " + other.transform.name);
 			int layer = LayerMask.NameToLayer("Useable");
 			if( other.gameObject.layer == layer){
 				Useable script = other.gameObject.GetComponent<Useable>();

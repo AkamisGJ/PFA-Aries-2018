@@ -14,7 +14,9 @@ public class Raygun : MonoBehaviour {
 	public Transform cursor;
 	public float maxDistance;
 	//public LayerMask m_layerMask;
-	public float cooldown_delay;
+	public float cooldown_delay = 0.4f;
+
+	public float cooldown_delay_2 = 1f;
 	private float cooldown = 0;
 	private float cooldown_2 = 0;
 	private FirstPersonController m_FPS_script;
@@ -28,7 +30,7 @@ public class Raygun : MonoBehaviour {
 
 	private PostProcessingBehaviour PostProd;
 
-	public LineRenderer m_lineRenderer;
+	public LineRenderer m_lineRendererPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,16 @@ public class Raygun : MonoBehaviour {
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
 		//PostProd.profile.chromaticAberration.enabled = false;
 		//m_TrailGenerator.SetActive(false);
+
+		//Ajoute le laser si il n'es pas déja dans la scene
+		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
+		if(m_laser == null){
+			LineRenderer laser = Instantiate(m_lineRendererPrefab, new Vector3(-2000, -2000, 2000), Quaternion.identity);
+			m_lineRendererPrefab = laser;
+		}
+		else{
+			m_lineRendererPrefab = m_laser.GetComponent<LineRenderer>();
+		}
 	}
 	
 	// Update is called once per frame
@@ -44,17 +56,14 @@ public class Raygun : MonoBehaviour {
 		cooldown += Time.deltaTime;
 		cooldown_2 += Time.deltaTime;
 
-		if(Input.GetButtonDown("Fire1") && cooldown > cooldown_delay){
-
+		if((Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1Joy") > 0.3f )&& cooldown > cooldown_delay){
 			
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 
 				//Line renderer
-				m_lineRenderer.SetPosition(0, firepoint.position);
-				m_lineRenderer.SetPosition(1, hit_info.point);
-
-                print(hit_info.transform.name);
+				m_lineRendererPrefab.SetPosition(0, firepoint.position);
+				m_lineRendererPrefab.SetPosition(1, hit_info.point);
 
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 				m_TrailGenerator.SetActive(false);
@@ -99,24 +108,17 @@ public class Raygun : MonoBehaviour {
 		}
 
 		//Tir Secondaire
-		if(Input.GetButtonDown("Fire2") && cooldown_2 > cooldown_delay){
+		if((Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f)&& cooldown_2 > cooldown_delay){
 
 			//Effect de particule
 			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
+			cooldown_2 = 0; //Reset le cooldown
 			
 			RaycastHit hit_info;
 			bool Raycast = Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value);
 			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
 			float additionalRoot = Vector3.SignedAngle(firepoint.position, cursor.position, cursor.forward);
 			Instantiate(m_FXShoot, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
-
-			if(Raycast){				
-				//Si le joueur tir sur un élément activable
-				int layer = LayerMask.NameToLayer("Useable");
-				if( hit_info.collider.gameObject.layer == layer){
-					cooldown_2 = 0; //Reset le cooldown
-				}
-			}
 		}
 	}
 
