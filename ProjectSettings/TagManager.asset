@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - DeathZone
+  - LaserTP
   layers:
   - Default
   - TransparentFX
