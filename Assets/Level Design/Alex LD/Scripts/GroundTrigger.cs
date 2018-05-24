@@ -7,6 +7,7 @@ public class GroundTrigger : MonoBehaviour
 
     private Animator animator;
     public GameObject Target;
+    public GameObject DeathZone;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class GroundTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             animator.SetBool("Fall", true);
+            DeathZone.SetActive(true);
 
         }
 
