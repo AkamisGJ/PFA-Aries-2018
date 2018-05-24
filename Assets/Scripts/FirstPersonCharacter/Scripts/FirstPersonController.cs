@@ -50,6 +50,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public int lastCheckPoint = 0;
         private Quaternion lastRotation;
 
+        public float m_distanceFootDetection = 2f;
+
 
         // Use this for initialization
         private void Start()
@@ -146,6 +148,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MouseLook.UpdateCursorLock();
             }
 
+            //Check if the player is on a movingPlatform
+            RaycastHit hitinfo;
+            LayerMask m_mask = LayerMask.NameToLayer("Travelling");
+            //print(m_mask.value);
+            if(Physics.Raycast(transform.position, - transform.up, out hitinfo ,m_distanceFootDetection)){
+                    if(hitinfo.transform.gameObject.layer == m_mask.value){
+                    transform.SetParent(hitinfo.transform);
+                }
+            }
+            else{
+                transform.SetParent(transform.root);
+            }
+            
         }
 
 
