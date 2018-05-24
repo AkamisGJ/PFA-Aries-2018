@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4359846430278638}
   - component: {fileID: 120498225350249956}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: "Laser T\xE9l\xE9portation"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
