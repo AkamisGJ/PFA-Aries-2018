@@ -1,12 +1,6 @@
-Correction :
+Regler le step Offest du Chara Controlleur
+Regler le probleme de la pente dans le niveau d'Alex
+Reflet du rayon laser dans les mirroir
+Relfet du Second tir dans le mirroir
 
-	Bug quand le joueur rentre une collision pendant un TP
-	Ajouter le FOV qui change pendant un TP
-	Faire la TP en mode FrameRate Independant
-
-
-Mécaniques :
-	
-	Ajouter des Zone de TP qui réflèque le tir (mirror)
-	Checkpoint
-	Passez le projet sur Git ou Unity community
+Check Trello

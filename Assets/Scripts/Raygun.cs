@@ -143,6 +143,12 @@ public class Raygun : MonoBehaviour {
 			point = m_point_TP_long; //La distance est longue 30
 		}
 
+		//Aberation Chromatique
+		float value = 1f;
+		setting.intensity = value;
+		PostProd.profile.chromaticAberration.settings = setting;
+
+
 		for(int i = point; i > 0; i--){
 			//Mouvement
 			player.position += (distance/i);
@@ -155,30 +161,21 @@ public class Raygun : MonoBehaviour {
 				MainCamera.fieldOfView++;
 			}
 
-			//Aberation Chromatique
-			float value = (float) i/point;
-			setting.intensity = value;
-			PostProd.profile.chromaticAberration.settings = setting;
-
 			time += Time.deltaTime;
 			yield return new WaitForFixedUpdate();
 		}
+
 		Guncamera.fieldOfView = 60;
 		MainCamera.fieldOfView = 60;
 
-		if(m_TrailGenerator.activeSelf == true){
-			foreach (Transform Trail in m_TrailGenerator.transform)
-				{
-					Trail.localPosition = new Vector3(0,0,0);
-					print("Reste to 0");
-				}
-		}
-		//m_TrailGenerator.SetActive(false);
-
 		setting.intensity = 0f;
 		PostProd.profile.chromaticAberration.settings = setting;
-
 		m_FPS_script.m_Active = true;
+		Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
+		m_lineRendererPrefab.SetPosition(0, hide);
+		m_lineRendererPrefab.SetPosition(1, hide);
+
+
 		//print("Temps = " + time);
 	}
 
@@ -202,6 +199,11 @@ public class Raygun : MonoBehaviour {
 				point = m_point_TP_long; //La distance est longue 30
 			}
 
+			//Aberation Chromatique
+			float value = 1f;
+			setting.intensity = value;
+			PostProd.profile.chromaticAberration.settings = setting;
+
 			for(int i = point; i > 0; i--){
 				//Mouvement
 				player.position += (distance/i);
@@ -214,10 +216,7 @@ public class Raygun : MonoBehaviour {
 					MainCamera.fieldOfView++;
 				}
 
-				//Aberation Chromatique
-				float value = (float) i/point;
-				setting.intensity = value;
-				PostProd.profile.chromaticAberration.settings = setting;
+				
 
 				time += Time.deltaTime;
 				yield return new WaitForFixedUpdate();
@@ -245,12 +244,6 @@ public class Raygun : MonoBehaviour {
 				player.position += (distance/i);
 				distance = EndPoint_2 - player.position;
 
-				//Aberation Chromatique
-				float value = (float) i/point;
-				setting.intensity = value;
-				//print("Value = " + value + "Setting = " + setting.intensity);
-				PostProd.profile.chromaticAberration.settings = setting;
-
 				time += Time.deltaTime;
 				yield return new WaitForFixedUpdate();
 			}
@@ -271,7 +264,5 @@ public class Raygun : MonoBehaviour {
 			PostProd.profile.chromaticAberration.settings = setting;
 			player.GetComponent<FirstPersonController>().m_MouseLook.smooth = false;
 			m_FPS_script.m_Active = true;
-
-		//Framerate independant
 	}
 }
