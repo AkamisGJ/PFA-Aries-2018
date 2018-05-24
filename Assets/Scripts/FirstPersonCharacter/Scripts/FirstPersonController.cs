@@ -96,14 +96,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_PreviouslyGrounded = m_CharacterController.isGrounded;
             }
 
-            //Check if a controlleur is pluged or not
-            String[] joystick = Input.GetJoystickNames();
-            if(joystick.Length > 0){
-                print("Xbox Controlleur is plug");
-            }
-            else{
-                print("Using the Mouse and Keyboard");
-            }
         }
 
 
