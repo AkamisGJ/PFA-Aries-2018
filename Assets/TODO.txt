@@ -1,5 +1,3 @@
-Regler le step Offest du Chara Controlleur
-Regler le probleme de la pente dans le niveau d'Alex
 Reflet du rayon laser dans les mirroir
 Relfet du Second tir dans le mirroir
 

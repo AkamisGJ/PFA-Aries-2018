@@ -42,12 +42,25 @@ public class Raygun : MonoBehaviour {
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
 		if(m_laser == null){
-			LineRenderer laser = Instantiate(m_lineRendererPrefab, new Vector3(-2000, -2000, 2000), Quaternion.identity);
+			LineRenderer laser = Instantiate(m_lineRendererPrefab, Vector3.zero, Quaternion.identity);
 			m_lineRendererPrefab = laser;
 		}
 		else{
 			m_lineRendererPrefab = m_laser.GetComponent<LineRenderer>();
 		}
+		HideLineRenderer();
+
+	}
+
+	void HideLineRenderer(){
+		//Line renderer
+		Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
+		Vector3[] posLineRenderer = new []{
+			hide,
+			hide,
+			hide
+		};
+		m_lineRendererPrefab.SetPositions(posLineRenderer);
 	}
 	
 	// Update is called once per frame
@@ -56,39 +69,45 @@ public class Raygun : MonoBehaviour {
 		cooldown += Time.deltaTime;
 		cooldown_2 += Time.deltaTime;
 
+		//Tir Principalle
 		if((Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1Joy") > 0.3f )&& cooldown > cooldown_delay){
 			
+			cooldown = 0; //Reset le cooldown
+
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
 
-				//Line renderer
-				m_lineRendererPrefab.SetPosition(0, firepoint.position);
-				m_lineRendererPrefab.SetPosition(1, hit_info.point);
-
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
-				m_TrailGenerator.SetActive(false);
 
-				if(m_TrailGenerator.activeSelf == true){
-					foreach (Transform Trail in m_TrailGenerator.transform)
-					{
-						print(Trail.name);
-						Trail.localPosition = new Vector3(0.5f,0.5f,10);
-					}
-				}
+				//Line renderer
+					Vector3[] posLineRenderer = new []{
+						firepoint.position,
+						hit_info.point,
+						hit_info.point
+					};
+					m_lineRendererPrefab.SetPositions(posLineRenderer);
 
 				//Si le joueur tir sur une surface téléportable
 				int layer = LayerMask.NameToLayer("CanTeleport");
 				if( hit_info.collider.gameObject.layer == layer){
 					StartCoroutine(Teleportation(player.position ,hit_info.point));
-					cooldown = 0; //Reset le cooldown
 				}
 
 				//Si le joueur tir sur un miroir
 				layer = LayerMask.NameToLayer("Mirror");
 				if( hit_info.collider.gameObject.layer == layer){
+
 					Vector3 reflexion = Vector3.Reflect(cursor.forward, hit_info.normal);
 					float angleY = Vector3.SignedAngle(cursor.forward, reflexion, Vector3.up);
-					print("AngleY = " + angleY);
+					//print("AngleY = " + angleY);
+
+					//Line renderer
+					posLineRenderer = new []{
+						firepoint.position,
+						hit_info.point,
+						reflexion * 100f,
+					};
+					m_lineRendererPrefab.SetPositions(posLineRenderer);
 
 					RaycastHit hit_info_reflexion;
 					if(Physics.Raycast(hit_info.point, reflexion, out hit_info_reflexion ,maxDistance, RaygunLayer.value)){
@@ -108,7 +127,7 @@ public class Raygun : MonoBehaviour {
 		}
 
 		//Tir Secondaire
-		if((Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f)&& cooldown_2 > cooldown_delay){
+		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2) ){
 
 			//Effect de particule
 			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
@@ -171,11 +190,7 @@ public class Raygun : MonoBehaviour {
 		setting.intensity = 0f;
 		PostProd.profile.chromaticAberration.settings = setting;
 		m_FPS_script.m_Active = true;
-		Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
-		m_lineRendererPrefab.SetPosition(0, hide);
-		m_lineRendererPrefab.SetPosition(1, hide);
-
-
+		HideLineRenderer();
 		//print("Temps = " + time);
 	}
 
@@ -258,8 +273,7 @@ public class Raygun : MonoBehaviour {
 						print("Reste to 0");
 					}
 			}
-			//m_TrailGenerator.SetActive(false);
-
+			HideLineRenderer();
 			setting.intensity = 0f;
 			PostProd.profile.chromaticAberration.settings = setting;
 			player.GetComponent<FirstPersonController>().m_MouseLook.smooth = false;
