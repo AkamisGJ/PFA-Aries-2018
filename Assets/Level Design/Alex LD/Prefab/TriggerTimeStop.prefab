@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4476446265376324}
   - component: {fileID: 65216277901677484}
   - component: {fileID: 114601890426935530}
-  m_Layer: 27
+  m_Layer: 19
   m_Name: TriggerTimeStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,3 +67,4 @@ MonoBehaviour:
   SlowMoFactor: 0.05
   SlowMoLenght: 2
   color_Time: {r: 0.9433962, g: 0.084549636, b: 0.61470175, a: 0.41960785}
+  MainCamera: {fileID: 0}
