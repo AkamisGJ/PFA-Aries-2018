@@ -2212,8 +2212,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: -0, y: -0.99725556, z: -0, w: 0.07403657}
-  m_LocalPosition: {x: 49.600002, y: 17.43, z: -4.2}
+  m_LocalRotation: {x: -0, y: -0.99995327, z: -0, w: 0.009670644}
+  m_LocalPosition: {x: -521.67, y: -43.73, z: -625.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4726340414773152}
@@ -6278,7 +6278,7 @@ MonoBehaviour:
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   m_gunCamera: {fileID: 20208677654545962}
   m_Active: 1
-  lastCheckPoint: 2
+  lastCheckPoint: 1
   slideSpeed: 0.08
   m_distanceFootDetection: 2
 --- !u!114 &114198353855927070
@@ -6384,7 +6384,8 @@ MonoBehaviour:
   m_FXShoot: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0, type: 2}
   m_Sparck_shoot: {fileID: 1712580943309616, guid: 14a068f0f21474b4aad11ec38e316287,
     type: 2}
-  m_lineRendererPrefab: {fileID: 0}
+  m_lineRendererPrefab: {fileID: 120498225350249956, guid: daae7541c57186841bf0f565db9a62c3,
+    type: 2}
 --- !u!114 &114965405747700638
 MonoBehaviour:
   m_ObjectHideFlags: 1

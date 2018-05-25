@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4345589807858890}
   - component: {fileID: 114997512448432664}
   - component: {fileID: 65840582659204012}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: DeathZone
   m_TagString: DeathZone
   m_Icon: {fileID: 0}
@@ -34,9 +34,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139952737991802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.4, y: -3.16, z: 1.1}
-  m_LocalScale: {x: 47.398384, y: 8.622318, z: 147.90259}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -100.33728, y: 2.673, z: -36.860718}
+  m_LocalScale: {x: 6, y: 1.2392238, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

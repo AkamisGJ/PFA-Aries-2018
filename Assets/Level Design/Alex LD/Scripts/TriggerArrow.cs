@@ -9,13 +9,17 @@ public class TriggerArrow : MonoBehaviour
     public GameObject ArrowToRemove2;
     public GameObject ArrowToRemove3;
 
-    private void OnTriggerEnter (Collider other)
+    private void OnTriggerStay (Collider other)
     {
         if (other.tag=="Player")
         {
             ArrowToRemove.SetActive(true);
-            ArrowToRemove2.SetActive(true);
-            ArrowToRemove3.SetActive(true);
+            print("test");
+
+            if(ArrowToRemove2 != null){
+                ArrowToRemove2.SetActive(true);
+                ArrowToRemove3.SetActive(true);
+            }
 
         }
     }
@@ -25,8 +29,11 @@ public class TriggerArrow : MonoBehaviour
         if (other.tag == "Player")
         {
             ArrowToRemove.SetActive(false);
-            ArrowToRemove2.SetActive(false);
-            ArrowToRemove3.SetActive(false);
+
+            if(ArrowToRemove2 != null){
+                ArrowToRemove2.SetActive(false);
+                ArrowToRemove3.SetActive(false);
+            }
 
         }
     }

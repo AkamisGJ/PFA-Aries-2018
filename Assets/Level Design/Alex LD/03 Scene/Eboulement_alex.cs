@@ -5,7 +5,7 @@ using UnityEngine;
 public class Eboulement_alex : MonoBehaviour
 {
     public int m_mass;
-    public bool active;
+    public bool active = false;
 
     void Update()
     {
@@ -21,7 +21,7 @@ public class Eboulement_alex : MonoBehaviour
 
 
         }
+            active = false;
         }
-        active = false;
     }
 }
