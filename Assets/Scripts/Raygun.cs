@@ -70,7 +70,7 @@ public class Raygun : MonoBehaviour {
 		cooldown_2 += Time.deltaTime;
 
 		//Tir Principalle
-		if((Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1Joy") > 0.3f )&& cooldown > cooldown_delay){
+		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay){
 			
 			cooldown = 0; //Reset le cooldown
 
