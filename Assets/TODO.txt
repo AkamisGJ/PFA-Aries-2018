@@ -1,7 +1,4 @@
 Shaking screen quand on meurt
 Crée un script qui m'ouvre tout mon setup quand je veux travailler
 
-Fix le trail quand on meurt
-Empecher le joueur de commencer a courir quand il est en saut
-
 Check Trello
