@@ -11,6 +11,9 @@ public class Fx_Forward : MonoBehaviour
 	public GameObject hitfx;
 
 	public GameObject FX;
+
+	bool HaveExplode = false;
+
 	void Start ()
     {
 		Destroy( gameObject, time_before_die);
@@ -24,22 +27,25 @@ public class Fx_Forward : MonoBehaviour
 	void OnCollisionEnter(Collision other)
 	{
 		//print("Tir secondaire touche : " + other.transform.name);
-		
-		int layer = LayerMask.NameToLayer("Mirror");
-		if( other.gameObject.layer == layer){
-			Vector3 reflexion = Vector3.Reflect(transform.forward, other.contacts[0].normal);
-			Instantiate(gameObject, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(reflexion));
-			Destroy(gameObject);
-		}
-		else{
-			layer = LayerMask.NameToLayer("Useable");
-			if( other.gameObject.layer == layer){
-				Useable script = other.gameObject.GetComponent<Useable>();
-				script.Toogle();
-			}
+		if(HaveExplode == false){
 			
-			Instantiate( hitfx, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));
-			Destroy(gameObject, 0.1f);
+			HaveExplode = true;
+			int layer = LayerMask.NameToLayer("Mirror");
+			if( other.gameObject.layer == layer){
+				Vector3 reflexion = Vector3.Reflect(transform.forward, other.contacts[0].normal);
+				Instantiate(gameObject, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(reflexion));
+				Destroy(gameObject);
+			}
+			else{
+				layer = LayerMask.NameToLayer("Useable");
+				if( other.gameObject.layer == layer){
+					Useable script = other.gameObject.GetComponent<Useable>();
+					script.Toogle();
+				}
+				
+				Instantiate( hitfx, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));
+				Destroy(gameObject, 0.1f);
+			}
 		}
 	}
 }
