@@ -1,4 +1,3 @@
-Reflet du rayon laser dans les mirroir
-Relfet du Second tir dans le mirroir
-
+Shaking screen quand on meurt
+Crée un script qui m'ouvre tout mon setup quand je veux travailler
 Check Trello
