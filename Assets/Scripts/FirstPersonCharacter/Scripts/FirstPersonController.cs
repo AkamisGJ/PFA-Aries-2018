@@ -52,6 +52,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Quaternion lastRotation;
 
         public float m_distanceFootDetection = 2f;
+        public TrailRenderer m_trail;
 
         private Rigidbody m_rigibody;
 
@@ -331,9 +332,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     int value = checkpoins.GetComponent<Checkpoint_Script>().CheckPoint_value;
                     if(value == lastCheckPoint){
+                        m_trail.time = 0;
                         transform.position = checkpoins.transform.position;
                         m_MouseLook.m_CharacterTargetRot = lastRotation;
                         m_MouseLook.m_CameraTargetRot = Quaternion.identity;
+                        m_trail.time = 4;
                         break;
                     }
                 }

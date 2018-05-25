@@ -502,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1313582472643382
 GameObject:
   m_ObjectHideFlags: 1
@@ -2212,8 +2212,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: -0, y: -0.70216405, z: -0, w: 0.7120153}
-  m_LocalPosition: {x: -5.5, y: 10.5, z: 1}
+  m_LocalRotation: {x: -0, y: -0.99725556, z: -0, w: 0.07403657}
+  m_LocalPosition: {x: 47.86, y: 17.43, z: -5.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4726340414773152}
@@ -6281,6 +6281,7 @@ MonoBehaviour:
   lastCheckPoint: 1
   slideSpeed: 0.1
   m_distanceFootDetection: 2
+  m_trail: {fileID: 96088810240522526}
 --- !u!114 &114198353855927070
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ TagManager:
   - Checkpoint
   - DeathZone
   - LaserTP
+  - Trail
   layers:
   - Default
   - TransparentFX
