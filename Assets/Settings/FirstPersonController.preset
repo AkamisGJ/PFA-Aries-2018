@@ -432,3 +432,7 @@ Preset:
     propertyPath: lastCheckPoint
     value: 0
     objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_distanceFootDetection
+    value: 2
+    objectReference: {fileID: 0}

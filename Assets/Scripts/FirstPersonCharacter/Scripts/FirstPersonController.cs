@@ -48,15 +48,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool m_Active = true;
 
         public int lastCheckPoint = 0;
+        public float slideSpeed = 2f;
         private Quaternion lastRotation;
 
         public float m_distanceFootDetection = 2f;
+
+        private Rigidbody m_rigibody;
 
 
         // Use this for initialization
         private void Start()
         {
             m_CharacterController = GetComponent<CharacterController>();
+            m_rigibody = GetComponent<Rigidbody>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
@@ -95,6 +99,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 m_PreviouslyGrounded = m_CharacterController.isGrounded;
             }
+
         }
 
 
@@ -151,15 +156,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //Check if the player is on a movingPlatform
             RaycastHit hitinfo;
             LayerMask m_mask = LayerMask.NameToLayer("Travelling");
-            //print(m_mask.value);
+
             if(Physics.Raycast(transform.position, - transform.up, out hitinfo ,m_distanceFootDetection)){
-                    if(hitinfo.transform.gameObject.layer == m_mask.value){
+                //Accorche le perso au plateform mouvante
+                if(hitinfo.transform.gameObject.layer == m_mask.value){
                     transform.SetParent(hitinfo.transform);
+                }
+
+                //Fait glisser le perssonnage
+                if(hitinfo.collider.tag == "Rampe"){
+                    Vector3 hitNormal = hitinfo.normal;
+                    Vector3 moveDirection = new Vector3(hitNormal.x, -hitNormal.y, hitNormal.z);
+                    moveDirection *= slideSpeed;
+                    m_CharacterController.Move(moveDirection);
                 }
             }
             else{
                 transform.SetParent(transform.root);
             }
+
             
         }
 
@@ -284,6 +299,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+
+            
         }
 
         /// <summary>
