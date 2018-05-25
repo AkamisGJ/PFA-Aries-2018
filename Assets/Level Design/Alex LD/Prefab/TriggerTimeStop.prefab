@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4476446265376324}
   - component: {fileID: 65216277901677484}
   - component: {fileID: 114601890426935530}
-  m_Layer: 12
+  m_Layer: 27
   m_Name: TriggerTimeStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

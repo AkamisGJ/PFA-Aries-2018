@@ -76,6 +76,7 @@ public class Raygun : MonoBehaviour {
 
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
+				
 
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 
@@ -91,6 +92,10 @@ public class Raygun : MonoBehaviour {
 				int layer = LayerMask.NameToLayer("CanTeleport");
 				if( hit_info.collider.gameObject.layer == layer){
 					StartCoroutine(Teleportation(player.position ,hit_info.point));
+					print("Téléporte a : " + hit_info.transform.gameObject.name);
+				}
+				else{
+					print("Tir sur : " + hit_info.transform.gameObject.name);
 				}
 
 				//Si le joueur tir sur un miroir
