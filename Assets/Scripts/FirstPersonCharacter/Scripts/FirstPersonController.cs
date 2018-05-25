@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
             //Init Checkpoint
-            lastCheckPoint = 1;
+            lastCheckPoint = 0;
         }
 
 
