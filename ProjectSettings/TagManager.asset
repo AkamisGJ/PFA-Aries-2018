@@ -8,6 +8,7 @@ TagManager:
   - DeathZone
   - LaserTP
   - Trail
+  - TPWall
   layers:
   - Default
   - TransparentFX
