@@ -801,6 +801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4481388264311706}
   - component: {fileID: 114812309494872010}
+  - component: {fileID: 114067225302205334}
   m_Layer: 10
   m_Name: Arme
   m_TagString: Untagged
@@ -2017,7 +2018,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520535529742434}
   m_LocalRotation: {x: 0, y: -0.043619405, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: 0.327, y: -0.343, z: 0.657}
+  m_LocalPosition: {x: 0.32612446, y: -0.32, z: 0.657}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4319981256907034}
@@ -2232,15 +2233,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.86, y: 17.43, z: -5.94}
+  m_LocalRotation: {x: -0, y: 0.99963886, z: -0, w: 0.026875544}
+  m_LocalPosition: {x: 47.839317, y: 17.43, z: -5.2233114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4797684123593332}
   - {fileID: 4932456165162038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 176.92001, z: 0}
 --- !u!4 &4698609942490914
 Transform:
   m_ObjectHideFlags: 1
@@ -2273,8 +2274,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605575037703808}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6800003, z: 0}
+  m_LocalRotation: {x: -0.3131639, y: 0, z: 0, w: 0.94969916}
+  m_LocalPosition: {x: 0.0049545537, y: 0.6800003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4738088012462454}
@@ -5573,7 +5574,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6199,6 +6200,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
   DefaultRotInfluence: {x: 0.5, y: 0.5, z: 0.5}
+--- !u!114 &114067225302205334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520535529742434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abf1280e40113d4b9a964fcebcfbc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amout: 0.1
+  maxAmount: 0.2
+  smoothAmount: 8
+  bobbingSpeedWalking: 0.15
+  bobbingAmountWalking: 0.01
+  bobbingSpeedRunning: 0.2
+  bobbingAmountRunning: 0.02
+  midpoint: -0.32
+  FPS: {fileID: 114169024332019474}
 --- !u!114 &114140916060808758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6284,10 +6305,10 @@ MonoBehaviour:
     smoothTime: 12
     lockCursor: 1
     m_Active: 1
-  m_UseFovKick: 0
+  m_UseFovKick: 1
   m_FovKick:
     Camera: {fileID: 20601588698232970}
-    originalFov: 40
+    originalFov: 60
     FOVIncrease: 5
     TimeToIncrease: 1
     TimeToDecrease: 1
@@ -6315,10 +6336,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_UseHeadBob: 0
+  m_UseHeadBob: 1
   m_HeadBob:
-    HorizontalBobRange: 0.1
-    VerticalBobRange: 0.1
+    HorizontalBobRange: 0.09
+    VerticalBobRange: 0.09
     Bobcurve:
       serializedVersion: 2
       m_Curve:
@@ -6376,13 +6397,13 @@ MonoBehaviour:
     BobAmount: 0.1
   m_StepInterval: 5
   m_FootstepSounds:
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   m_gunCamera: {fileID: 20208677654545962}
   m_Active: 1
-  lastCheckPoint: 1
+  lastCheckPoint: 0
   slideSpeed: 0.1
   m_distanceFootDetection: 2
   m_trail: {fileID: 96088810240522526}
@@ -6494,7 +6515,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3858623487
   stopNaNPropagation: 1
-  antialiasingMode: 1
+  antialiasingMode: 2
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -6609,7 +6630,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3

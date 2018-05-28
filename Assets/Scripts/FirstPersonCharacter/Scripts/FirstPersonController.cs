@@ -11,7 +11,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        [SerializeField] private bool m_IsWalking;
+        [SerializeField] public bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public TrailRenderer m_trail;
 
         private Rigidbody m_rigibody;
-        private CameraShaker m_CameraShake;
+        private CameraShaker[] m_CameraShake;
 
 
         // Use this for initialization
@@ -64,7 +64,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_CharacterController = GetComponent<CharacterController>();
             m_rigibody = GetComponent<Rigidbody>();
-            m_CameraShake = GetComponentInChildren<CameraShaker>();
+            m_CameraShake = GetComponentsInChildren<CameraShaker>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
@@ -343,9 +343,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         m_MouseLook.m_CameraTargetRot = Quaternion.identity;
 
                         //Camera Shake
-                        CameraShakeInstance m_CameraPresset = new CameraShakeInstance(7f, 10f, 0f, 2f);
-                        m_CameraShake.ShakeOnce(m_CameraPresset.Magnitude, m_CameraPresset.Roughness, 0f, 1.2f);
-
+                        
+            
+                        foreach (var CameraShake in m_CameraShake)
+                        {
+                            CameraShaker cam = CameraShaker.GetInstance(CameraShake.gameObject.name);
+                            if(cam.name == "CameraShaker"){
+                                CameraShakeInstance m_CameraPresset = new CameraShakeInstance(7f, 10f);
+                                cam.ShakeOnce(m_CameraPresset.Magnitude , m_CameraPresset.Roughness , 0f, 1.2f);
+                            }
+                            if(cam.name == "GunCamera"){
+                                CameraShakeInstance m_CameraPresset = new CameraShakeInstance(15f, 20f);
+                                cam.ShakeOnce(m_CameraPresset.Magnitude , m_CameraPresset.Roughness , 0.5f, 1.5f);
+                            }
+                            print(CameraShake.gameObject.name);
+                        }
                         m_trail.time = 4;
                         break;
                     }
