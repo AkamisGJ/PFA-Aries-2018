@@ -19,7 +19,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_StickToGroundForce;
         public float m_GravityMultiplier;
         [SerializeField] public MouseLook m_MouseLook;
-        [SerializeField] private bool m_UseFovKick;
+        [SerializeField] public bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
         [SerializeField] private bool m_UseHeadBob;
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
@@ -83,8 +83,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-           m_MouseLook.m_Active = m_Active;
             RotateView();
+            m_MouseLook.m_Active = m_Active;
+            //RotateView();
             if(m_Active){
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump)
