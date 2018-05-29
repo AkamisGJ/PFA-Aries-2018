@@ -1,7 +1,6 @@
-Faire le ballencement de l'arme
-Ajouter le mur de TP
 Feedback qui montre quand on a déja cliquer une fois sur un téléporteur
-Rajouter le cadre sur le niveau des mirroir d'Alex
+Shader holographique pour la surface du téléporteur
+Faire un slowmotion pendant la téléportation dans un mirroir
 
-Crée un script qui m'ouvre tout mon setup quand je veux travailler
+
 Check Trello
