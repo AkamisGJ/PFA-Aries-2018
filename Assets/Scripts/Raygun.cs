@@ -32,6 +32,10 @@ public class Raygun : MonoBehaviour {
 
 	public LineRenderer m_lineRendererPrefab;
 
+	  [Header("Debug")]
+
+    public bool DesactiveColliderDuringTeleportation;
+
 	// Use this for initialization
 	void Start () {
 		m_FPS_script = player.GetComponent<FirstPersonController>();
@@ -154,7 +158,9 @@ public class Raygun : MonoBehaviour {
 	private float m_point_TP_long = 21f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
 
-		player.GetComponent<CharacterController>().enabled = false;
+		if(DesactiveColliderDuringTeleportation == true){
+			player.GetComponent<CharacterController>().enabled = false;
+		}
 		player.GetComponent<FirstPersonController>().m_UseFovKick = false;
 		GetComponent<Weapon_sway>().enabled = false;
 
@@ -220,7 +226,9 @@ public class Raygun : MonoBehaviour {
 	private float m_point_TP_long_2 = 41f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint, Vector3 EndPoint_2, float angleY){
 		
-		player.GetComponent<CharacterController>().enabled = false;
+		if(DesactiveColliderDuringTeleportation == true){
+			player.GetComponent<CharacterController>().enabled = false;
+		}
 		player.GetComponent<FirstPersonController>().m_UseFovKick = false;
 		GetComponent<Weapon_sway>().enabled = false;
 
