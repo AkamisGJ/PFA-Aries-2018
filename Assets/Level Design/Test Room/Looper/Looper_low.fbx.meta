@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: fb4537ed71b6ff44ca84f96210bd7b57
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Actuator_low
+    100002: Arm_low
+    100004: Arm_low 1
+    100006: Attractor_system_low
+    100008: Axle_low
+    100010: Axle_low 1
+    100012: Axle_low 2
+    100014: Barrel_low
+    100016: Cartridge_low
+    100018: Cooling_ailettes_low
+    100020: Crystal_attractor_low
+    100022: First_ailette_low
+    100024: First_part_low
+    100026: First_stabiliser_low
+    100028: First_stabiliser_low 1
+    100030: Fixed_part_low
+    100032: Frame_low1
+    100034: Left_arm_low
+    100036: //RootNode
+    100038: Magazine_frame_low
+    100040: Main_grip_low
+    100042: Moving_part
+    100044: Moving_part 1
+    100046: Reload_system_low
+    100048: Reload_system_low_Butt_low
+    100050: Right_arm_low
+    100052: Second_ailette_low
+    100054: Second_part_low
+    100056: Second_stabiliser_low
+    100058: Second_stabiliser_low 1
+    100060: Shock_absorber_low
+    100062: Stabilisers_low
+    100064: Stabilisers_low 1
+    100066: Third_ailette_low
+    100068: Third_part_low
+    100070: Third_stabiliser_low
+    100072: Third_stabiliser_low 1
+    100074: Trigger_low
+    100076: Weapon_low_Barrel_low_Barrel_low
+    400000: Actuator_low
+    400002: Arm_low
+    400004: Arm_low 1
+    400006: Attractor_system_low
+    400008: Axle_low
+    400010: Axle_low 1
+    400012: Axle_low 2
+    400014: Barrel_low
+    400016: Cartridge_low
+    400018: Cooling_ailettes_low
+    400020: Crystal_attractor_low
+    400022: First_ailette_low
+    400024: First_part_low
+    400026: First_stabiliser_low
+    400028: First_stabiliser_low 1
+    400030: Fixed_part_low
+    400032: Frame_low1
+    400034: Left_arm_low
+    400036: //RootNode
+    400038: Magazine_frame_low
+    400040: Main_grip_low
+    400042: Moving_part
+    400044: Moving_part 1
+    400046: Reload_system_low
+    400048: Reload_system_low_Butt_low
+    400050: Right_arm_low
+    400052: Second_ailette_low
+    400054: Second_part_low
+    400056: Second_stabiliser_low
+    400058: Second_stabiliser_low 1
+    400060: Shock_absorber_low
+    400062: Stabilisers_low
+    400064: Stabilisers_low 1
+    400066: Third_ailette_low
+    400068: Third_part_low
+    400070: Third_stabiliser_low
+    400072: Third_stabiliser_low 1
+    400074: Trigger_low
+    400076: Weapon_low_Barrel_low_Barrel_low
+    2100000: lambert1
+    2300000: Actuator_low
+    2300002: Arm_low
+    2300004: Arm_low 1
+    2300006: Axle_low
+    2300008: Axle_low 1
+    2300010: Axle_low 2
+    2300012: Cartridge_low
+    2300014: Crystal_attractor_low
+    2300016: First_ailette_low
+    2300018: First_part_low
+    2300020: First_stabiliser_low
+    2300022: First_stabiliser_low 1
+    2300024: Fixed_part_low
+    2300026: Frame_low1
+    2300028: Magazine_frame_low
+    2300030: Reload_system_low_Butt_low
+    2300032: Second_ailette_low
+    2300034: Second_part_low
+    2300036: Second_stabiliser_low
+    2300038: Second_stabiliser_low 1
+    2300040: Third_ailette_low
+    2300042: Third_part_low
+    2300044: Third_stabiliser_low
+    2300046: Third_stabiliser_low 1
+    2300048: Trigger_low
+    2300050: Weapon_low_Barrel_low_Barrel_low
+    3300000: Actuator_low
+    3300002: Arm_low
+    3300004: Arm_low 1
+    3300006: Axle_low
+    3300008: Axle_low 1
+    3300010: Axle_low 2
+    3300012: Cartridge_low
+    3300014: Crystal_attractor_low
+    3300016: First_ailette_low
+    3300018: First_part_low
+    3300020: First_stabiliser_low
+    3300022: First_stabiliser_low 1
+    3300024: Fixed_part_low
+    3300026: Frame_low1
+    3300028: Magazine_frame_low
+    3300030: Reload_system_low_Butt_low
+    3300032: Second_ailette_low
+    3300034: Second_part_low
+    3300036: Second_stabiliser_low
+    3300038: Second_stabiliser_low 1
+    3300040: Third_ailette_low
+    3300042: Third_part_low
+    3300044: Third_stabiliser_low
+    3300046: Third_stabiliser_low 1
+    3300048: Trigger_low
+    3300050: Weapon_low_Barrel_low_Barrel_low
+    4300000: Arm_low
+    4300002: Axle_low
+    4300004: First_stabiliser_low
+    4300006: Second_stabiliser_low
+    4300008: Third_stabiliser_low
+    4300010: Arm_low
+    4300012: Axle_low
+    4300014: First_stabiliser_low
+    4300016: Second_stabiliser_low
+    4300018: Third_stabiliser_low
+    4300020: Weapon_low_Barrel_low_Barrel_low
+    4300022: First_ailette_low
+    4300024: Second_ailette_low
+    4300026: Third_ailette_low
+    4300028: Cartridge_low
+    4300030: Trigger_low
+    4300032: Frame_low1
+    4300034: Reload_system_low_Butt_low
+    4300036: Actuator_low
+    4300038: Axle_low
+    4300040: Fixed_part_low
+    4300042: Third_part_low
+    4300044: Second_part_low
+    4300046: First_part_low
+    4300048: Magazine_frame_low
+    4300050: Crystal_attractor_low
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 06ec2b25c5516e24890b63e9d746c004, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
