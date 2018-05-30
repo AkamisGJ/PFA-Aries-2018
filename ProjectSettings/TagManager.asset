@@ -9,6 +9,7 @@ TagManager:
   - LaserTP
   - Trail
   - TPWall
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
