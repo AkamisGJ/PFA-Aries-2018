@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 114221623053664294}
   - component: {fileID: 114733400655006442}
   m_Layer: 5
-  m_Name: Pause Menu 1
+  m_Name: Pause Menu Theo
   m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
