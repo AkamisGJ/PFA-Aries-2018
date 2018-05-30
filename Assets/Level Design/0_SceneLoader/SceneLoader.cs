@@ -23,9 +23,6 @@ public class SceneLoader : MonoBehaviour
     }
 
    
-
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag =="Player")
@@ -41,7 +38,7 @@ public class SceneLoader : MonoBehaviour
     {
         animator.SetTrigger("FadeOut");
         print(Index);
-        SceneManager.LoadScene(Index);
+        SceneManager.LoadSceneAsync(Index);
     }
 
     void OnDrawGizmos()

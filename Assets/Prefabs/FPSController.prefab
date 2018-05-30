@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 82336664855976162}
   - component: {fileID: 33907628947433786}
   - component: {fileID: 23722288096740670}
+  - component: {fileID: 114777093755877298}
   m_Layer: 17
   m_Name: FPSController
   m_TagString: Player
@@ -1417,7 +1418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1984915020510666
 GameObject:
   m_ObjectHideFlags: 1
@@ -2233,8 +2234,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: -0, y: -0.7086983, z: -0, w: 0.70551175}
-  m_LocalPosition: {x: 37.59392, y: 17.332388, z: -3.812051}
+  m_LocalRotation: {x: -0, y: -0.70216405, z: -0, w: 0.7120153}
+  m_LocalPosition: {x: -5.5, y: 10.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4797684123593332}
@@ -6404,7 +6405,7 @@ MonoBehaviour:
   m_gunCamera: {fileID: 20208677654545962}
   m_Active: 1
   lastCheckPoint: 0
-  slideSpeed: 0.1
+  slideSpeed: 0.5
   m_distanceFootDetection: 2
   m_trail: {fileID: 96088810240522526}
 --- !u!114 &114198353855927070
@@ -6556,6 +6557,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &114777093755877298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257443474843486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5bc63c47999584fa4dd7cf6b6586f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 0}
 --- !u!114 &114812309494872010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6572,7 +6585,7 @@ MonoBehaviour:
   firepoint_FX: {fileID: 4873503306568130}
   cursor: {fileID: 224207564976588964}
   maxDistance: 10000
-  cooldown_delay: 0.3
+  cooldown_delay: 0.1
   cooldown_delay_2: 0.3
   m_timeScaleFactor: 0.1
   Guncamera: {fileID: 20208677654545962}
@@ -6586,6 +6599,7 @@ MonoBehaviour:
     type: 2}
   m_lineRendererPrefab: {fileID: 120498225350249956, guid: daae7541c57186841bf0f565db9a62c3,
     type: 2}
+  DesactiveColliderDuringTeleportation: 0
 --- !u!114 &114837663708304132
 MonoBehaviour:
   m_ObjectHideFlags: 1
