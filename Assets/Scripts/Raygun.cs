@@ -23,12 +23,12 @@ public class Raygun : MonoBehaviour {
 	public Camera Guncamera;
 	public Camera MainCamera;
 	public LayerMask RaygunLayer;
-
-	public GameObject m_TrailGenerator;
 	public GameObject m_FXShoot;
 	public GameObject m_Sparck_shoot;
 
 	private PostProcessingBehaviour PostProd;
+	private Animator m_animator;
+	private bool OnTeleporation = false;
 
 	public LineRenderer m_lineRendererPrefab;
 
@@ -40,6 +40,7 @@ public class Raygun : MonoBehaviour {
 	void Start () {
 		m_FPS_script = player.GetComponent<FirstPersonController>();
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
+		m_animator = GetComponentInChildren<Animator>();
 
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
@@ -72,8 +73,8 @@ public class Raygun : MonoBehaviour {
 		cooldown_2 += Time.deltaTime;
 
 		//Tir Principalle
-		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay){
-			
+		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
+			m_animator.SetTrigger("Shoot");
 			cooldown = 0; //Reset le cooldown
 
 			RaycastHit hit_info;
@@ -140,7 +141,10 @@ public class Raygun : MonoBehaviour {
 		}
 
 		//Tir Secondaire
-		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2) ){
+		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
+			
+			//Animation
+			m_animator.SetTrigger("Shoot");
 
 			//Effect de particule
 			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
@@ -157,6 +161,7 @@ public class Raygun : MonoBehaviour {
 	private float m_point_TP_court = 10f;
 	private float m_point_TP_long = 21f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
+		OnTeleporation = true;
 
 		if(DesactiveColliderDuringTeleportation == true){
 			player.GetComponent<CharacterController>().enabled = false;
@@ -218,6 +223,8 @@ public class Raygun : MonoBehaviour {
 		m_FPS_script.m_Active = true;
 		HideLineRenderer();
 		//print("Temps = " + time);
+
+		OnTeleporation = false;
 	}
 
 	//Teleportation avec un mirroir
@@ -225,6 +232,8 @@ public class Raygun : MonoBehaviour {
 	private float m_point_TP_court_2 = 20f;
 	private float m_point_TP_long_2 = 41f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint, Vector3 EndPoint_2, float angleY){
+
+		OnTeleporation = true;
 		
 		if(DesactiveColliderDuringTeleportation == true){
 			player.GetComponent<CharacterController>().enabled = false;
@@ -316,6 +325,8 @@ public class Raygun : MonoBehaviour {
 			PostProd.profile.chromaticAberration.settings = setting;
 			player.GetComponent<FirstPersonController>().m_MouseLook.smooth = false;
 			m_FPS_script.m_Active = true;
+
+			OnTeleporation = false;
 	}
 
 	IEnumerator Rotation(float angleY){

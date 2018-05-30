@@ -1,11 +1,10 @@
 Faire un slowmotion pendant la téléportation dans un mirroir //Half Down
 
-Faire la fonction de Pause
-Ajouter le menu options au menu Pause
+Ajouter le menu Pause sur les niveau d'Alex
+Ajouter le menu Options dans le menu Pause
 Rende les pentes indépendante
-Coder les menus d'options
-Modifier l'arme du perssonage
-Animer l'arme
+Le perso reste en l'air si il saute contre un toit
+
 Poser les mains du persso rigger sur l'arme
 
 Animer le perssonage
@@ -14,7 +13,10 @@ Animer le perssonage
 Check Trello
 
 
-
 Petit truc a faire :
 Corriger la lumière sur la scene d'Alex
 Upgrade compte GitHub
+
+En cours : 
+Modifier l'arme du perssonage
+Animer l'arme
