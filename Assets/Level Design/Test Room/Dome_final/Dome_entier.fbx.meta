@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03f9448a0d479cf458344913aaaefa0d
+guid: 3d47e424ba633f341bbdf46c1630ac5d
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -60,32 +60,7 @@ ModelImporter:
     4300014: Deco
     4300016: Tuyaux
     4300018: Colonne
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 72d91885996932047a7c85ab6f94ac7e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 7c1d2d8952174f342ac007717a2fc900, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 41f9657cfa4f46a45aca93339683f3e0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: 23076a7c4a4f9a94483da9ab6cee5f9e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: 0fa264d12465af349bae43416ed35b06, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -116,7 +91,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -135,7 +110,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

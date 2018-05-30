@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb4537ed71b6ff44ca84f96210bd7b57
+guid: 991d5135324d3064d8fe448d0959b574
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -160,12 +160,7 @@ ModelImporter:
     4300046: First_part_low
     4300048: Magazine_frame_low
     4300050: Crystal_attractor_low
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 06ec2b25c5516e24890b63e9d746c004, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -196,7 +191,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 20
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
