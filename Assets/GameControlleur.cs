@@ -42,12 +42,16 @@ public class GameControlleur : MonoBehaviour {
 		if(PauseMenuState == true){
 			Time.timeScale = 0f;
 			GetComponent<FirstPersonController>().enabled = false;
-			GetComponentInChildren<Raygun>().enabled = false;
+			if(GetComponentInChildren<Raygun>()){
+				GetComponentInChildren<Raygun>().enabled = false;
+			}
 		}
 		else{
 			Time.timeScale = 1f;
 			GetComponent<FirstPersonController>().enabled = true;
-			GetComponentInChildren<Raygun>().enabled = true;
+			if(GetComponentInChildren<Raygun>()){
+				GetComponentInChildren<Raygun>().enabled = true;
+			}
 		}
 	}
 
