@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Menu_Play : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     public Animator camera;
     
