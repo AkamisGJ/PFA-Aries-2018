@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class activeTrigger : MonoBehaviour {
 
-	public Eboulement_alex script;
-	public Eboulement_alex script2;
+	public Eboulement_alex[] ScriptArray;
 
-	public Eboulement_alex script3;
+	public Animator m_Anim;
+
+	private void Start() 
+	{
+		m_Anim.GetComponent<Animator>();
+	}
+
 	void OnTriggerEnter(Collider other) {
-		script.active = true;
-		script2.active = true;
-		script3.active = true;
+
+		foreach (var eboul in ScriptArray)
+		{
+			eboul.active = true;		
+		}
+
+		m_Anim.enabled = false;
 	}
 }
