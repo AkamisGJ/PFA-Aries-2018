@@ -5,11 +5,12 @@
  
  public class TriangleExplosion : MonoBehaviour {
 
-
-	 void Start()
-	 {
-		  StartCoroutine(SplitMesh(true));
-	 }
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.transform.tag == "Sol Dome"){
+            StartCoroutine(SplitMesh(false));
+        }
+    }
  
      public IEnumerator SplitMesh (bool destroy)    {
  

@@ -13,7 +13,8 @@ public class SoundTrigger : MonoBehaviour
 
 	private void Start() 
 	{
-		TriggerZone = GetComponent<BoxCollider>();
+		TriggerZone = gameObject.GetComponent<BoxCollider>();
+	
 	}
 
 	private void OnTriggerEnter(Collider other) 

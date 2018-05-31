@@ -11,6 +11,9 @@ TagManager:
   - TPWall
   - PauseMenu
   - Rampe
+  - Looper
+  - Sol Dome
+  - Platforme Dome
   layers:
   - Default
   - TransparentFX

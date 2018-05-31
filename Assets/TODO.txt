@@ -15,6 +15,7 @@ Important :
     Poser les mains du persso rigger sur l'arme
     Améliorer l'éclairage du jeu
     Réparer le menu Pause
+    Ajouter le sound design
 
 
 Bugs : 
