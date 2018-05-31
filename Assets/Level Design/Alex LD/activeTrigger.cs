@@ -14,12 +14,15 @@ public class activeTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-
-		foreach (var eboul in ScriptArray)
+	if (other.tag == "Player") 
 		{
-			eboul.active = true;		
-		}
 
-		m_Anim.enabled = false;
+			foreach (var eboul in ScriptArray)
+			{
+				eboul.active = true;		
+			}
+
+			m_Anim.enabled = false;
+		}
 	}
 }
