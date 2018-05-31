@@ -10,6 +10,7 @@ TagManager:
   - Trail
   - TPWall
   - PauseMenu
+  - Rampe
   layers:
   - Default
   - TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   - Checkpoint
   - Deathzone
   - Particle
-  - 
+  - LightinBold
   - 
   m_SortingLayers:
   - name: Default

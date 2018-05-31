@@ -14,7 +14,7 @@ public class GameControlleur : MonoBehaviour {
 	{
 		if(GameObject.FindGameObjectWithTag("PauseMenu") == null){
 			Debug.LogError("PauseMenu is not in the scene !!");
-			Debug.Break();	
+			//Debug.Break();	
 		}
 		PauseMenu.enabled = PauseMenuState;
 	}

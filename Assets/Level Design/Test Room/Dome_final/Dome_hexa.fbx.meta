@@ -70,7 +70,32 @@ ModelImporter:
     4300018: Colonne
     4300020: Hexa
     4300022: Dome
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Colonne1
+    second: {fileID: 2100000, guid: 23076a7c4a4f9a94483da9ab6cee5f9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hexa1
+    second: {fileID: 2100000, guid: 7c1d2d8952174f342ac007717a2fc900, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sol1
+    second: {fileID: 2100000, guid: 0fa264d12465af349bae43416ed35b06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 72d91885996932047a7c85ab6f94ac7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: toit_surface
+    second: {fileID: 2100000, guid: 5de088f8372e8da4fb0d2a0d7cad221a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -101,7 +126,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 5
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -120,7 +145,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
