@@ -1,6 +1,16 @@
-Feedback qui montre quand on a déja cliquer une fois sur un téléporteur
-Shader holographique pour la surface du téléporteur
-Faire un slowmotion pendant la téléportation dans un mirroir
+Ajouter le menu Options dans le menu Pause
+
+Le perso reste en l'air si il saute contre un toit
+Le perso bouge en fonction des animations
+
+Poser les mains du persso rigger sur l'arme
 
 
 Check Trello
+
+
+Petit truc a faire :
+Corriger la lumière sur la scene d'Alex
+Upgrade compte GitHub
+
+En cours : 

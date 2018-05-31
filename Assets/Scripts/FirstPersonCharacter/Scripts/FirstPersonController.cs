@@ -173,6 +173,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 //Fait glisser le perssonnage
                 if(hitinfo.collider.tag == "Rampe"){
+                    slideSpeed = hitinfo.collider.GetComponent<Pente>().penteValue;
                     Vector3 hitNormal = hitinfo.normal;
                     Vector3 moveDirection = new Vector3(hitNormal.x, -hitNormal.y, hitNormal.z);
                     moveDirection *= slideSpeed;
