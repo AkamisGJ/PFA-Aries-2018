@@ -9,6 +9,8 @@
     {
         if(other.transform.tag == "Sol Dome"){
             StartCoroutine(SplitMesh(false));
+            GetComponent<BoxCollider>().enabled = false;
+            Destroy(gameObject, 10f);
         }
     }
  
