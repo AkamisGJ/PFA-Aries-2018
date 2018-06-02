@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeathZone : MonoBehaviour {
 
 	[Header("Gizmos")]
+	public bool m_ActiveGizmos = true;
 	public Color color_zone;
 	private BoxCollider cubePosition;
 
@@ -14,8 +15,10 @@ public class DeathZone : MonoBehaviour {
 	
 	void OnDrawGizmos()
 	{
-		Gizmos.color = color_zone;
-		cubePosition = GetComponent<BoxCollider>();
-		Gizmos.DrawCube(cubePosition.center + transform.position, transform.localScale);
+		if(m_ActiveGizmos == true){
+			Gizmos.color = color_zone;
+			cubePosition = GetComponent<BoxCollider>();
+			Gizmos.DrawCube(cubePosition.center + transform.position, transform.localScale);
+		}
 	}
 }
