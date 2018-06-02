@@ -71,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1417304166172382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.022000313, y: 0.030000687, z: -0.7400478}
-  m_LocalScale: {x: 0.535593, y: 0.535593, z: 0.43280762}
+  m_LocalScale: {x: 0.6849503, y: 0.68495023, z: 0.5535018}
   m_Children: []
   m_Father: {fileID: 4751071572022146}
   m_RootOrder: 0
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974999095341732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.655052, y: 2.63097, z: 11.40341}
+  m_LocalPosition: {x: 4.1719055, y: 7.111872, z: -0.45715332}
   m_LocalScale: {x: 1, y: 1, z: 0.1297216}
   m_Children:
   - {fileID: 4330706189341934}
@@ -210,8 +210,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 3.3222735}
+  m_Center: {x: 0, y: 0, z: -1.1611369}
 --- !u!114 &114317051164330584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,6 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activate: 0
-  connections: []
-  Dropdown: 0
+  connections:
+  - {fileID: 0}
+  - {fileID: 0}
+  Dropdown: 1
   delay_cooldown: 5
