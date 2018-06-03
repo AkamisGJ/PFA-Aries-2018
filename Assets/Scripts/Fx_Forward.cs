@@ -40,7 +40,9 @@ public class Fx_Forward : MonoBehaviour
 				layer = LayerMask.NameToLayer("Useable");
 				if( other.gameObject.layer == layer){
 					Useable script = other.gameObject.GetComponent<Useable>();
-					script.Toogle();
+					if(script.PlaqueDePression == false){
+						script.Toogle();
+					}
 				}
 				
 				Instantiate( hitfx, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));

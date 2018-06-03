@@ -57,6 +57,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Rigidbody m_rigibody;
         private CameraShaker[] m_CameraShake;
+        public float FlyingPower = 50f;
+        private GameObject LastTouch;
+        private Vector3 LastMovePos;
 
 
         // Use this for initialization
@@ -85,7 +88,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
             m_MouseLook.m_Active = m_Active;
-            //RotateView();
+
             if(m_Active){
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump)
@@ -153,12 +156,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
                 }
-                m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+
+                //Movement
+                if(FlyingPower > 0){
+                     //Propulseur
+                    Vector3 fly = transform.up * FlyingPower;
+                    m_MoveDir -= Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+                    m_MoveDir.y = m_JumpSpeed;
+                    fly += m_MoveDir;
+                    m_CharacterController.Move(fly*Time.fixedDeltaTime);
+                }else{
+                    //Classic movement
+                    m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+                }
 
                 ProgressStepCycle(speed);
                 UpdateCameraPosition(speed);
 
                 m_MouseLook.UpdateCursorLock();
+
+
+                
             }
 
             //Check if the player is on a movingPlatform
@@ -167,8 +185,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if(Physics.Raycast(transform.position, - transform.up, out hitinfo ,m_distanceFootDetection)){
                 //Accorche le perso au plateform mouvante
-                if(hitinfo.transform.gameObject.layer == m_mask.value){
-                    transform.SetParent(hitinfo.transform);
+                if(hitinfo.transform.gameObject.layer == m_mask.value){    
+                    transform.SetParent(hitinfo.transform, true);
                 }
 
                 //Fait glisser le perssonnage
@@ -298,6 +316,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            //Reset Flying
+            if(FlyingPower > 0){
+                FlyingPower = 0f;
+            }
+
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
             if (m_CollisionFlags == CollisionFlags.Below)
@@ -310,7 +333,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
-
             
         }
 

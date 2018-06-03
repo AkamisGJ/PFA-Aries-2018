@@ -5,10 +5,12 @@ using UnityEngine;
 public class Useable : MonoBehaviour {
 
 	public bool activate = false;
+	public bool PlaqueDePression = false;
 	public Animator[] connections;
 	public enum fonctionnement{
 		ON_OFF,
-		Cooldown
+		Cooldown,
+		AlwaysTrue,
 	}
 	public fonctionnement Dropdown;
 	public float delay_cooldown = 5f;
@@ -16,13 +18,13 @@ public class Useable : MonoBehaviour {
 	private MeshRenderer m_mesh;
 	private Color m_color = Color.red;
 
-	/// <summary>
-	/// Start is called on the frame when a script is enabled just before
-	/// any of the Update methods is called the first time.
-	/// </summary>
+
 	void Start()
 	{
-		m_mesh = GetComponent<MeshRenderer>();
+		if(GetComponent<MeshRenderer>()){
+			m_mesh = GetComponent<MeshRenderer>();
+		}
+		activate = false;
 	}
 
 
@@ -33,6 +35,9 @@ public class Useable : MonoBehaviour {
 			foreach (var connection in connections)
 			{
 				connection.GetComponent<Useable_output>().Activate();
+				if(connection.GetComponent<Teleporteur>()){
+					connection.GetComponent<Teleporteur>().Alimenter = !connection.GetComponent<Teleporteur>().Alimenter;
+				}
 			}
 		}
 
@@ -42,13 +47,27 @@ public class Useable : MonoBehaviour {
 			foreach (var connection in connections)
 			{
 				connection.GetComponent<Useable_output>().Activate();
+				if(connection.GetComponent<Teleporteur>()){
+					connection.GetComponent<Teleporteur>().Alimenter = !connection.GetComponent<Teleporteur>().Alimenter;
+				}
 			}
+		}
+
+		if(Dropdown.ToString() == "AlwaysTrue"){
+			if(activate == false){
+				foreach (var connection in connections)
+				{
+					connection.GetComponent<Useable_output>().Activate();
+					if(connection.GetComponent<Teleporteur>()){
+						connection.GetComponent<Teleporteur>().Alimenter = true;
+					}
+				}
+			}
+			activate = true;
 		}
 	}
 
-	/// <summary>
-	/// Update is called every frame, if the MonoBehaviour is enabled.
-	/// </summary>
+
 	void Update()
 	{
 		if(activate == true)
@@ -56,7 +75,10 @@ public class Useable : MonoBehaviour {
 		else
 		m_color = Color.red;
 
-		m_mesh.material.color = m_color;
+		if(m_mesh){
+			m_mesh.material.color = m_color;
+		}
+
 
 		if(Dropdown.ToString() == "Cooldown" && activate == true){
 			cooldown += Time.deltaTime;
@@ -69,6 +91,20 @@ public class Useable : MonoBehaviour {
 			{
 				connection.GetComponent<Useable_output>().Activate();
 			}
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(PlaqueDePression == true){
+			Toogle();
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if(PlaqueDePression == true){
+			Toogle();
 		}
 	}
 }
