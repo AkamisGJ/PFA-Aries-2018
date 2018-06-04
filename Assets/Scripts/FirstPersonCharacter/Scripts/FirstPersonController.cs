@@ -62,6 +62,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 LastMovePos;
 
 
+        private Transform m_platform;
+
         // Use this for initialization
         private void Start()
         {
@@ -185,8 +187,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if(Physics.Raycast(transform.position, - transform.up, out hitinfo ,m_distanceFootDetection)){
                 //Accorche le perso au plateform mouvante
-                if(hitinfo.transform.gameObject.layer == m_mask.value){    
-                    transform.SetParent(hitinfo.transform, true);
+                if( hitinfo.transform.gameObject.layer == m_mask.value )
+                {
+                    SetPlatform( hitinfo.transform );    
+                }
+                else
+                {
+                    RemovePlatform( m_platform );
                 }
 
                 //Fait glisser le perssonnage
@@ -199,13 +206,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
             else{
-                transform.SetParent(transform.root);
+                RemovePlatform( m_platform );
             }
 
             
         }
 
-
+        private void SetPlatform( Transform parent )
+        {
+            if( parent != m_platform )
+            {
+                m_platform = parent;
+                transform.SetParent( m_platform, true );
+                m_MouseLook.ComputeCurrentRot (transform, m_Camera.transform);
+            }
+        }
+        private void RemovePlatform( Transform parent )
+        {
+            if( (parent == m_platform) && (parent != null) )
+            {
+                m_platform = null;
+                transform.SetParent( m_platform, true );
+                m_MouseLook.ComputeCurrentRot (transform, m_Camera.transform);
+            }
+        }
+        
         private void PlayJumpSound()
         {
             m_AudioSource.clip = m_JumpSound;

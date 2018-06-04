@@ -29,6 +29,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CameraTargetRot = camera.localRotation;
         }
 
+        public void ComputeCurrentRot(Transform character, Transform camera)
+        {
+            m_CharacterTargetRot = character.localRotation;
+            m_CameraTargetRot = camera.localRotation;
+        }
 
         public void LookRotation(Transform character, Transform camera)
         {
