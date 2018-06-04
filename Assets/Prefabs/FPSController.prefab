@@ -1625,8 +1625,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: -0, y: -0.99995327, z: -0, w: 0.009670644}
-  m_LocalPosition: {x: -373, y: -60, z: -595}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 7.77, y: 211.42, z: -59.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4797684123593332}
@@ -3674,7 +3674,7 @@ MonoBehaviour:
   slideSpeed: 0.1
   m_distanceFootDetection: 2
   m_trail: {fileID: 96088810240522526}
-  FlyingPower: 0
+  power: 0
 --- !u!114 &114198353855927070
 MonoBehaviour:
   m_ObjectHideFlags: 1
