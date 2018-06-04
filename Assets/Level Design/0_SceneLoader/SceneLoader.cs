@@ -27,6 +27,14 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.tag =="Player")
         {
+            //Save the Time of the run
+            string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().name;
+            float finishTime = other.GetComponentInChildren<SpeedRun>().timeGame;
+            if(PlayerPrefs.GetFloat(indexSaveTime, float.MaxValue) > finishTime){
+                PlayerPrefs.SetFloat(indexSaveTime, finishTime);
+            }
+
+            //Load Next Scene
             Scene current = SceneManager.GetActiveScene();
             Index = current.buildIndex;
             Index++;
@@ -38,7 +46,7 @@ public class SceneLoader : MonoBehaviour
     {
         animator.SetTrigger("FadeOut");
         print(Index);
-        SceneManager.LoadSceneAsync(Index);
+        SceneManager.LoadSceneAsync(Index, LoadSceneMode.Single);
     }
 
     void OnDrawGizmos()
