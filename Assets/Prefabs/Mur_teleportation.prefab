@@ -100,14 +100,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855102127496850}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 28.57, y: 16.62, z: 1.51}
+  m_LocalRotation: {x: -0, y: 0.0000014603136, z: -0, w: 1}
+  m_LocalPosition: {x: 5.6627197, y: 8, z: -42.150024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4914672020609098}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4709274642775068
 Transform:
   m_ObjectHideFlags: 1
@@ -313,5 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b053ae3855b26e479c95c646a6a870e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Alimenter: 1
   surface_vert: {fileID: 2100000, guid: d4b18e281154bf840a4ae4bc59a308b8, type: 2}
   surface_bleu: {fileID: 2100000, guid: 7817c07e2d1d60a4bba0b722690d3c91, type: 2}
+  m_VitreHolographic: {fileID: 1538676535990580}
