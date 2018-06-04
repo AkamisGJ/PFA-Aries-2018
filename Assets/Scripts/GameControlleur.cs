@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameControlleur : MonoBehaviour {
 
 	public Canvas PauseMenu;
+	public GameObject Speedrun;
+
+	public TextMeshProUGUI BestTime;
+	public TextMeshProUGUI ActualTime;
 	private bool PauseMenuState = false;
 	
 
@@ -31,13 +36,19 @@ public class GameControlleur : MonoBehaviour {
 		else{
 			Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-		}	
+		}
+
+		BestTime.text = "Best Time = " + BestScoreOnThisLevel();
+		ActualTime.text = "Actual Time = " + ActualTimeOnThisLevel();	
 	}
 
 	public void Pause(){	
 
 		PauseMenuState = !PauseMenuState;
 		PauseMenu.enabled = PauseMenuState;
+
+		//Desactive le compteur de speedrun dans le menu
+		Speedrun.GetComponent<TextMeshProUGUI>().enabled = !PauseMenuState;
 
 		if(PauseMenuState == true){
 			Time.timeScale = 0f;
@@ -63,5 +74,25 @@ public class GameControlleur : MonoBehaviour {
 
 	public void Quit(){
 		Application.Quit();
+	}
+
+	public string BestScoreOnThisLevel(){
+		string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().name;
+		float BestTimeFloat = PlayerPrefs.GetFloat(indexSaveTime, 0f);
+		return FormatTime(BestTimeFloat);
+	}
+
+	public string ActualTimeOnThisLevel(){
+		float actualtime = Speedrun.GetComponent<SpeedRun>().timeLevel;
+		return FormatTime(actualtime);
+	}
+
+	public string FormatTime (float Time){
+		string FormatTime = string.Format("{0:0}:{1:00}.{2:000}",
+		Mathf.Floor(Time / 60),//minutes
+		Mathf.Floor(Time) % 60,//seconds
+		Mathf.Floor((Time*1000) % 1000));//miliseconds
+
+		return FormatTime;
 	}
 }
