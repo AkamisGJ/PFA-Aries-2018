@@ -96,7 +96,7 @@ public class Raygun : MonoBehaviour {
 				if( hit_info.collider.gameObject.layer == layer){
 					StartCoroutine(Teleportation(player.position ,hit_info.point));
 					if(hit_info.collider.GetComponentInParent<Teleporteur>()){
-						hit_info.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux7
+						hit_info.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
 					}
 					print("Téléporte a : " + hit_info.transform.gameObject.name);
 				}

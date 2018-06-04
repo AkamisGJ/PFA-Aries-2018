@@ -8,6 +8,7 @@ public class Checkpoint_Script : MonoBehaviour {
 	public string Information;
 	
 	[Header("Gizmos")]
+	public bool m_ActiveGizmos = true;
 	public Color color_checkpoint;
 	public Color color_respawnpoint;
 	public float radius = 0.5f;
@@ -27,10 +28,12 @@ public class Checkpoint_Script : MonoBehaviour {
 	/// </summary>
 	void OnDrawGizmos()
 	{
-		Gizmos.color = color_checkpoint;
-		cubePosition = GetComponent<BoxCollider>();
-		Gizmos.DrawCube(cubePosition.center + transform.position, cubePosition.size);
-		Gizmos.color = color_respawnpoint;
-		Gizmos.DrawSphere(transform.position, radius);
+		if(m_ActiveGizmos == true){
+			Gizmos.color = color_checkpoint;
+			cubePosition = GetComponent<BoxCollider>();
+			Gizmos.DrawCube(cubePosition.center + transform.position, cubePosition.size);
+			Gizmos.color = color_respawnpoint;
+			Gizmos.DrawSphere(transform.position, radius);
+		}
 	}
 }
