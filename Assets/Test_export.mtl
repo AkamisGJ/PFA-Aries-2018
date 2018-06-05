@@ -1,0 +1,25 @@
+newmtl Default_Prototype
+map_Kd GridBox_Default.png
+Kd 1 1 1
+d 1
+
+newmtl TP
+Kd 0.2028302 1 0.2874784
+d 1
+
+newmtl Bool
+Kd 0.08971161 0.7137322 0.9056604
+d 1
+
+newmtl 3CadavresSol
+Kd 0 0 0
+d 1
+
+newmtl button_bis
+Kd 0.9433962 0.5929121 0.04004982
+d 1
+
+newmtl Roof_PlaceHolder
+Kd 1 1 1
+d 0.3058824
+
