@@ -19,6 +19,14 @@ public class Useable : MonoBehaviour {
 	private Color m_color = Color.red;
 	private Animator BoutonAnimator;
 
+	[Header("Audio")]
+
+	[Range(0f, 1f)] public float volume_buttonActivate = 1f;
+	public AudioClip BoutonActivate;
+	[Range(0f, 1f)] public float volume_buttonDeactivate = 1f;
+	public AudioClip BoutonDesactivate;
+
+	private AudioSource m_AudioSource;
 
 	void Start()
 	{
@@ -33,6 +41,11 @@ public class Useable : MonoBehaviour {
 		if(GetComponent<MeshRenderer>()){
 			m_mesh = GetComponent<MeshRenderer>();
 		}
+
+		if(GetComponentInParent<AudioSource>()){
+			m_AudioSource = GetComponentInParent<AudioSource>();
+		}
+
 		activate = false;
 	}
 
@@ -48,7 +61,21 @@ public class Useable : MonoBehaviour {
 					connection.GetComponent<Teleporteur>().Alimenter = !connection.GetComponent<Teleporteur>().Alimenter;
 				}
 			}
-			BoutonAnimator.SetBool("Active", activate);
+			if(BoutonAnimator){
+				BoutonAnimator.SetBool("Active", activate);
+			}
+
+			//Sound Design
+			if(m_AudioSource == true && activate == true){
+				m_AudioSource.Stop();
+				m_AudioSource.volume = volume_buttonActivate;
+				m_AudioSource.PlayOneShot(BoutonActivate);
+			}
+			if(m_AudioSource == true && activate == false){
+				m_AudioSource.Stop();
+				m_AudioSource.volume = volume_buttonDeactivate;
+				m_AudioSource.PlayOneShot(BoutonDesactivate);
+			}
 		}
 
 		if(Dropdown.ToString() == "Cooldown"){
@@ -61,7 +88,21 @@ public class Useable : MonoBehaviour {
 					connection.GetComponent<Teleporteur>().Alimenter = !connection.GetComponent<Teleporteur>().Alimenter;
 				}
 			}
-			BoutonAnimator.SetBool("Active", activate);
+			if(BoutonAnimator){
+				BoutonAnimator.SetBool("Active", activate);
+			}
+
+			//Sound Design
+			if(m_AudioSource == true && activate == true){
+				m_AudioSource.Stop();
+				m_AudioSource.volume = volume_buttonActivate;
+				m_AudioSource.PlayOneShot(BoutonActivate);
+			}
+			if(m_AudioSource == true && activate == false){
+				m_AudioSource.Stop();
+				m_AudioSource.volume = volume_buttonDeactivate;
+				m_AudioSource.PlayOneShot(BoutonDesactivate);
+			}
 		}
 
 		if(Dropdown.ToString() == "AlwaysTrue"){
@@ -74,8 +115,24 @@ public class Useable : MonoBehaviour {
 					}
 				}
 			}
+
 			activate = true;
-			BoutonAnimator.SetBool("Active", activate);
+
+			if(BoutonAnimator){
+				BoutonAnimator.SetBool("Active", activate);
+			}
+
+			//Sound Design
+			if(m_AudioSource == true && activate == true){
+				m_AudioSource.Stop();
+				m_AudioSource.volume = volume_buttonActivate;
+				m_AudioSource.PlayOneShot(BoutonActivate);
+			}
+			if(m_AudioSource == true && activate == false){
+				m_AudioSource.Stop();
+				m_AudioSource.volume = volume_buttonDeactivate;
+				m_AudioSource.PlayOneShot(BoutonDesactivate);
+			}
 		}
 	}
 
@@ -98,12 +155,7 @@ public class Useable : MonoBehaviour {
 		}
 
 		if(cooldown > delay_cooldown){
-			activate = false;
-			cooldown = 0f;
-			foreach (var connection in connections)
-			{
-				Toogle();
-			}
+			Toogle();
 		}
 	}
 
@@ -116,7 +168,7 @@ public class Useable : MonoBehaviour {
 
 	void OnTriggerExit(Collider other)
 	{
-		if(PlaqueDePression == true && other.tag == "Player"){
+		if(PlaqueDePression == true && other.tag == "Player" && Dropdown.ToString() != "Cooldown"){
 			Toogle();
 		}
 	}

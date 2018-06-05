@@ -1,6 +1,8 @@
-En cours : 
-    Ajouter le prebab des plaques de pression et des bouton poussoir
-    Demander a Alex d'imcorporer tout ça
+﻿En cours : 
+    Ajouter les VFX de ben
+    Ajouter le Sound Design d'Alex
+    PolyBrush
+    
 
 Petite taches :
     Faire disparaitre le laser apres un tir qui n'a pas toucher un TP

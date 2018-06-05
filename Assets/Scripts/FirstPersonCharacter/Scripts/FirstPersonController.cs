@@ -24,10 +24,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private bool m_UseHeadBob;
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
-        [SerializeField] private float m_StepInterval;
-        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
-        [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
-        [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        
+        
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -60,9 +58,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float FlyingPower = 50f;
         private GameObject LastTouch;
         private Vector3 LastMovePos;
-
-
         private Transform m_platform;
+
+        [Header("Sound")]
+        [Range(0f, 1f)] public float volume_deaths;
+            public AudioClip[] deaths;
+        [Range(0f, 1f)] public float volume_FootStep;
+            [SerializeField] private float m_StepInterval;            // time between to foorsteps
+            [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        [Range(0f, 1f)] public float volume_Jump;
+            [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
+        [Range(0f, 1f)] public float volume_Landing;
+            [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         // Use this for initialization
         private void Start()
@@ -119,8 +126,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
-            m_AudioSource.clip = m_LandSound;
-            m_AudioSource.Play();
+            m_AudioSource.volume = volume_Landing;
+            m_AudioSource.PlayOneShot(m_LandSound);
             m_NextStep = m_StepCycle + .5f;
         }
 
@@ -235,6 +242,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayJumpSound()
         {
             m_AudioSource.clip = m_JumpSound;
+            m_AudioSource.volume = volume_Jump;
             m_AudioSource.Play();
         }
 
@@ -267,6 +275,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // pick & play a random footstep sound from the array,
             // excluding sound at index 0
             int n = Random.Range(1, m_FootstepSounds.Length);
+            m_AudioSource.volume = volume_FootStep;
             m_AudioSource.clip = m_FootstepSounds[n];
             m_AudioSource.PlayOneShot(m_AudioSource.clip);
             // move picked sound to index 0 so it's not picked next time
@@ -383,6 +392,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             
             if(other.tag == "DeathZone"){
+                //Play Sound
+                int index = Random.Range(0, deaths.Length);
+                m_AudioSource.Stop();
+                m_AudioSource.volume = volume_deaths;
+                m_AudioSource.clip = deaths[index];
+                m_AudioSource.Play();
+
                 foreach (var checkpoins in GameObject.FindGameObjectsWithTag("Checkpoint"))
                 {
                     int value = checkpoins.GetComponent<Checkpoint_Script>().CheckPoint_value;

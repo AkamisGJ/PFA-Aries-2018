@@ -6,27 +6,37 @@ public class open_door : MonoBehaviour {
 
 
 	public Animator m_animationComponnent;
+	[Range(0f, 1f)] public float volume_door;
+	public AudioClip OpenDoor;
+	public AudioClip CloseDoor;
+	private AudioSource AudioSource;
 
-	/// <summary>
-	/// OnTriggerEnter is called when the Collider other enters the trigger.
-	/// </summary>
-	/// <param name="other">The other Collider involved in this collision.</param>
+	
+	void Start()
+	{
+		AudioSource = GetComponent<AudioSource>();
+	}
+
+	
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Player"){
 			m_animationComponnent.SetBool("InFrontDoor", true);
+			AudioSource.Stop();
+			AudioSource.volume = volume_door;
+			AudioSource.PlayOneShot(OpenDoor);
+			
 		}
 		
 	}
 
-	/// <summary>
-	/// OnTriggerExit is called when the Collider other has stopped touching the trigger.
-	/// </summary>
-	/// <param name="other">The other Collider involved in this collision.</param>
 	void OnTriggerExit(Collider other)
 	{
 		if(other.tag == "Player"){
 			m_animationComponnent.SetBool("InFrontDoor", false);
+			AudioSource.Stop();
+			AudioSource.volume = volume_door;
+			AudioSource.PlayOneShot(CloseDoor);
 		}
 	}
 }

@@ -32,6 +32,13 @@ public class Raygun : MonoBehaviour {
 
 	public LineRenderer m_lineRendererPrefab;
 
+	[Header("Audio")]
+	[Range(0f, 1f)] public float volumeFiring1 = 1f;
+	public AudioClip[] Fire1;
+	[Range(0f, 1f)] public float volumeFiring2 = 1f;
+	public AudioClip Fire2;
+	private AudioSource m_audioSource;
+
 	  [Header("Debug")]
 
     public bool DesactiveColliderDuringTeleportation;
@@ -41,6 +48,7 @@ public class Raygun : MonoBehaviour {
 		m_FPS_script = player.GetComponent<FirstPersonController>();
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
 		m_animator = GetComponentInChildren<Animator>();
+		m_audioSource = GetComponent<AudioSource>();
 
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
@@ -74,7 +82,14 @@ public class Raygun : MonoBehaviour {
 
 		//Tir Principalle
 		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
+			
+			//Animation and Sound
 			m_animator.SetTrigger("Shoot");
+			m_audioSource.Stop();
+			m_audioSource.volume = volumeFiring1;
+			int index = Random.Range(0, Fire1.Length);
+			m_audioSource.PlayOneShot(Fire1[index]);
+
 			cooldown = 0; //Reset le cooldown
 
 			RaycastHit hit_info;
@@ -145,6 +160,9 @@ public class Raygun : MonoBehaviour {
 			
 			//Animation
 			m_animator.SetTrigger("Shoot");
+			m_audioSource.Stop();
+			m_audioSource.volume = volumeFiring2;
+			m_audioSource.PlayOneShot(Fire2);
 
 			//Effect de particule
 			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
