@@ -28,7 +28,7 @@ public class Eboulement : MonoBehaviour
                 transform.GetChild(i).GetComponent<Rigidbody>().useGravity = true;
                 transform.GetChild(i).GetComponent<Rigidbody>().mass = m_mass;
 
-                CameraShakeInstance m_CameraPresset = new CameraShakeInstance(2f, 4f);
+                CameraShakeInstance m_CameraPresset = new CameraShakeInstance(1f, 12f);
                 m_Player.GetComponentInChildren<CameraShaker>().ShakeOnce(m_CameraPresset.Magnitude, m_CameraPresset.Roughness, timeShaking, timeShaking);
                 
             }
