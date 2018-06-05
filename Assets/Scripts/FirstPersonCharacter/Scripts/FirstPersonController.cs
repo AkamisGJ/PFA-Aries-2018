@@ -48,9 +48,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Camera m_gunCamera;
         public bool m_Active = true;
 
-        public int lastCheckPoint = 0;
-        public float slideSpeed = 2f;
+        public int lastCheckPoint = 1;
         private Quaternion lastRotation;
+        public float slideSpeed = 2f;
 
         public float m_distanceFootDetection = 2f;
         public TrailRenderer m_trail;
@@ -81,7 +81,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
             //Init Checkpoint
-            lastCheckPoint = 0;
+            lastCheckPoint = 1;
+            lastRotation = Quaternion.identity;
         }
 
 
