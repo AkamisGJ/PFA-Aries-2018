@@ -1,13 +1,11 @@
 ﻿En cours : 
     Ajouter les VFX de ben
-    Ajouter le Sound Design d'Alex
     PolyBrush
     
 
 Petite taches :
     Faire disparaitre le laser apres un tir qui n'a pas toucher un TP
     Ajouter le weapons sway a l'axe vertical
-    Ajouter le dome de Karen
     Ajouter le menu Options dans le menu Pause
         Changer la sensibilité
         Activer ou désactiver le trail
@@ -17,8 +15,6 @@ Petite taches :
 Important :
     Poser les mains du persso rigger sur l'arme
     Améliorer l'éclairage du jeu
-    Réparer le menu Pause
-    Ajouter le sound design
 
 
 Bugs : 

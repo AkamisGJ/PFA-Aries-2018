@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: dfd89f39ce46da145adb092d0623ee04
+timeCreated: 1462817337
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Grass_Patch_L_01
+    100002: //RootNode
+    100004: pCube4221
+    100006: pCube4222
+    100008: pCube4223
+    100010: pCube4224
+    100012: pCube4225
+    100014: pCube4226
+    100016: pCube4227
+    100018: pCube4228
+    100020: pCube4229
+    100022: pCube4230
+    100024: pCube4231
+    100026: pCube4232
+    100028: pCube4245
+    100030: pCube4246
+    100032: pCube4247
+    100034: pCube4248
+    100036: pCube4249
+    100038: pCube4250
+    100040: pCube4251
+    100042: pCube4252
+    100044: pCube4253
+    100046: transform1733
+    100048: transform1734
+    100050: transform1735
+    100052: transform1736
+    100054: transform1737
+    100056: transform1738
+    100058: transform1739
+    100060: transform1740
+    100062: transform1741
+    100064: transform1742
+    100066: transform1743
+    100068: transform1744
+    100070: transform1976
+    100072: transform1977
+    100074: transform1978
+    100076: transform1979
+    100078: transform1980
+    100080: transform1981
+    100082: transform1982
+    100084: transform1983
+    100086: transform1984
+    400000: Grass_Patch_L_01
+    400002: //RootNode
+    400004: pCube4221
+    400006: pCube4222
+    400008: pCube4223
+    400010: pCube4224
+    400012: pCube4225
+    400014: pCube4226
+    400016: pCube4227
+    400018: pCube4228
+    400020: pCube4229
+    400022: pCube4230
+    400024: pCube4231
+    400026: pCube4232
+    400028: pCube4245
+    400030: pCube4246
+    400032: pCube4247
+    400034: pCube4248
+    400036: pCube4249
+    400038: pCube4250
+    400040: pCube4251
+    400042: pCube4252
+    400044: pCube4253
+    400046: transform1733
+    400048: transform1734
+    400050: transform1735
+    400052: transform1736
+    400054: transform1737
+    400056: transform1738
+    400058: transform1739
+    400060: transform1740
+    400062: transform1741
+    400064: transform1742
+    400066: transform1743
+    400068: transform1744
+    400070: transform1976
+    400072: transform1977
+    400074: transform1978
+    400076: transform1979
+    400078: transform1980
+    400080: transform1981
+    400082: transform1982
+    400084: transform1983
+    400086: transform1984
+    2300000: Grass_Patch_L_01
+    2300002: //RootNode
+    3300000: Grass_Patch_L_01
+    3300002: //RootNode
+    4300000: Grass_Patch_L_01
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 0
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: processed_v01
+  assetBundleName: 
+  assetBundleVariant: 
