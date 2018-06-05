@@ -10143,7 +10143,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh642116
+  m_Name: pb_Mesh183322
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -13999,7 +13999,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-790644
+  m_Name: pb_Mesh183176
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -24308,7 +24308,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh641870
+  m_Name: pb_Mesh183066
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -30153,7 +30153,7 @@ Transform:
   m_GameObject: {fileID: 941854496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -170.33728, y: 10.99999, z: -18.860716}
-  m_LocalScale: {x: 6, y: 1, z: 3.5}
+  m_LocalScale: {x: 6.543581, y: 1, z: 3.5}
   m_Children: []
   m_Father: {fileID: 926163145}
   m_RootOrder: 1
@@ -33967,32 +33967,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4727605717257246, guid: 762011b3eb7150c44ac9fbfb9afa7bae, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727605717257246, guid: 762011b3eb7150c44ac9fbfb9afa7bae, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.6170874
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727605717257246, guid: 762011b3eb7150c44ac9fbfb9afa7bae, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.61708754
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727605717257246, guid: 762011b3eb7150c44ac9fbfb9afa7bae, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.61708754
-      objectReference: {fileID: 0}
     - target: {fileID: 114024140805014330, guid: 762011b3eb7150c44ac9fbfb9afa7bae,
         type: 2}
       propertyPath: connections.Array.data[0]
       value: 
       objectReference: {fileID: 2128287868}
-    - target: {fileID: 114024140805014330, guid: 762011b3eb7150c44ac9fbfb9afa7bae,
-        type: 2}
-      propertyPath: Dropdown
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762011b3eb7150c44ac9fbfb9afa7bae, type: 2}
   m_IsPrefabParent: 0
