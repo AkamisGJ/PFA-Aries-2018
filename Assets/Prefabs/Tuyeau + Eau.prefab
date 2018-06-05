@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4182088999387082}
   m_Layer: 0
-  m_Name: Pipe_low
+  m_Name: Tuyeau + Eau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

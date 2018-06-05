@@ -1,0 +1,1136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb01fe4379016034b8949e8ea25df931, type: 3}
+  m_Name: MainTerrain_MaterialData
+  m_EditorClassIdentifier: 
+  placeholderShader: {fileID: 0}
+  nearShader: {fileID: 4800000, guid: dddf30a5fecd5ae4bbf93d01d473791f, type: 3}
+  defaultShader: {fileID: 4800000, guid: dddf30a5fecd5ae4bbf93d01d473791f, type: 3}
+  farShader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  placeholderMaterial: {fileID: 21000013336282904}
+  nearMaterial: {fileID: 21000013008562984}
+  defaultMaterial: {fileID: 21000012174712056}
+  farMaterial: {fileID: 21000010076100634}
+  gridTexture: {fileID: 2800000, guid: df5d20ec6e89b7a4197708f89d9220db, type: 3}
+  noiseTexture: {fileID: 2800000, guid: f74a639a0727ec849ae6de0d87e3dda1, type: 3}
+  textureArraySize: 2048
+  textureSets:
+  - name: Grass_01
+    guid: fb2017965fa14d8ca2b2a05e4962af94
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 0
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: LumpyStreakyMud
+    guid: 814bb8fac8654468983ac5be234804ad
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 0
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: LumpyStreakyMud_02
+    guid: 74696ad4c00349b9a24d8f968205bad8
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 0
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: ConcreteFloorTile_01
+    guid: 617a65537b834f95a946df73680485c3
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: ConcreteFloor_02
+    guid: fd0ab18ddc3a45ff9d9706b07cc7b61f
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: BigCracksConcrete01
+    guid: 1384efdcfa324e1894a4021b3db561cf
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: SmallStonesGrass_01
+    guid: a70dbf59a2c54c8ab1374b98d2f0068c
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  undergrowthTextureArraySize: 512
+  undergrowthTextureSets:
+  - name: Vess G2
+    guid: f0ca738ef5444a31a9065bb245cfff8b
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 0.85
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: Vess G3
+    guid: e91bf255c3ff449ab43b1907125e1e06
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 0.85
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: Vess G5
+    guid: 218f3f52161c43a1b52b193c9ea3bf76
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 0.85
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  - name: Quixel_01
+    guid: 3dcc2591ea8245c988b88dbcd3e2e7f3
+    albedo: {fileID: 0}
+    albedoTint: {r: 1, g: 1, b: 1, a: 1}
+    albedoTintScale: 1
+    specSmooth: {fileID: 0}
+    specularTint: {r: 1, g: 1, b: 1, a: 1}
+    specularTintScale: 1
+    smoothnessScale: 1
+    normal: {fileID: 0}
+    normalScale: 1
+    displacement: {fileID: 0}
+    displacementScale: 1
+    displacementOffset: 0
+    displacementGeomScale: 1
+    occlusion: {fileID: 0}
+    occlusionScale: 1
+    uvScale: 1
+  undergrowthSpriteTemplates:
+  - name: Quixel_01
+    guid: e80f704427d4404ea45d679d0ee2b0ff
+    textureSet: 3dcc2591ea8245c988b88dbcd3e2e7f3
+    textureAlbedoTint: {r: 0.8235294, g: 1, b: 0.9342799, a: 1}
+    uvScaleOffset: {x: 1, y: 1, z: 0, w: 0}
+    widthMinMaxMedian: {x: 0.4, y: 0.6, z: 0.6}
+    heightMinMaxMedian: {x: 0.2, y: 0.3, z: 0.4}
+    groundColorFactorBottomTopMid: {x: 0, y: 0, z: 0}
+    groundColorFactorScaleBottomTopMid: {x: 0, y: 0, z: 0}
+    groundWetnessDarkenFactorBottomTopMid: {x: 0, y: 0, z: 0}
+    growsInWater: 0
+    mode: 16
+  - name: Vess G2
+    guid: 2a328528e7f3440cab74c4652d84e914
+    textureSet: f0ca738ef5444a31a9065bb245cfff8b
+    textureAlbedoTint: {r: 0.75735295, g: 0.75735295, b: 0.75735295, a: 1}
+    uvScaleOffset: {x: 1, y: 1, z: 0, w: 0}
+    widthMinMaxMedian: {x: 0.75, y: 0.55, z: 0.6}
+    heightMinMaxMedian: {x: 0.25, y: 0.55, z: 0.4}
+    groundColorFactorBottomTopMid: {x: 0.6, y: 0.4, z: 0.5}
+    groundColorFactorScaleBottomTopMid: {x: 1, y: 1, z: 1}
+    groundWetnessDarkenFactorBottomTopMid: {x: 0.3, y: 0.1, z: 0.1}
+    growsInWater: 0
+    mode: 8
+  - name: VEss G3
+    guid: c40911a8a2484745b0666d17ce485c40
+    textureSet: e91bf255c3ff449ab43b1907125e1e06
+    textureAlbedoTint: {r: 0.9485294, g: 1, b: 0.97018254, a: 1}
+    uvScaleOffset: {x: 1, y: 1, z: 0, w: 0}
+    widthMinMaxMedian: {x: 1, y: 2, z: 0.6}
+    heightMinMaxMedian: {x: 0.5, y: 1, z: 0.4}
+    groundColorFactorBottomTopMid: {x: 0.6, y: 0.4, z: 0.5}
+    groundColorFactorScaleBottomTopMid: {x: 1, y: 1, z: 1}
+    groundWetnessDarkenFactorBottomTopMid: {x: 0.3, y: 0.1, z: 0.1}
+    growsInWater: 0
+    mode: 1
+  - name: Vess G5
+    guid: 0d5313b6daf64b8fad5bf3b57c91e6d0
+    textureSet: 218f3f52161c43a1b52b193c9ea3bf76
+    textureAlbedoTint: {r: 0.80384946, g: 0.82012886, b: 0.86764705, a: 1}
+    uvScaleOffset: {x: 1, y: 1, z: 0, w: 0}
+    widthMinMaxMedian: {x: 0.6, y: 0.4, z: 0.6}
+    heightMinMaxMedian: {x: 0.2, y: 0.3, z: 0.4}
+    groundColorFactorBottomTopMid: {x: 0.6, y: 0.4, z: 0.5}
+    groundColorFactorScaleBottomTopMid: {x: 1, y: 1, z: 1}
+    groundWetnessDarkenFactorBottomTopMid: {x: 0.3, y: 0.1, z: 0.1}
+    growsInWater: 0
+    mode: 8
+  - name: Quixel_0
+    guid: dfab6da24ced4f6582173f9887992d0b
+    textureSet: 
+    textureAlbedoTint: {r: 1, g: 1, b: 1, a: 1}
+    uvScaleOffset: {x: 1, y: 1, z: 0, w: 0}
+    widthMinMaxMedian: {x: 0.3, y: 0.8, z: 0.6}
+    heightMinMaxMedian: {x: 0.2, y: 0.5, z: 0.4}
+    groundColorFactorBottomTopMid: {x: 0.6, y: 0.4, z: 0.5}
+    groundColorFactorScaleBottomTopMid: {x: 1, y: 1, z: 1}
+    groundWetnessDarkenFactorBottomTopMid: {x: 0.3, y: 0.1, z: 0.1}
+    growsInWater: 1
+    mode: 1
+  undergrowthMeshTemplates: []
+  overgrowthTemplates: []
+  detailLayers:
+  - name: Grass_01
+    guid: 4580c687e2044af98ab57bf1fe83ef1e
+    textureSet: fb2017965fa14d8ca2b2a05e4962af94
+    textureAlbedoTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0
+    textureOcclusionScale: 1
+    textureUVScale: {x: 4, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers:
+    - name: Vess G2
+      guid: 2a328529e7f9770cab74c4652d84e914
+      undergrowthTemplate: 2a328528e7f3440cab74c4652d84e914
+      widthHeightScale: {x: 1, y: 1}
+      probability: 0.4
+    - name: Vess G3
+      guid: 3a328529e7f9770cab74c4652d84e914
+      undergrowthTemplate: c40911a8a2484745b0666d17ce485c40
+      widthHeightScale: {x: 1, y: 1}
+      probability: 0.01
+    - name: Vess G5
+      guid: 4a328529e7f9770cab74c4652d84e914
+      undergrowthTemplate: 0d5313b6daf64b8fad5bf3b57c91e6d0
+      widthHeightScale: {x: 1, y: 1}
+      probability: 0.49
+    undergrowthWeakDetailLayers: []
+  - name: LumpyStreakyMud_02
+    guid: cbc38404b4494c5b97e5aca4878df21f
+    textureSet: 74696ad4c00349b9a24d8f968205bad8
+    textureAlbedoTint: {r: 0.64705884, g: 0.69330627, b: 1, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0.1
+    textureDisplacementGeomScale: 0
+    textureOcclusionScale: 1
+    textureUVScale: {x: 4, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: LumpyMud
+    guid: d25a8bc2e73d449a82c640f661e9a898
+    textureSet: 814bb8fac8654468983ac5be234804ad
+    textureAlbedoTint: {r: 0.8455882, g: 0.81986034, b: 0.7523248, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 0.75
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0
+    textureOcclusionScale: 1
+    textureUVScale: {x: 4, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: ConcreteFloorTile_01
+    guid: 016c9152015143da8bf41fa5e357f060
+    textureSet: 617a65537b834f95a946df73680485c3
+    textureAlbedoTint: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 0.98
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0
+    textureOcclusionScale: 1
+    textureUVScale: {x: 5.39, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: ConcreteFloor_02
+    guid: 69fe3de390b8493a9b34979259e6d9fb
+    textureSet: fd0ab18ddc3a45ff9d9706b07cc7b61f
+    textureAlbedoTint: {r: 0.68235296, g: 0.68235296, b: 0.68235296, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 0.4
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0.25
+    textureOcclusionScale: 1
+    textureUVScale: {x: 1, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 1
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: BigCracksConcrete01
+    guid: b61b42d8932644bf884b4d23467962ec
+    textureSet: 1384efdcfa324e1894a4021b3db561cf
+    textureAlbedoTint: {r: 0.53703505, g: 0.5649706, b: 0.5661765, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 0.81
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0.25
+    textureOcclusionScale: 0.5
+    textureUVScale: {x: 11.63, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: SmallStonesGrass_01
+    guid: 902df71e3d3e445ea5dd771d5cac7a1f
+    textureSet: a70dbf59a2c54c8ab1374b98d2f0068c
+    textureAlbedoTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0.25
+    textureOcclusionScale: 1
+    textureUVScale: {x: 1, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: SmallStonesGrass_01-darker
+    guid: b07848f585f24157929d7cbff7fcb64b
+    textureSet: a70dbf59a2c54c8ab1374b98d2f0068c
+    textureAlbedoTint: {r: 0.6544118, g: 0.6544118, b: 0.6544118, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0.25
+    textureOcclusionScale: 1
+    textureUVScale: {x: 1, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: LumpyStreaky_big
+    guid: 0609a7f78bc143dd8dacab8b0e8db1a3
+    textureSet: 74696ad4c00349b9a24d8f968205bad8
+    textureAlbedoTint: {r: 0.51254326, g: 0.6222111, b: 0.88235295, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0
+    textureDisplacementGeomScale: 0.25
+    textureOcclusionScale: 1
+    textureUVScale: {x: 10, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers: []
+    undergrowthWeakDetailLayers: []
+  - name: LumpyStreakyMud_02-grass
+    guid: c34cbd1bc5b6405a8facb2f53d6cadf2
+    textureSet: 74696ad4c00349b9a24d8f968205bad8
+    textureAlbedoTint: {r: 0.64705884, g: 0.69330627, b: 1, a: 1}
+    textureSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    textureSmoothnessScale: 1
+    textureNormalScale: 1
+    textureDisplacementScale: 1
+    textureDisplacementOffset: 0.1
+    textureDisplacementGeomScale: 0
+    textureOcclusionScale: 1
+    textureUVScale: {x: 4, y: 1}
+    textureUVMultiProjection: 0
+    textureUVTileRotation: 0
+    slopeThreshold: {x: 0, y: 0, z: 1, w: 1}
+    undergrowthStrongDetailLayers:
+    - name: Vess G2
+      guid: 2a328528e893440cab74c4652d84e91
+      undergrowthTemplate: 2a328528e7f3440cab74c4652d84e914
+      widthHeightScale: {x: 1, y: 1}
+      probability: 1
+    undergrowthWeakDetailLayers: []
+  albedoTextureArray: {fileID: 18700000, guid: 6af42235718fc64499d822363137f96e, type: 2}
+  specSmoothTextureArray: {fileID: 18700000, guid: 029383f4b73d804419e3dc45f9be73f0,
+    type: 2}
+  occlusionTextureArray: {fileID: 18700000, guid: 80aeb21e0ea2fb245a513c882fb33c2b,
+    type: 2}
+  normalTextureArray: {fileID: 18700000, guid: 36f3400ac51b27149bcf625bdf76296a, type: 2}
+  displacementTextureArray: {fileID: 18700000, guid: fd7d3b621131dd042b6b88aec4955dd7,
+    type: 2}
+  undergrowthAlbedoTextureArray: {fileID: 18700000, guid: eae2144bcf68a2e45bdcdb417da2a8b5,
+    type: 2}
+  undergrowthSpecSmoothTextureArray: {fileID: 0}
+  undergrowthNormalTextureArray: {fileID: 18700000, guid: 65f4b9e7e147d514e8766128584b0339,
+    type: 2}
+--- !u!21 &21000010076100634
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/TerrainEvo/TerrainStatic
+  m_Shader: {fileID: 4800000, guid: dde913c1c9c48cf44b67f9d8509f1767, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: df5d20ec6e89b7a4197708f89d9220db, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WaterBumpMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WaterMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_AlbedoLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_BaseMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_BaseTexture
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Colormap
+      second:
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Controlmap
+      second:
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Defaultmap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_DisplacementLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Geoshape
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Heightmap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_NoiseTexture
+      second:
+        m_Texture: {fileID: 2800000, guid: 8bd0ca4ed90f87f4ca58cbef0b190373, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_NormalLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_OcclusionLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_SoftNoiseTexture
+      second:
+        m_Texture: {fileID: 2800000, guid: f74a639a0727ec849ae6de0d87e3dda1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_SpecSmoothLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsAlbedo
+      second:
+        m_Texture: {fileID: 18700000, guid: 6af42235718fc64499d822363137f96e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsDisplacement
+      second:
+        m_Texture: {fileID: 18700000, guid: fd7d3b621131dd042b6b88aec4955dd7, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsNormal
+      second:
+        m_Texture: {fileID: 18700000, guid: 36f3400ac51b27149bcf625bdf76296a, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsOcclusion
+      second:
+        m_Texture: {fileID: 18700000, guid: 80aeb21e0ea2fb245a513c882fb33c2b, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsSpecSmooth
+      second:
+        m_Texture: {fileID: 18700000, guid: 029383f4b73d804419e3dc45f9be73f0, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _WaterBumpScale
+      second: 1
+    - first:
+        name: _WaterBumpUVScale
+      second: 0.5
+    - first:
+        name: _WaterClarity
+      second: 0.594
+    - first:
+        name: _WaterGlossiness
+      second: 0.918
+    - first:
+        name: _WaterLevel
+      second: -2
+    - first:
+        name: _WaterLevelEaseRange
+      second: 0.11
+    - first:
+        name: _WaterMaskHeightOffset
+      second: 0
+    - first:
+        name: _WaterMaskHeightScale
+      second: 1
+    - first:
+        name: _WetnessFogAddRange
+      second: 8.45
+    - first:
+        name: _WetnessFogDarkenRange
+      second: 2.07
+    - first:
+        name: _WetnessGlossiness
+      second: 1
+    - first:
+        name: _WetnessRange
+      second: 0.29
+    - first:
+        name: u_HeightmapScale
+      second: 0
+    m_Colors:
+    - first:
+        name: _WaterAlbedoDarken
+      second: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+    - first:
+        name: _WaterSpecColor
+      second: {r: 0.39999998, g: 0.39999998, b: 0.39999998, a: 1}
+    - first:
+        name: _WetnessAlbedoDarken
+      second: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - first:
+        name: _WetnessFogColor
+      second: {r: 0.6985294, g: 0.5828399, b: 0.33385596, a: 1}
+    - first:
+        name: _WetnessSpecColor
+      second: {r: 0.32999998, g: 0.32999998, b: 0.32999998, a: 1}
+    - first:
+        name: u_HeightmapLookup
+      second: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &21000012174712056
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/TerrainEvo/Terrain
+  m_Shader: {fileID: 4800000, guid: dddf30a5fecd5ae4bbf93d01d473791f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: df5d20ec6e89b7a4197708f89d9220db, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WaterBumpMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WaterMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_AlbedoLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_BaseMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_BaseTexture
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Colormap
+      second:
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Controlmap
+      second:
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Defaultmap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_DisplacementLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Geoshape
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Heightmap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_NoiseTexture
+      second:
+        m_Texture: {fileID: 2800000, guid: 8bd0ca4ed90f87f4ca58cbef0b190373, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_NormalLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_OcclusionLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_SoftNoiseTexture
+      second:
+        m_Texture: {fileID: 2800000, guid: f74a639a0727ec849ae6de0d87e3dda1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_SpecSmoothLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsAlbedo
+      second:
+        m_Texture: {fileID: 18700000, guid: 6af42235718fc64499d822363137f96e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsDisplacement
+      second:
+        m_Texture: {fileID: 18700000, guid: fd7d3b621131dd042b6b88aec4955dd7, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsNormal
+      second:
+        m_Texture: {fileID: 18700000, guid: 36f3400ac51b27149bcf625bdf76296a, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsOcclusion
+      second:
+        m_Texture: {fileID: 18700000, guid: 80aeb21e0ea2fb245a513c882fb33c2b, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsSpecSmooth
+      second:
+        m_Texture: {fileID: 18700000, guid: 029383f4b73d804419e3dc45f9be73f0, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _WaterBumpScale
+      second: 1
+    - first:
+        name: _WaterBumpUVScale
+      second: 0.5
+    - first:
+        name: _WaterClarity
+      second: 0.594
+    - first:
+        name: _WaterGlossiness
+      second: 0.918
+    - first:
+        name: _WaterLevel
+      second: -2
+    - first:
+        name: _WaterLevelEaseRange
+      second: 0.11
+    - first:
+        name: _WaterMaskHeightOffset
+      second: 0
+    - first:
+        name: _WaterMaskHeightScale
+      second: 1
+    - first:
+        name: _WetnessFogAddRange
+      second: 8.45
+    - first:
+        name: _WetnessFogDarkenRange
+      second: 2.07
+    - first:
+        name: _WetnessGlossiness
+      second: 1
+    - first:
+        name: _WetnessRange
+      second: 0.29
+    - first:
+        name: u_HeightmapScale
+      second: 0
+    m_Colors:
+    - first:
+        name: _WaterAlbedoDarken
+      second: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+    - first:
+        name: _WaterSpecColor
+      second: {r: 0.39999998, g: 0.39999998, b: 0.39999998, a: 1}
+    - first:
+        name: _WetnessAlbedoDarken
+      second: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - first:
+        name: _WetnessFogColor
+      second: {r: 0.6985294, g: 0.5828399, b: 0.33385596, a: 1}
+    - first:
+        name: _WetnessSpecColor
+      second: {r: 0.32999998, g: 0.32999998, b: 0.32999998, a: 1}
+    - first:
+        name: u_HeightmapLookup
+      second: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &21000013008562984
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/TerrainEvo/Terrain
+  m_Shader: {fileID: 4800000, guid: dddf30a5fecd5ae4bbf93d01d473791f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: df5d20ec6e89b7a4197708f89d9220db, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WaterBumpMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WaterMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_AlbedoLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_BaseMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_BaseTexture
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Colormap
+      second:
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Controlmap
+      second:
+        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Defaultmap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_DisplacementLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Geoshape
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_Heightmap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_NoiseTexture
+      second:
+        m_Texture: {fileID: 2800000, guid: 8bd0ca4ed90f87f4ca58cbef0b190373, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_NormalLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_OcclusionLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_SoftNoiseTexture
+      second:
+        m_Texture: {fileID: 2800000, guid: f74a639a0727ec849ae6de0d87e3dda1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_SpecSmoothLayers
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsAlbedo
+      second:
+        m_Texture: {fileID: 18700000, guid: 6af42235718fc64499d822363137f96e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsDisplacement
+      second:
+        m_Texture: {fileID: 18700000, guid: fd7d3b621131dd042b6b88aec4955dd7, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsNormal
+      second:
+        m_Texture: {fileID: 18700000, guid: 36f3400ac51b27149bcf625bdf76296a, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsOcclusion
+      second:
+        m_Texture: {fileID: 18700000, guid: 80aeb21e0ea2fb245a513c882fb33c2b, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: u_TextureSetsSpecSmooth
+      second:
+        m_Texture: {fileID: 18700000, guid: 029383f4b73d804419e3dc45f9be73f0, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _WaterBumpScale
+      second: 1
+    - first:
+        name: _WaterBumpUVScale
+      second: 0.5
+    - first:
+        name: _WaterClarity
+      second: 0.594
+    - first:
+        name: _WaterGlossiness
+      second: 0.918
+    - first:
+        name: _WaterLevel
+      second: -2
+    - first:
+        name: _WaterLevelEaseRange
+      second: 0.11
+    - first:
+        name: _WaterMaskHeightOffset
+      second: 0
+    - first:
+        name: _WaterMaskHeightScale
+      second: 1
+    - first:
+        name: _WetnessFogAddRange
+      second: 8.45
+    - first:
+        name: _WetnessFogDarkenRange
+      second: 2.07
+    - first:
+        name: _WetnessGlossiness
+      second: 1
+    - first:
+        name: _WetnessRange
+      second: 0.29
+    - first:
+        name: u_HeightmapScale
+      second: 0
+    m_Colors:
+    - first:
+        name: _WaterAlbedoDarken
+      second: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+    - first:
+        name: _WaterSpecColor
+      second: {r: 0.39999998, g: 0.39999998, b: 0.39999998, a: 1}
+    - first:
+        name: _WetnessAlbedoDarken
+      second: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - first:
+        name: _WetnessFogColor
+      second: {r: 0.6985294, g: 0.5828399, b: 0.33385596, a: 1}
+    - first:
+        name: _WetnessSpecColor
+      second: {r: 0.32999998, g: 0.32999998, b: 0.32999998, a: 1}
+    - first:
+        name: u_HeightmapLookup
+      second: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &21000013336282904
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/TerrainEvo/DebugShaders
+  m_Shader: {fileID: 4800000, guid: 49fa195a2d86be24c87480ab42c19294, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - first:
+        name: u_HeightmapLookup
+      second: {r: 0, g: 0, b: 0, a: 0}
