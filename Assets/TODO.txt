@@ -1,5 +1,6 @@
 En cours : 
-
+    Ajouter le prebab des plaques de pression et des bouton poussoir
+    Demander a Alex d'imcorporer tout ça
 
 Petite taches :
     Faire disparaitre le laser apres un tir qui n'a pas toucher un TP

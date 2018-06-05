@@ -17,10 +17,19 @@ public class Useable : MonoBehaviour {
 	private float cooldown = 0f;
 	private MeshRenderer m_mesh;
 	private Color m_color = Color.red;
+	private Animator BoutonAnimator;
 
 
 	void Start()
 	{
+		if(GetComponentInParent<Animator>()){
+			BoutonAnimator = GetComponentInParent<Animator>();
+		}
+
+		if(GetComponent<Animator>()){
+			BoutonAnimator = GetComponent<Animator>();
+		}
+
 		if(GetComponent<MeshRenderer>()){
 			m_mesh = GetComponent<MeshRenderer>();
 		}
@@ -39,6 +48,7 @@ public class Useable : MonoBehaviour {
 					connection.GetComponent<Teleporteur>().Alimenter = !connection.GetComponent<Teleporteur>().Alimenter;
 				}
 			}
+			BoutonAnimator.SetBool("Active", activate);
 		}
 
 		if(Dropdown.ToString() == "Cooldown"){
@@ -51,6 +61,7 @@ public class Useable : MonoBehaviour {
 					connection.GetComponent<Teleporteur>().Alimenter = !connection.GetComponent<Teleporteur>().Alimenter;
 				}
 			}
+			BoutonAnimator.SetBool("Active", activate);
 		}
 
 		if(Dropdown.ToString() == "AlwaysTrue"){
@@ -64,6 +75,7 @@ public class Useable : MonoBehaviour {
 				}
 			}
 			activate = true;
+			BoutonAnimator.SetBool("Active", activate);
 		}
 	}
 
@@ -77,6 +89,7 @@ public class Useable : MonoBehaviour {
 
 		if(m_mesh){
 			m_mesh.material.color = m_color;
+			m_mesh.material.SetColor("_EmissionColor", (m_color * Mathf.LinearToGammaSpace(1f)));
 		}
 
 
@@ -89,21 +102,21 @@ public class Useable : MonoBehaviour {
 			cooldown = 0f;
 			foreach (var connection in connections)
 			{
-				connection.GetComponent<Useable_output>().Activate();
+				Toogle();
 			}
 		}
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(PlaqueDePression == true){
+		if(PlaqueDePression == true && other.tag == "Player"){
 			Toogle();
 		}
 	}
 
 	void OnTriggerExit(Collider other)
 	{
-		if(PlaqueDePression == true){
+		if(PlaqueDePression == true && other.tag == "Player"){
 			Toogle();
 		}
 	}
