@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 54943832044555758}
   - component: {fileID: 114515292183498972}
   m_Layer: 25
-  m_Name: FX Shoot
+  m_Name: FX Second Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894705366515160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.67603, y: 31.995434, z: 8.123145}
+  m_LocalPosition: {x: 55.22996, y: 22.880924, z: -11.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4910588224219534}
@@ -331,8 +331,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.58763707, b: 0.6792453, a: 0.19607843}
-      maxColor: {r: 0, g: 0.43586493, b: 1, a: 0.19607843}
+      minColor: {r: 0, g: 0.58763707, b: 0.6792453, a: 0.40392157}
+      maxColor: {r: 0, g: 0.43586493, b: 1, a: 0.7921569}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

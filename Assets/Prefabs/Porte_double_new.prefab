@@ -779,9 +779,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -884,5 +884,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animationComponnent: {fileID: 95108727854725040}
+  volume_door: 1
   OpenDoor: {fileID: 8300000, guid: 2c0cb2a4327227140846e4bd91e52d84, type: 3}
   CloseDoor: {fileID: 8300000, guid: 79b077dc4db0f1a46b09cdc1e607ec70, type: 3}

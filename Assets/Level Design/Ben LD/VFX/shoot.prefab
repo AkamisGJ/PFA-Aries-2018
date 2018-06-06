@@ -66,8 +66,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182081799226176}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -365.24673, y: -78.62488, z: -560.3871}
+  m_LocalRotation: {x: -0.09510492, y: -0.019425243, z: 0.0018606745, w: -0.995276}
+  m_LocalPosition: {x: 54.161396, y: 20.281452, z: -9.433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4056203058759604}
@@ -88,7 +88,7 @@ MonoBehaviour:
   speed: 0.5
   time_before_die: 10
   hitfx: {fileID: 1697983956073682, guid: 48f7829f57ce7b146874d0070c58999c, type: 2}
-  FX: {fileID: 1182081799226176}
+  FX: {fileID: 1678895989124804, guid: 83fa7a46f23b6e9469f5fa1343577da5, type: 2}
 --- !u!135 &135443791610996336
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -99,7 +99,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.44
+  m_Radius: 0.3
   m_Center: {x: 0.68, y: 0, z: 0}
 --- !u!198 &198447710245668676
 ParticleSystem:
