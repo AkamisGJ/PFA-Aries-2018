@@ -1710,7 +1710,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257443474843486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.76605356, z: -0, w: 0.6427767}
   m_LocalPosition: {x: 52.82, y: 17.27, z: -5.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1719,7 +1719,7 @@ Transform:
   - {fileID: 224024827866138950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -100.00201, z: 0}
 --- !u!4 &4708360623657882
 Transform:
   m_ObjectHideFlags: 1
@@ -1840,7 +1840,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1708018113263646}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.541, y: 0.105199814, z: -0.002}
+  m_LocalPosition: {x: -0.564, y: 0.105, z: -0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4411621525254202}
@@ -3956,13 +3956,15 @@ MonoBehaviour:
   m_JumpBob:
     BobDuration: 0.1
     BobAmount: 0.2
+  m_Jump: 0
+  m_MoveDir: {x: 0, y: 0, z: 0}
+  m_Jumping: 0
   m_gunCamera: {fileID: 20208677654545962}
   m_Active: 1
   lastCheckPoint: 0
   slideSpeed: 0.1
   m_distanceFootDetection: 2
   m_trail: {fileID: 96088810240522526}
-  FlyingPower: 0
   volume_deaths: 1
   deaths:
   - {fileID: 8300000, guid: ae7f0dd0bd052b245b6ec2fd14b3a6bb, type: 3}
@@ -5251,7 +5253,7 @@ MonoBehaviour:
   m_FXShoot: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0, type: 2}
   m_Sparck_shoot: {fileID: 1712580943309616, guid: 14a068f0f21474b4aad11ec38e316287,
     type: 2}
-  m_lineRendererPrefab: {fileID: 120498225350249956, guid: daae7541c57186841bf0f565db9a62c3,
+  m_lineRendererPrefab: {fileID: 120447758923362356, guid: daeaa5b12431a8e4883aba8651095152,
     type: 2}
   volumeFiring1: 0.7
   Fire1:

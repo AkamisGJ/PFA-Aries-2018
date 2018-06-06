@@ -15,7 +15,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
-        [SerializeField] private float m_JumpSpeed;
+        [SerializeField] public float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
         public float m_GravityMultiplier;
         [SerializeField] public MouseLook m_MouseLook;
@@ -28,17 +28,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
         
 
         private Camera m_Camera;
-        private bool m_Jump;
+        public bool m_Jump;
         private float m_YRotation;
         private Vector2 m_Input;
-        private Vector3 m_MoveDir = Vector3.zero;
+        public Vector3 m_MoveDir = Vector3.zero;
         private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
         private Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
-        private bool m_Jumping;
+        public bool m_Jumping;
         private AudioSource m_AudioSource;
 
         //Add by Théo
@@ -46,7 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Camera m_gunCamera;
         public bool m_Active = true;
 
-        public int lastCheckPoint = 1;
+        public int lastCheckPoint = 0;
         private Quaternion lastRotation;
         public float slideSpeed = 2f;
 
@@ -55,10 +55,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Rigidbody m_rigibody;
         private CameraShaker[] m_CameraShake;
-        public float FlyingPower = 50f;
         private GameObject LastTouch;
         private Vector3 LastMovePos;
         private Transform m_platform;
+        private float SaveJumpPower;
 
         [Header("Sound")]
         [Range(0f, 1f)] public float volume_deaths;
@@ -86,6 +86,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            SaveJumpPower = m_JumpSpeed;
 
             //Init Checkpoint
             lastCheckPoint = 1;
@@ -99,9 +100,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             RotateView();
             m_MouseLook.m_Active = m_Active;
 
+            if(m_CharacterController.isGrounded){
+                m_JumpSpeed = SaveJumpPower;
+            }
+
             if(m_Active){
                 // the jump state needs to read here to make sure it is not missed
-                if (!m_Jump)
+                if (!m_Jump && !m_Jumping)
                 {
                     m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
                 }
@@ -167,18 +172,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
                 }
 
-                //Movement
-                if(FlyingPower > 0){
-                     //Propulseur
-                    Vector3 fly = transform.up * FlyingPower;
-                    m_MoveDir -= Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-                    m_MoveDir.y = m_JumpSpeed;
-                    fly += m_MoveDir;
-                    m_CharacterController.Move(fly*Time.fixedDeltaTime);
-                }else{
-                    //Classic movement
-                    m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
-                }
+                m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+
+                // //Movement
+                // if(FlyingPower > 0){
+                //      //Propulseur
+                //     Vector3 fly = transform.up * FlyingPower;
+                //     m_MoveDir -= Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+                //     m_MoveDir.y = m_JumpSpeed;
+                //     fly += m_MoveDir;
+                //     m_CharacterController.Move(fly*Time.fixedDeltaTime);
+                // }
+                
+                // else{
+                //     //Classic movement
+                   
+                // }
 
                 ProgressStepCycle(speed);
                 UpdateCameraPosition(speed);
@@ -216,9 +225,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else{
                 RemovePlatform( m_platform );
             }
-
-            
         }
+
 
         private void SetPlatform( Transform parent )
         {
@@ -239,6 +247,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
         
+        public void JumpWithPropullseur(float JumpPower){
+            m_JumpSpeed = JumpPower;
+			
+			m_MoveDir -= Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+			m_MoveDir.y = JumpPower;
+			m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+        }
+
         private void PlayJumpSound()
         {
             m_AudioSource.clip = m_JumpSound;
@@ -351,10 +367,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            //Reset Flying
-            if(FlyingPower > 0){
-                FlyingPower = 0f;
-            }
 
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it

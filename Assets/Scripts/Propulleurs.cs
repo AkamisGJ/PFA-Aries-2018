@@ -5,12 +5,29 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Propulleurs : MonoBehaviour {
 
-	public float GivePower = 2f;
-	private FirstPersonController m_characterController;
+	public float JumpPower = 2f;
+	private FirstPersonController FPSControlleur;
+	private bool Propullseur = false;
 
-	void OnTriggerEnter(Collider other)
+	
+
+	void Start()
 	{
-		m_characterController = other.transform.GetComponent<FirstPersonController>();
-		m_characterController.FlyingPower = GivePower;
+		FPSControlleur =  GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+	}
+	
+	void OnTriggerStay(Collider other)
+	{
+		if(other.tag == "Player"){
+			Propullseur = true;	
+		}
+	}
+
+	void FixedUpdate()
+	{
+		if(Propullseur){
+			FPSControlleur.JumpWithPropullseur(JumpPower);
+			Propullseur = false;
+		}
 	}
 }
