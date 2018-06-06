@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
+using VolumetricLines;
 public class Raygun : MonoBehaviour {
 	
 	public Transform player;
@@ -99,12 +100,13 @@ public class Raygun : MonoBehaviour {
 				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 
 				//Line renderer
-					Vector3[] posLineRenderer = new []{
-						firepoint.position,
-						hit_info.point,
-						hit_info.point
-					};
-					m_lineRendererPrefab.SetPositions(posLineRenderer);
+				Vector3[] posLineRenderer = new []{
+					firepoint.position,
+					hit_info.point,
+					hit_info.point
+				};
+				m_lineRendererPrefab.SetPositions(posLineRenderer);
+
 
 				//Si le joueur tir sur une surface téléportable
 				int layer = LayerMask.NameToLayer("CanTeleport");
