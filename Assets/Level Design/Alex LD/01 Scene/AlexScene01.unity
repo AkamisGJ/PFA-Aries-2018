@@ -59094,20 +59094,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114767512056616316, guid: 5fa93d9323eaf1349a7e63cc6f723f08,
+    - target: {fileID: 114524897169027234, guid: 5fa93d9323eaf1349a7e63cc6f723f08,
         type: 2}
-      propertyPath: m_FXShoot
-      value: 
-      objectReference: {fileID: 1359154688624708, guid: c0a9d957f2442a7449a27874bf89ce02,
-        type: 2}
-    - target: {fileID: 224024827866138950, guid: 5fa93d9323eaf1349a7e63cc6f723f08,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: m_havePropertiesChanged
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114777093755877298, guid: 5fa93d9323eaf1349a7e63cc6f723f08,
+    - target: {fileID: 114524897169027234, guid: 5fa93d9323eaf1349a7e63cc6f723f08,
         type: 2}
-      propertyPath: m_Enabled
+      propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
