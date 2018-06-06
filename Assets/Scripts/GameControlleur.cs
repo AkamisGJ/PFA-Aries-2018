@@ -13,10 +13,14 @@ public class GameControlleur : MonoBehaviour {
 	public TextMeshProUGUI BestTime;
 	public TextMeshProUGUI ActualTime;
 	private bool PauseMenuState = false;
+	private GameObject Player;
+	public FinalExplosion script;
 	
 
 	void Start()
 	{
+		Player = GameObject.FindGameObjectWithTag("Player");
+
 		if(GameObject.FindGameObjectWithTag("PauseMenu") == null){
 			Debug.LogError("PauseMenu is not in the scene !!");
 			//Debug.Break();	

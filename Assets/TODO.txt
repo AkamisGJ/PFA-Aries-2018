@@ -1,6 +1,6 @@
 ﻿En cours : 
-    Ajouter les VFX de ben
     PolyBrush
+    Ajouter le perssonage au controlleur et ajouter les animations
     
 
 Petite taches :
@@ -10,6 +10,7 @@ Petite taches :
         Changer la sensibilité
         Activer ou désactiver le trail
         Activer ou désactiver le speedrun
+    Modifier le tir du laser
 
 
 Important :
@@ -18,6 +19,7 @@ Important :
 
 
 Bugs : 
+    Réparer le bugs de la pente dans le niveau 1
     Le perso reste en l'air si il saute contre un toit
     Le perso bouge en fonction des animations
 

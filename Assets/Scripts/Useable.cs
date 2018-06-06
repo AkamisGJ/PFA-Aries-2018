@@ -30,12 +30,14 @@ public class Useable : MonoBehaviour {
 
 	void Start()
 	{
-		if(GetComponentInParent<Animator>()){
-			BoutonAnimator = GetComponentInParent<Animator>();
-		}
+		if(PlaqueDePression == false){
+			if(GetComponentInParent<Animator>()){
+				BoutonAnimator = GetComponentInParent<Animator>();
+			}
 
-		if(GetComponent<Animator>()){
-			BoutonAnimator = GetComponent<Animator>();
+			if(GetComponent<Animator>()){
+				BoutonAnimator = GetComponent<Animator>();
+			}
 		}
 
 		if(GetComponent<MeshRenderer>()){
@@ -114,24 +116,16 @@ public class Useable : MonoBehaviour {
 						connection.GetComponent<Teleporteur>().Alimenter = true;
 					}
 				}
-			}
-
-			activate = true;
-
-			if(BoutonAnimator){
-				BoutonAnimator.SetBool("Active", activate);
-			}
-
-			//Sound Design
-			if(m_AudioSource == true && activate == true){
+				if(m_AudioSource == true){
 				m_AudioSource.Stop();
 				m_AudioSource.volume = volume_buttonActivate;
 				m_AudioSource.PlayOneShot(BoutonActivate);
 			}
-			if(m_AudioSource == true && activate == false){
-				m_AudioSource.Stop();
-				m_AudioSource.volume = volume_buttonDeactivate;
-				m_AudioSource.PlayOneShot(BoutonDesactivate);
+				
+			}
+			activate = true;
+			if(BoutonAnimator){
+				BoutonAnimator.SetBool("Active", activate);
 			}
 		}
 	}

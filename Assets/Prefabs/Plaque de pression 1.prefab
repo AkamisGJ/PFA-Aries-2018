@@ -323,7 +323,7 @@ MonoBehaviour:
   PlaqueDePression: 1
   connections:
   - {fileID: 0}
-  Dropdown: 0
+  Dropdown: 2
   delay_cooldown: 5
   volume_buttonActivate: 1
   BoutonActivate: {fileID: 8300000, guid: fc6ff32b780c92248ad043bc62436777, type: 3}
