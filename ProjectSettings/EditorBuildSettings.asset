@@ -5,17 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Level Design/Ben LD/scene/Menu.unity
+    path: Assets/Level Design/Ben LD/scene/Menu/Menu.unity
     guid: 229da80e698b02d44b565fcb77932184
   - enabled: 1
     path: Assets/Level Design/Theo LD/TheoScene01.unity
     guid: c441559838b641a419e53d9d3c86e700
   - enabled: 1
-    path: Assets/Level Design/Ben LD/scene/scene_Ben_1.unity
+    path: Assets/Level Design/Ben LD/scene/scene_Ben_1/scene_Ben_1.unity
     guid: 3b2a3936b11a1634a94b9adc8e8bd28b
   - enabled: 1
     path: Assets/Level Design/Alex LD/01 Scene/AlexScene01.unity
