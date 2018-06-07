@@ -16,6 +16,12 @@ Petite taches :
 Important :
     Poser les mains du persso rigger sur l'arme
     Améliorer l'éclairage du jeu
+    Fermer la porte quand le joueurs entre dans le dome pour qu'il ne puisse pas sortir
+    Ajouter sur le mur du début les commande pour jouer. Et ajouter une UI quand il est vers l'arme pour lui donner les controlles. Appuyer sur X pour récupéré l'arme
+    Mettre un son pour expliquer que le sol s'ouvre dans le dernier niveau
+    Ajouter un son de timer pour les platforme timer du niveau 1 d'Alex
+    Programmer la défaite dans la fuite du complexe
+    Différencier les différent type de platformes
 
 
 Bugs : 
