@@ -7,263 +7,139 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Grass_01a_D
-  m_Shader: {fileID: 4800000, guid: 2f07cc146ee3586409a2a0b309900203, type: 3}
+  m_Shader: {fileID: 10606, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2450
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _AnimatedAlbedo
-      second:
+    - _AnimatedAlbedo:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _AnimatedEmission
-      second:
+    - _AnimatedEmission:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _BumpMap
-      second:
+    - _BumpMap:
         m_Texture: {fileID: 2800000, guid: d3bb48b982a818942b8c4e3c1160c689, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _BumpMapVariant
-      second:
+    - _BumpMapVariant:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailAlbedoMap
-      second:
+    - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailMask
-      second:
+    - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailNormalMap
-      second:
+    - _DetailNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _EmissionMap
-      second:
+    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
+    - _MainTex:
         m_Texture: {fileID: 2800000, guid: 2ceeec9354b56d64491fb1a722851465, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTexVariant
-      second:
+    - _MainTexVariant:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MetallicGlossMap
-      second:
+    - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _OcclusionMap
-      second:
+    - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _ParallaxMap
-      second:
+    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _SpecGlossMap
-      second:
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _SpecGlossMapVariant
-      second:
+    - _SpecGlossMapVariant:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _TransmissionThicknessMap
-      second:
+    - _TransmissionThicknessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _VariantMask
-      second:
+    - _VariantMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _AnimatedRandomRowOffset
-      second: 1
-    - first:
-        name: _BumpScale
-      second: 1
-    - first:
-        name: _CullMode
-      second: 0
-    - first:
-        name: _Cutoff
-      second: 0.35
-    - first:
-        name: _DetailMode
-      second: 0
-    - first:
-        name: _DetailNormalMapScale
-      second: 1
-    - first:
-        name: _DstBlend
-      second: 0
-    - first:
-        name: _ExtraNormalShadowBias
-      second: 0
-    - first:
-        name: _GlossMapScale
-      second: 1
-    - first:
-        name: _Glossiness
-      second: 0.028
-    - first:
-        name: _GlossyReflections
-      second: 1
-    - first:
-        name: _HasAnimatedAlbedo
-      second: 0
-    - first:
-        name: _HasAnimatedEmission
-      second: 0
-    - first:
-        name: _HasTransmission
-      second: 1
-    - first:
-        name: _LightProbeScale
-      second: 1
-    - first:
-        name: _MetaDiffuseScale
-      second: 1
-    - first:
-        name: _MetaEmissionScale
-      second: 1
-    - first:
-        name: _MetaMetallicSoup
-      second: 1
-    - first:
-        name: _MetaSpecularScale
-      second: 1
-    - first:
-        name: _MetaUseCustom
-      second: 0
-    - first:
-        name: _Metallic
-      second: 0
-    - first:
-        name: _Mode
-      second: 1
-    - first:
-        name: _OcclusionStrength
-      second: 1
-    - first:
-        name: _Parallax
-      second: 0.02
-    - first:
-        name: _ReflectionProbeBoost
-      second: 1
-    - first:
-        name: _SmoothnessTextureChannel
-      second: 0
-    - first:
-        name: _SpecularHighlights
-      second: 1
-    - first:
-        name: _SrcBlend
-      second: 1
-    - first:
-        name: _Translucency
-      second: 0
-    - first:
-        name: _TransmissionThicknessScale
-      second: 1
-    - first:
-        name: _UVDetailMask
-      second: 0
-    - first:
-        name: _UVSec
-      second: 0
-    - first:
-        name: _VertexOcclusionPower
-      second: 1
-    - first:
-        name: _WindHeightClamp
-      second: 1
-    - first:
-        name: _WindHeightScale
-      second: 0
-    - first:
-        name: _ZWrite
-      second: 1
+    - _AnimatedRandomRowOffset: 1
+    - _BumpScale: 1
+    - _CullMode: 0
+    - _Cutoff: 0.35
+    - _DetailMode: 0
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _ExtraNormalShadowBias: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.028
+    - _GlossyReflections: 1
+    - _HasAnimatedAlbedo: 0
+    - _HasAnimatedEmission: 0
+    - _HasTransmission: 1
+    - _LightProbeScale: 1
+    - _MetaDiffuseScale: 1
+    - _MetaEmissionScale: 1
+    - _MetaMetallicSoup: 1
+    - _MetaSpecularScale: 1
+    - _MetaUseCustom: 0
+    - _Metallic: 0
+    - _Mode: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _ReflectionProbeBoost: 1
+    - _ShadowStrength: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SquashAmount: 1
+    - _SrcBlend: 1
+    - _Translucency: 0
+    - _TranslucencyViewDependency: 0.7
+    - _TransmissionThicknessScale: 1
+    - _UVDetailMask: 0
+    - _UVSec: 0
+    - _VertexOcclusionPower: 1
+    - _WindHeightClamp: 1
+    - _WindHeightScale: 0
+    - _ZWrite: 1
     m_Colors:
-    - first:
-        name: _AnimatedFrameSize
-      second: {r: 0.125, g: 0.25, b: 0, a: 0}
-    - first:
-        name: _AnimatedRowsColsTotal
-      second: {r: 8, g: 4, b: 0, a: 0}
-    - first:
-        name: _AnimatedUVRange
-      second: {r: 0.5, g: 0.05, b: 0.05, a: 0.1}
-    - first:
-        name: _AnimatedUVScaleOffset
-      second: {r: 1, g: 1, b: 0, a: 0}
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _MetaDiffuseAdd
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _MetaDiffuseTint
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _MetaEmissionAdd
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _MetaEmissionTint
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _MetaSpecularAdd
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _MetaSpecularTint
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _SpecColor
-      second: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _AnimatedFrameSize: {r: 0.125, g: 0.25, b: 0, a: 0}
+    - _AnimatedRowsColsTotal: {r: 8, g: 4, b: 0, a: 0}
+    - _AnimatedUVRange: {r: 0.5, g: 0.05, b: 0.05, a: 0.1}
+    - _AnimatedUVScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MetaDiffuseAdd: {r: 0, g: 0, b: 0, a: 1}
+    - _MetaDiffuseTint: {r: 1, g: 1, b: 1, a: 1}
+    - _MetaEmissionAdd: {r: 0, g: 0, b: 0, a: 1}
+    - _MetaEmissionTint: {r: 1, g: 1, b: 1, a: 1}
+    - _MetaSpecularAdd: {r: 0, g: 0, b: 0, a: 1}
+    - _MetaSpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.40999997, a: 1}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
