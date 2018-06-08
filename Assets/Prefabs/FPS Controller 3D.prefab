@@ -10226,13 +10226,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.5
+  m_Height: 2.4
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.3
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1.25, z: -0.03}
+  m_Center: {x: 0, y: 1.2, z: -0.03}
 --- !u!222 &222064780520000304
 CanvasRenderer:
   m_ObjectHideFlags: 1
