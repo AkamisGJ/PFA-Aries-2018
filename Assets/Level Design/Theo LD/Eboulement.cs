@@ -9,6 +9,8 @@ public class Eboulement : MonoBehaviour
     public float timeShaking = 3f;
     private GameObject m_Player;
     private bool Tédjapassé = false;
+    public float m_magnitude = 1f;
+    public float m_roughness = 12f;
    // public AudioSource m_audiosource;
     //public AudioClip m_sonEboulement;
 
@@ -30,7 +32,7 @@ public class Eboulement : MonoBehaviour
                 transform.GetChild(i).GetComponent<Rigidbody>().useGravity = true;
                 transform.GetChild(i).GetComponent<Rigidbody>().mass = m_mass;
 
-                CameraShakeInstance m_CameraPresset = new CameraShakeInstance(1f, 12f);
+                CameraShakeInstance m_CameraPresset = new CameraShakeInstance(m_magnitude, m_roughness);
                 m_Player.GetComponentInChildren<CameraShaker>().ShakeOnce(m_CameraPresset.Magnitude, m_CameraPresset.Roughness, timeShaking, timeShaking);
 
               //  m_audiosource.PlayOneShot(m_sonEboulement);
