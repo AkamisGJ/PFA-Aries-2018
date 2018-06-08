@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class FinalExplosion : MonoBehaviour {
 
@@ -14,6 +16,7 @@ public class FinalExplosion : MonoBehaviour {
 
 	private int nextExplosion;
 	private int nombreExplosion = 0;
+	private FirstPersonController FPS;
 	void Start () {
 		nextExplosion = Mathf.RoundToInt(timeExplosion) - 5;
 
@@ -22,6 +25,8 @@ public class FinalExplosion : MonoBehaviour {
 			explosion.SetActive(false);
 		}
 		LastExplosion.SetActive(false);
+
+		FPS = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
 	}
 	
 	// Update is called once per frame
@@ -45,9 +50,19 @@ public class FinalExplosion : MonoBehaviour {
 			}
 
 			if(timeExplosion <= 0f){
-				gameObject.SetActive(false);
+				//gameObject.SetActive(false);
+				m_Timer.enabled = false;
 				LastExplosion.SetActive(true);
+				FPS.CameraShake();
+				StartCoroutine(ReloadScene());
+
+				
 			}
 		}
+	}
+
+	IEnumerator ReloadScene(){
+		yield return new WaitForSeconds(3f);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 }
