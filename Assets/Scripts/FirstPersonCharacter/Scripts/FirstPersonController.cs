@@ -393,12 +393,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if(other.GetComponent<Checkpoint_Script>().CheckPoint_value > lastCheckPoint){
                     //Position
                     lastCheckPoint = other.GetComponent<Checkpoint_Script>().CheckPoint_value;
-                    
-                    //Rotation
-                    if(lastRotation == null){
-                        lastRotation = Quaternion.identity;
-                    }
-                    else
                     lastRotation = other.GetComponent<Checkpoint_Script>().rotation;
                 }
             }
@@ -439,6 +433,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         m_trail.time = 4;
                         break;
                     }
+                }
+            }
+        }
+
+        public void CameraShake(){
+            foreach (var CameraShake in m_CameraShake)
+            {
+                CameraShaker cam = CameraShaker.GetInstance(CameraShake.gameObject.name);
+                if(cam.name == "CameraShaker"){
+                    CameraShakeInstance m_CameraPresset = new CameraShakeInstance(9f, 10f);
+                    cam.ShakeOnce(m_CameraPresset.Magnitude , m_CameraPresset.Roughness , 1.5f, 1.5f);
+                }
+                if(cam.name == "GunCamera"){
+                    CameraShakeInstance m_CameraPresset = new CameraShakeInstance(20f, 20f);
+                    cam.ShakeOnce(m_CameraPresset.Magnitude , m_CameraPresset.Roughness , 1.5f, 1.5f);
                 }
             }
         }
