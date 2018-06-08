@@ -46,7 +46,7 @@ TagManager:
   - Deathzone
   - Particle
   - LightinBold
-  - 
+  - Model3D
   m_SortingLayers:
   - name: Default
     uniqueID: 0
