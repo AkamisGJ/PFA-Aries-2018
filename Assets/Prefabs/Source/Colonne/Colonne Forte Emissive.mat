@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Mur 1
-  m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
+  m_Name: Colonne Forte Emissive
+  m_Shader: {fileID: 4800000, guid: 78929cc20041b60488d6c59345701489, type: 3}
+  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 498d02355766d55419646257ef66f702, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3ff00162154fd3a41ba723185c094d78, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -35,27 +35,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 2cb1fc50a421e3c4881228897ca3b358, type: 3}
-        m_Scale: {x: 0.08, y: 0.08}
+        m_Texture: {fileID: 2800000, guid: 9dc13d1a8038d644499a5350cab4380f, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0cb25b5383f02464babf315e75b9b5db, type: 3}
-        m_Scale: {x: 0.08, y: 0.08}
+        m_Texture: {fileID: 2800000, guid: 90bed6a4410311749b36363b43f2ab25, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 309fcf458914829418cadb91f188b0f2, type: 3}
+        m_Texture: {fileID: 2800000, guid: ed9bd21726ce6af459a523e0bb95ad7c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: f6021df3d382dd64db70565a64ca22b7, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: d2a3134eaabb7c1488c19eb37667564f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: ccf644c5b127f734992dbafbfa5ed84b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2cfae2dd708bf9640934c32c5863744f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -77,4 +73,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.59896106, g: 4.237095, b: 3.4606638, a: 1}
+    - _EmissionColor: {r: 11.984314, g: 11.984314, b: 11.984314, a: 1}

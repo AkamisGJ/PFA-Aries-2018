@@ -1,6 +1,6 @@
 ﻿En cours : 
-    PolyBrush
-    Ajouter le perssonage au controlleur et ajouter les animations
+    Regler le bug qui passe a travers les TP horizontaux
+    Ajouter l'animation du jump pendant une TP
     
 
 Petite taches :
