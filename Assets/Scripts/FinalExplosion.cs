@@ -50,7 +50,10 @@ public class FinalExplosion : MonoBehaviour {
 			}
 
 			if(timeExplosion <= 0f){
-				//gameObject.SetActive(false);
+					foreach (var explosion in Explosion)
+				{
+					explosion.SetActive(true);
+				}
 				m_Timer.enabled = false;
 				LastExplosion.SetActive(true);
 				FPS.CameraShake();
@@ -58,6 +61,14 @@ public class FinalExplosion : MonoBehaviour {
 
 				
 			}
+		}
+	}
+
+	public IEnumerator ExploseEverythinks(){
+		foreach (var explosion in Explosion)
+		{
+			explosion.SetActive(true);
+			yield return new WaitForSecondsRealtime(0.2f);
 		}
 	}
 
