@@ -43,6 +43,8 @@ public class Raygun : MonoBehaviour {
 	  [Header("Debug")]
 
     public bool DesactiveColliderDuringTeleportation;
+	public SphereCollider HeadBlocker;
+	public float HeadDistance = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -214,8 +216,16 @@ public class Raygun : MonoBehaviour {
 
 		for(float i = point; i > 0; i--){
 			//Mouvement
+			Vector3 ClosestPoint = HeadBlocker.ClosestPoint(EndPoint);
+			Vector3 distanceHeadCollision = EndPoint - ClosestPoint;
+			if(distanceHeadCollision.magnitude < HeadDistance){
+				i = 0;
+				break;
+			}
+
 			player.position += (distance/i);
 			distance = EndPoint - player.position;
+			
 
 			//Field Of View
 			if(i > point/2.5){

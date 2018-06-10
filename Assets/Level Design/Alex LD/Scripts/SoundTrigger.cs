@@ -10,6 +10,7 @@ public class SoundTrigger : MonoBehaviour
 	private int OnceOnly =0;
 	public AudioSource m_audiosource;
 	public AudioClip explosion;
+	public bool Looping;
 
 	private void Start() 
 	{
@@ -21,8 +22,14 @@ public class SoundTrigger : MonoBehaviour
 	{
 		if (other.tag == "Player") 
 		{
-			print("Sound Is Playing");
-			m_audiosource.PlayOneShot(explosion);
+			if(Looping == true){
+				m_audiosource.loop = true;
+				m_audiosource.clip = explosion;
+				m_audiosource.Play();
+			}
+			else{
+				m_audiosource.PlayOneShot(explosion);
+			}
 			OnceOnly += 1;
 			print (OnceOnly);
 			TriggerZone.enabled = false;

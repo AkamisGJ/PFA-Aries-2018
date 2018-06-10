@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4023846954679266}
   - component: {fileID: 33995614550689952}
   - component: {fileID: 23177080700583332}
+  - component: {fileID: 64779190022214362}
   m_Layer: 0
   m_Name: Rail Platforme Mouvante
   m_TagString: Untagged
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806034451194696}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.994946, y: 10.520326, z: -96.08729}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
+  m_LocalPosition: {x: 25.75, y: 17.575, z: -0.1}
+  m_LocalScale: {x: 0.39074346, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!23 &23177080700583332
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,4 +83,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806034451194696}
+  m_Mesh: {fileID: 4300000, guid: 9651bc07096130545b1036f406a24cd0, type: 3}
+--- !u!64 &64779190022214362
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806034451194696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 9651bc07096130545b1036f406a24cd0, type: 3}

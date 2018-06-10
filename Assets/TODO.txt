@@ -1,6 +1,9 @@
 ﻿En cours : 
-    PolyBrush
-    Ajouter le perssonage au controlleur et ajouter les animations
+    Ajouter l'animation du jump pendant une TP
+    Faire looper la musique du jeu
+    Ajouter le son du bumper
+    Faire retomber le joueur tout de suite quand il touche le plafond avec sa tête
+    Ajouter la grande colonne dans le niveau d'Alex
     
 
 Petite taches :
@@ -11,6 +14,7 @@ Petite taches :
         Activer ou désactiver le trail
         Activer ou désactiver le speedrun
     Modifier le tir du laser
+
 
 
 Important :
@@ -25,9 +29,8 @@ Important :
 
 
 Bugs : 
-    Réparer le bugs de la pente dans le niveau 1
     Le perso reste en l'air si il saute contre un toit
-    Le perso bouge en fonction des animations
+    Le perso fait des pas de trop quand il arrete de marcher
 
 
 

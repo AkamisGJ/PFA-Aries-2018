@@ -39,7 +39,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - DontCollideWithPlayer
   - VFX
   - Travelling
   - Checkpoint
