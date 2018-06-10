@@ -14,7 +14,7 @@ public class Useable : MonoBehaviour {
 	}
 	public fonctionnement Dropdown;
 	public float delay_cooldown = 5f;
-	private float cooldown = 0f;
+	public float cooldown = 0f;
 	private MeshRenderer m_mesh;
 	private Color m_color = Color.red;
 	private Animator BoutonAnimator;
@@ -96,12 +96,12 @@ public class Useable : MonoBehaviour {
 
 			//Sound Design
 			if(m_AudioSource == true && activate == true){
-				m_AudioSource.Stop();
+				//m_AudioSource.Stop();
 				m_AudioSource.volume = volume_buttonActivate;
 				m_AudioSource.PlayOneShot(BoutonActivate);
 			}
 			if(m_AudioSource == true && activate == false){
-				m_AudioSource.Stop();
+				//m_AudioSource.Stop();
 				m_AudioSource.volume = volume_buttonDeactivate;
 				m_AudioSource.PlayOneShot(BoutonDesactivate);
 			}
@@ -117,7 +117,7 @@ public class Useable : MonoBehaviour {
 					}
 				}
 				if(m_AudioSource == true){
-				m_AudioSource.Stop();
+				//m_AudioSource.Stop();
 				m_AudioSource.volume = volume_buttonActivate;
 				m_AudioSource.PlayOneShot(BoutonActivate);
 			}
@@ -155,7 +155,10 @@ public class Useable : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(PlaqueDePression == true && other.tag == "Player"){
+		if(Dropdown.ToString() == "Cooldown" && cooldown == 0f){
+			Toogle();
+			return;
+		}else if(PlaqueDePression == true && other.tag == "Player" && Dropdown.ToString() != "Cooldown"){
 			Toogle();
 		}
 	}

@@ -145,8 +145,8 @@ public class Raygun : MonoBehaviour {
 						//Si le joueur tir sur une surface téléportable
 						layer = LayerMask.NameToLayer("CanTeleport");
 						if(hit_info_reflexion.collider.gameObject.layer == layer){
-							if(hit_info.collider.GetComponentInParent<Teleporteur>()){
-								hit_info.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
+							if(hit_info_reflexion.collider.GetComponentInParent<Teleporteur>()){
+								hit_info_reflexion.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
 							}
 							cooldown = 0; //Reset le cooldown
 							StartCoroutine(Teleportation(player.position ,hit_info.point, hit_info_reflexion.point, angleY));
@@ -183,6 +183,8 @@ public class Raygun : MonoBehaviour {
 	private float m_point_TP_court = 10f;
 	private float m_point_TP_long = 21f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
+
+		player.GetComponent<Animator>().SetTrigger("Teleporting");
 		OnTeleporation = true;
 
 		if(DesactiveColliderDuringTeleportation == true){
@@ -263,6 +265,7 @@ public class Raygun : MonoBehaviour {
 	private float m_point_TP_long_2 = 41f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint, Vector3 EndPoint_2, float angleY){
 
+		player.GetComponent<Animator>().SetTrigger("Teleporting");
 		OnTeleporation = true;
 		
 		if(DesactiveColliderDuringTeleportation == true){
