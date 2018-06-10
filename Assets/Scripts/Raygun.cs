@@ -218,7 +218,6 @@ public class Raygun : MonoBehaviour {
 			//Mouvement
 			Vector3 ClosestPoint = HeadBlocker.ClosestPoint(EndPoint);
 			Vector3 distanceHeadCollision = EndPoint - ClosestPoint;
-			print(distanceHeadCollision.magnitude);
 			if(distanceHeadCollision.magnitude < HeadDistance){
 				i = 0;
 				break;

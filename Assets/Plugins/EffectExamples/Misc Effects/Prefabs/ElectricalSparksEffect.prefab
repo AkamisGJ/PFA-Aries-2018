@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4000012832170722}
   - component: {fileID: 198000012283690144}
   - component: {fileID: 199000010805106158}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: ElectricalSparksEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33299857737045268}
   - component: {fileID: 23533922882842548}
   - component: {fileID: 64776613069519360}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,14 +52,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011396044746}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -31.194046, y: 4.36, z: 10.08959}
+  m_LocalRotation: {x: -0.2588189, y: -0.00000017881392, z: -0, w: 0.96592593}
+  m_LocalPosition: {x: 1.67, y: -2.0062063, z: -4.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4267998418013034}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -30.000002, y: 0, z: 0}
 --- !u!4 &4267998418013034
 Transform:
   m_ObjectHideFlags: 1

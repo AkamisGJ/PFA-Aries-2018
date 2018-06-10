@@ -174,21 +174,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
-                // //Movement
-                // if(FlyingPower > 0){
-                //      //Propulseur
-                //     Vector3 fly = transform.up * FlyingPower;
-                //     m_MoveDir -= Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-                //     m_MoveDir.y = m_JumpSpeed;
-                //     fly += m_MoveDir;
-                //     m_CharacterController.Move(fly*Time.fixedDeltaTime);
-                // }
-                
-                // else{
-                //     //Classic movement
-                   
-                // }
-
                 ProgressStepCycle(speed);
                 UpdateCameraPosition(speed);
 

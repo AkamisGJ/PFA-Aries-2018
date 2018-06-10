@@ -23,6 +23,11 @@ public class Propulleurs : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter(Collider other)
+	{
+		GetComponent<AudioSource>().Play();
+	}
+
 	void FixedUpdate()
 	{
 		if(Propullseur){
