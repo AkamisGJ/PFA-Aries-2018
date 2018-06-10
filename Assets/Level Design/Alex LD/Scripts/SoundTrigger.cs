@@ -23,6 +23,7 @@ public class SoundTrigger : MonoBehaviour
 		if (other.tag == "Player") 
 		{
 			if(Looping == true){
+				m_audiosource.loop = true;
 				m_audiosource.clip = explosion;
 				m_audiosource.Play();
 			}

@@ -5633,8 +5633,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361554968109750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -516.9211, y: -64.679214, z: -680.45087}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -474.4837, y: -70.10592, z: -615.50354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4522386585262408}
@@ -5645,7 +5645,7 @@ Transform:
   - {fileID: 224067973122849574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4188622721854106
 Transform:
   m_ObjectHideFlags: 1
@@ -14110,7 +14110,7 @@ MonoBehaviour:
   Fire2: {fileID: 8300000, guid: 4a0a9c7a4c68e424eb8c971b4e8c3f77, type: 3}
   DesactiveColliderDuringTeleportation: 0
   HeadBlocker: {fileID: 135119308140500822}
-  HeadDistance: 1.2
+  HeadDistance: 2
 --- !u!114 &114625533234437702
 MonoBehaviour:
   m_ObjectHideFlags: 1
