@@ -1196,7 +1196,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 325961770}
-  m_LocalRotation: {x: 0.0014461388, y: 0.9969295, z: 0.075955115, w: -0.018982485}
+  m_LocalRotation: {x: 0.001446116, y: 0.9969296, z: 0.07595404, w: -0.018982487}
   m_LocalPosition: {x: -1.6330824, y: 5.393628, z: 51.71661}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2462,6 +2462,21 @@ CapsuleCollider:
   m_Height: 5.765444
   m_Direction: 1
   m_Center: {x: -0.0000000015758608, y: 4.4080763, z: 0.17844929}
+--- !u!54 &708978118
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708978114}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &718407643
 Prefab:
   m_ObjectHideFlags: 0
@@ -12501,7 +12516,7 @@ GameObject:
   - component: {fileID: 2019859026}
   - component: {fileID: 2019859025}
   - component: {fileID: 2019859024}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trigger Fin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
