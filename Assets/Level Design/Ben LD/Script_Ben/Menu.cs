@@ -9,6 +9,9 @@ public class Menu : MonoBehaviour
 {
     public Animator m_camera;
     
+    public void BackToMenu(){
+        SceneManager.LoadScene(0);
+    }
 
     public void startButton()
     {
