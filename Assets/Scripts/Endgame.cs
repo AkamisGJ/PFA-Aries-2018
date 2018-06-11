@@ -11,7 +11,6 @@ public bool Activate;
 		if(other.tag == "Player"){
 			GOToDeactivate.SetActive(Activate);
 		}
-		print("test");
 		//Destroy(this); //Delette this Script
 	}
 }

@@ -13,7 +13,7 @@ public class SpeedRun : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		timeGame = Time.time;
 		timeLevel = Time.timeSinceLevelLoad;
 
