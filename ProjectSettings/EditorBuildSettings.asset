@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level Design/Theo Vart LD/Scene Finale.unity
     guid: a4f156877203a1342ace6af4d7ddbc4f
+  - enabled: 1
+    path: "Assets/Level Design/Ben LD/scene/Cinematique/Cin\xE9matique.unity"
+    guid: 96036d0541b9675439aeeb55ba97b332
   m_configObjects: {}
