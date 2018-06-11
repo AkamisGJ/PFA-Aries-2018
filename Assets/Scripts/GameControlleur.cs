@@ -20,6 +20,8 @@ public class GameControlleur : MonoBehaviour {
 
 	[Header("Options")]
 	public GameObject OptionMenu;
+	public Slider volume;
+	public Toggle muteVolume;
 	public Slider sensibility;
 	public FirstPersonController FPSControlleur;
 	public Toggle TrailToogle;
@@ -42,6 +44,9 @@ public class GameControlleur : MonoBehaviour {
 		//Setup Options Menu
 		sensibility.value = PlayerPrefs.GetFloat("Sensibility", 2f);
 		SetSensibility();
+
+		volume.value = PlayerPrefs.GetFloat("Volume", 1);
+		SetVolume();
 		
 		TrailToogle.isOn = PlayerPrefs2.GetBool("Trail");
 		SetTrail();
@@ -84,6 +89,18 @@ public class GameControlleur : MonoBehaviour {
 		FPSControlleur.m_MouseLook.XSensitivity = sensibility.value;
 		FPSControlleur.m_MouseLook.YSensitivity = sensibility.value;
 		PlayerPrefs.SetFloat("Sensibility", sensibility.value);
+	}
+
+	public void SetVolume(){
+		AudioListener.volume = volume.value;
+		PlayerPrefs.SetFloat("Volume", volume.value);
+	}
+	public void MuteVolume(){
+		if(muteVolume.isOn){
+			AudioListener.volume = PlayerPrefs.GetFloat("Volume", 1);
+		}else{
+			AudioListener.volume = 0;
+		}
 	}
 
 	public void Pause(){	
