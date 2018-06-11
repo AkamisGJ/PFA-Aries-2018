@@ -6752,17 +6752,11 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 04000000
+  m_selectedFaces: 
   m_SelectedEdges:
-  - x: 16
-    y: 17
-  - x: 18
-    y: 16
-  - x: 17
-    y: 19
-  - x: 19
-    y: 18
-  m_selectedTriangles: 10000000110000001200000013000000
+  - x: 11
+    y: 10
+  m_selectedTriangles: 0b0000000a000000
 --- !u!33 &136294388
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27141,7 +27135,7 @@ Transform:
   m_Children:
   - {fileID: 1774715444}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &525452707
 GameObject:
@@ -33696,7 +33690,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036926916220734, guid: a38d0f9d6303a264d8f328387519d73b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a38d0f9d6303a264d8f328387519d73b, type: 2}
@@ -96795,7 +96789,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh366776
+  m_Name: pb_Mesh55700
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -99968,7 +99962,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4625990203081038, guid: cf6d0fd72f1d27e478116a4e249f741b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4625990203081038, guid: cf6d0fd72f1d27e478116a4e249f741b, type: 2}
       propertyPath: m_LocalScale.x
