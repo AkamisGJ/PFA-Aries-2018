@@ -266,6 +266,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4973243735041094}
+  - component: {fileID: 65101398752835530}
   m_Layer: 0
   m_Name: Glass_door_low
   m_TagString: Untagged
@@ -294,15 +295,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1107802762967790}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.474651, y: 19.199099, z: -69.74033}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -21.475, y: 19.199099, z: -70.093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4973243735041094}
   - {fileID: 4461863777455168}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4026723852977720
 Transform:
   m_ObjectHideFlags: 1
@@ -998,3 +999,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665069115818538}
   m_Mesh: {fileID: 4300016, guid: 4aba14cc3bbce3f4e8a894c05953c060, type: 3}
+--- !u!65 &65101398752835530
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922064680886818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16746712, y: 5.8816357, z: 3.4614792}
+  m_Center: {x: -0.010088921, y: 2.9214907, z: -1.6668282}
