@@ -8,6 +8,11 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public Animator m_camera;
+
+    public void Start(){
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     
     public void BackToMenu(){
         SceneManager.LoadScene(0);
