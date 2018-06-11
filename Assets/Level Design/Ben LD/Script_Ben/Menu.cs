@@ -45,6 +45,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
+    public void Level5()
+    {
+        SceneManager.LoadScene(6);
+    }
+
     public void ToogleBool(string Parameter)
     {
         bool value = m_camera.GetBool(Parameter);

@@ -28,8 +28,8 @@ public class SceneLoader : MonoBehaviour
         if (other.tag =="Player")
         {
             //Save the Time of the run
-            string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().name;
-            float finishTime = other.GetComponentInChildren<SpeedRun>().timeGame;
+            string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().buildIndex;
+            float finishTime = other.GetComponentInChildren<SpeedRun>().timeLevel;
             if(PlayerPrefs.GetFloat(indexSaveTime, float.MaxValue) > finishTime){
                 PlayerPrefs.SetFloat(indexSaveTime, finishTime);
             }
