@@ -1,16 +1,12 @@
 ﻿En cours : 
     Faire retomber le joueur tout de suite quand il touche le plafond avec sa tête
     Ajouter la grande colonne dans le niveau d'Alex
-    Ajouter le menu Options et le rendre fonctionnel
+    Ajouter le son des pressoir
     
 
 Petite taches :
     Faire disparaitre le laser apres un tir qui n'a pas toucher un TP
     Ajouter le weapons sway a l'axe vertical
-    Ajouter le menu Options dans le menu Pause
-        Changer la sensibilité
-        Activer ou désactiver le trail
-        Activer ou désactiver le speedrun
     Modifier le tir du laser
 
 

@@ -40,7 +40,7 @@ public class GameControlleur : MonoBehaviour {
 
 
 		//Setup Options Menu
-		sensibility.value = PlayerPrefs.GetFloat("Sensibility");
+		sensibility.value = PlayerPrefs.GetFloat("Sensibility", 2f);
 		SetSensibility();
 		
 		TrailToogle.isOn = PlayerPrefs2.GetBool("Trail");
