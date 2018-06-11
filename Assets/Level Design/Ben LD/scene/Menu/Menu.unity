@@ -9329,6 +9329,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &504384043
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -364
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -632.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071047
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071089
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928339640254862, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 82024822405977052, guid: 92c50f6a2e188dc498f05983f2966546,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1377e8600abaac44b9b25cd43b08cd03, type: 3}
+    - target: {fileID: 82024822405977052, guid: 92c50f6a2e188dc498f05983f2966546,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82024822405977052, guid: 92c50f6a2e188dc498f05983f2966546,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 92c50f6a2e188dc498f05983f2966546, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &510335312
 GameObject:
   m_ObjectHideFlags: 0
