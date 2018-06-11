@@ -1,9 +1,7 @@
 ﻿En cours : 
-    Ajouter l'animation du jump pendant une TP
-    Faire looper la musique du jeu
-    Ajouter le son du bumper
     Faire retomber le joueur tout de suite quand il touche le plafond avec sa tête
     Ajouter la grande colonne dans le niveau d'Alex
+    Ajouter le menu Options et le rendre fonctionnel
     
 
 Petite taches :

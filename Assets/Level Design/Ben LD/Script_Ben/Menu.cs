@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public Animator camera;
+    public Animator m_camera;
     
 
     public void startButton()
@@ -47,7 +47,7 @@ public class Menu : MonoBehaviour
 
     public void ToogleBool(string Parameter)
     {
-        bool value = camera.GetBool(Parameter);
-        camera.SetBool(Parameter, !value);
+        bool value = m_camera.GetBool(Parameter);
+        m_camera.SetBool(Parameter, !value);
     }
 }

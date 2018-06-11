@@ -37,7 +37,7 @@ public class Weapon_sway : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		isRunning = !FPS.m_IsWalking;
 		isJumping = ! (bool)(FPS.GetComponent<CharacterController>().isGrounded);

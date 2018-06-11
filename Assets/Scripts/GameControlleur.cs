@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -8,6 +9,7 @@ using TMPro;
 public class GameControlleur : MonoBehaviour {
 
 	public Canvas PauseMenu;
+	public GameObject MainPauseMenu; 
 	public GameObject Speedrun;
 
 	public TextMeshProUGUI BestTime;
@@ -15,6 +17,15 @@ public class GameControlleur : MonoBehaviour {
 	private bool PauseMenuState = false;
 	private GameObject Player;
 	public FinalExplosion script;
+
+	[Header("Options")]
+	public GameObject OptionMenu;
+	public Slider sensibility;
+	public FirstPersonController FPSControlleur;
+	public Toggle TrailToogle;
+	public TrailRenderer Trail;
+	public Toggle TimerToogle;
+	public TextMeshProUGUI TimerText;
 	
 
 	void Start()
@@ -26,6 +37,19 @@ public class GameControlleur : MonoBehaviour {
 			//Debug.Break();	
 		}
 		PauseMenu.enabled = PauseMenuState;
+
+
+		//Setup Options Menu
+		sensibility.value = PlayerPrefs.GetFloat("Sensibility");
+		SetSensibility();
+		
+		TrailToogle.isOn = PlayerPrefs2.GetBool("Trail");
+		SetTrail();
+		
+		TimerToogle.isOn = PlayerPrefs2.GetBool("Timer");
+		SetTimer();
+
+		
 	}
 	void Update () {
 
@@ -46,13 +70,29 @@ public class GameControlleur : MonoBehaviour {
 		ActualTime.text = "Actual Time = " + ActualTimeOnThisLevel();	
 	}
 
+	public void SetTimer(){
+		TimerText.enabled = TimerToogle.isOn;
+		PlayerPrefs2.SetBool("Timer", TimerToogle.isOn);
+	}
+
+	public void SetTrail(){
+		Trail.enabled = TrailToogle.isOn;
+		PlayerPrefs2.SetBool("Trail", TrailToogle.isOn);
+	}
+
+	public void SetSensibility(){
+		FPSControlleur.m_MouseLook.XSensitivity = sensibility.value;
+		FPSControlleur.m_MouseLook.YSensitivity = sensibility.value;
+		PlayerPrefs.SetFloat("Sensibility", sensibility.value);
+	}
+
 	public void Pause(){	
 
 		PauseMenuState = !PauseMenuState;
 		PauseMenu.enabled = PauseMenuState;
 
 		//Desactive le compteur de speedrun dans le menu
-		Speedrun.GetComponent<TextMeshProUGUI>().enabled = !PauseMenuState;
+		Speedrun.GetComponent<TextMeshProUGUI>().text = "";
 
 		if(PauseMenuState == true){
 			Time.timeScale = 0f;
@@ -78,6 +118,11 @@ public class GameControlleur : MonoBehaviour {
 
 	public void Quit(){
 		Application.Quit();
+	}
+
+	public void Option(bool State){
+		OptionMenu.SetActive(State);
+		MainPauseMenu.SetActive(!State);
 	}
 
 	public string BestScoreOnThisLevel(){
