@@ -144,7 +144,7 @@ public class GameControlleur : MonoBehaviour {
 
 	public string BestScoreOnThisLevel(){
 		string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().buildIndex;
-		print("Game Controlleur = " + indexSaveTime);
+		//print("Game Controlleur = " + indexSaveTime);
 		float BestTimeFloat = PlayerPrefs.GetFloat(indexSaveTime, 0f);
 		return FormatTime(BestTimeFloat);
 	}

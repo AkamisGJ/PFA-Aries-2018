@@ -6,6 +6,8 @@
     Ajouter les animations dans le niveau 1
     Scripter début du jeu
     Ajouter les info pour les commandes
+    Réparer les piques dans le niveau 1
+    Récupéré ma clef USB a Alban !
 
 Alex : 
     Faire les images pour expliquer les commandes

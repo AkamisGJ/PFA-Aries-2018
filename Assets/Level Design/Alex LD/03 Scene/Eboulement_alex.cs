@@ -9,6 +9,8 @@ public class Eboulement_alex : MonoBehaviour
      public float m_angulardrag = 0.001f;
     public bool active = false;
 
+    public bool Addforce = false;
+
     void Update()
     {
         if(active == true){
@@ -18,8 +20,6 @@ public class Eboulement_alex : MonoBehaviour
         for(int i = 0; i < nb_child; i++)
         {
             transform.GetChild(i).gameObject.AddComponent(typeof(Rigidbody));
-
-            //float random_mass = Random.Range(10, 100);
             float random_angular = Random.Range(0.001f, 0.2f);
 
             transform.GetChild(i).GetComponent<Rigidbody>().useGravity = true;
@@ -28,8 +28,10 @@ public class Eboulement_alex : MonoBehaviour
             transform.GetChild(i).GetComponent<Rigidbody>().angularDrag = m_angulardrag;
 
             print(transform.GetChild(i).name);
-
-
+            if(Addforce){
+                Vector3 direction = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
+                transform.GetChild(i).GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
+            }
         }
             Destroy(this);
         }

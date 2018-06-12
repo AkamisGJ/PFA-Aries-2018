@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4850417863278662}
-  - component: {fileID: 114358414400020878}
+  - component: {fileID: 114495604303502632}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -70,9 +70,10 @@ GameObject:
   - component: {fileID: 33368020157273936}
   - component: {fileID: 23859369436042768}
   - component: {fileID: 82261386607434840}
+  - component: {fileID: 95013007666639414}
   m_Layer: 0
   m_Name: Alarme Light
-  m_TagString: Untagged
+  m_TagString: AlarmeLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,8 +84,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625602944086424}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 1.215, y: 6.008, z: -16.51}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: 169.25655, y: -27.989882, z: 35.440903}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4850417863278662}
@@ -180,7 +181,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625602944086424}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cb376ac0ec68a3f4bb1ceded8b918bfe, type: 3}
@@ -296,6 +297,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95013007666639414
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625602944086424}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b34417aa0c770342911c2a93656c3f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108041836299053218
 Light:
   m_ObjectHideFlags: 1
@@ -306,7 +325,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9811321, g: 0.36723867, b: 0.23602703, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: 0
   m_Range: 100
   m_SpotAngle: 28.2
   m_CookieSize: 10
@@ -342,7 +361,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9811321, g: 0.36723867, b: 0.23602703, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: 0
   m_Range: 100
   m_SpotAngle: 28.2
   m_CookieSize: 10
@@ -368,7 +387,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114358414400020878
+--- !u!114 &114495604303502632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -379,4 +398,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d145353d069deb42840130553e0f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.5
