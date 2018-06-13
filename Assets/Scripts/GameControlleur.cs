@@ -42,6 +42,9 @@ public class GameControlleur : MonoBehaviour {
 
 
 		//Setup Options Menu
+		if(PlayerPrefs.GetFloat("Sensibility") == 0f){
+			sensibility.value = 2f;
+		}
 		sensibility.value = PlayerPrefs.GetFloat("Sensibility", 2f);
 		SetSensibility();
 

@@ -9,12 +9,14 @@ public class Useable_output: MonoBehaviour {
 
 	public bool activate = false;
 	private Animator m_animator;
+	private AudioSource audioSource;
 
 
 	void Start()
 	{
 		activate = false;
 		m_animator = GetComponent<Animator>();
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	public void Activate(){
@@ -27,5 +29,9 @@ public class Useable_output: MonoBehaviour {
 			m_animator.SetBool("Active", false);
 		}
 
+	}
+
+	public void PlaySound(){
+		audioSource.Play();
 	}
 }

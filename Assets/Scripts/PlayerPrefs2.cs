@@ -10,7 +10,7 @@
  
      public static bool GetBool(string key)
      {
-         int value = PlayerPrefs.GetInt(key, 1);
+         int value = PlayerPrefs.GetInt(key, 0);
  
          if (value == 1)
          {
