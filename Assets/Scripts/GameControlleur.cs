@@ -139,6 +139,10 @@ public class GameControlleur : MonoBehaviour {
 	public void Quit(){
 		Application.Quit();
 	}
+	
+	public void BackToMenu(){
+		SceneManager.LoadScene(0);
+	}
 
 	public void Option(bool State){
 		OptionMenu.SetActive(State);
