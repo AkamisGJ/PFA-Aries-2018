@@ -2974,7 +2974,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4092106725701318}
-  - component: {fileID: 135119308140500822}
+  - component: {fileID: 136498548469104200}
   m_Layer: 24
   m_Name: HeadBlocker
   m_TagString: Untagged
@@ -6109,8 +6109,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1652154811561056}
-  m_LocalRotation: {x: -0.09833715, y: 0.45330155, z: 0.094894074, w: 0.8808194}
-  m_LocalPosition: {x: -0.0039272294, y: 1.5333275, z: 0.0009212496}
+  m_LocalRotation: {x: -0.09833714, y: 0.45330146, z: 0.09489405, w: 0.8808193}
+  m_LocalPosition: {x: -0.00392723, y: 1.5333271, z: 0.0009202957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4024406463236252}
@@ -6181,8 +6181,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361554968109750}
-  m_LocalRotation: {x: -0, y: -0.0000004768371, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2244163, y: 0.29999995, z: -2.3528736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5068438, y: 1.62, z: -38.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4522386585262408}
@@ -6193,7 +6193,7 @@ Transform:
   - {fileID: 224067973122849574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4188622721854106
 Transform:
   m_ObjectHideFlags: 1
@@ -15632,7 +15632,7 @@ MonoBehaviour:
   volumeFiring2: 0.5
   Fire2: {fileID: 8300000, guid: 4a0a9c7a4c68e424eb8c971b4e8c3f77, type: 3}
   DesactiveColliderDuringTeleportation: 0
-  HeadBlocker: {fileID: 135119308140500822}
+  HeadBlocker: {fileID: 136498548469104200}
   HeadDistance: 2
 --- !u!114 &114592340074166564
 MonoBehaviour:
@@ -16851,8 +16851,8 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1616358864722694}
   m_Enabled: 1
---- !u!135 &135119308140500822
-SphereCollider:
+--- !u!136 &136498548469104200
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -16860,9 +16860,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.23
-  m_Center: {x: -0.05, y: 0, z: 0}
+  m_Radius: 0.4
+  m_Height: 1.71
+  m_Direction: 1
+  m_Center: {x: -0.11, y: -0.65, z: -0.08}
 --- !u!137 &137136887256428326
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -43,7 +43,7 @@ public class Raygun : MonoBehaviour {
 	  [Header("Debug")]
 
     public bool DesactiveColliderDuringTeleportation;
-	public SphereCollider HeadBlocker;
+	public Collider HeadBlocker;
 	public float HeadDistance = 2f;
 
 	// Use this for initialization
