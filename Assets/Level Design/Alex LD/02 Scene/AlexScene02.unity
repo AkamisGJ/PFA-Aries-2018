@@ -3563,7 +3563,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -13685,7 +13685,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh828922
+  m_Name: pb_Mesh116816
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -26162,7 +26162,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh830664
+  m_Name: pb_Mesh118620
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -34399,6 +34399,10 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4188007962878032, guid: 1d9133f184906084088fe73ff77370cb, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d9133f184906084088fe73ff77370cb, type: 2}
   m_IsPrefabParent: 0
@@ -37912,7 +37916,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh828840
+  m_Name: pb_Mesh116732
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

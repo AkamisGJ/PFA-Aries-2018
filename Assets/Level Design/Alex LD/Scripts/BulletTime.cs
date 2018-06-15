@@ -13,13 +13,21 @@ public class BulletTime : MonoBehaviour
     public Color color_Time;
     private BoxCollider cubePosition;
 
-    public Camera MainCamera;
+    private Camera MainCamera;
     PostProcessingBehaviour PostProd;
 
     void Start()
     {
         cubePosition = GetComponent<BoxCollider>();
+        MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
+
+        //Reset TimeScale
+        Time.timeScale = 1;
+        //Aberation Chromatique
+        ChromaticAberrationModel.Settings setting = PostProd.profile.chromaticAberration.settings;
+        setting.intensity = 0f;
+        PostProd.profile.chromaticAberration.settings = setting;
     }
 
 
