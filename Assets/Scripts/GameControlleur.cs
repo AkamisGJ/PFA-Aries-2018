@@ -57,7 +57,7 @@ public class GameControlleur : MonoBehaviour {
 		TimerToogle.isOn = PlayerPrefs2.GetBool("Timer");
 		SetTimer();
 
-		
+		BestTime.text = "Best Time = " + BestScoreOnThisLevel();
 	}
 	void Update () {
 
@@ -72,10 +72,12 @@ public class GameControlleur : MonoBehaviour {
 		else{
 			Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+			string timeSinceStart = ActualTimeOnThisLevel();
+			ActualTime.text = "Actual Time = " + timeSinceStart;
+			TimerText.text = "Time : " + timeSinceStart;
 		}
 
-		BestTime.text = "Best Time = " + BestScoreOnThisLevel();
-		ActualTime.text = "Actual Time = " + ActualTimeOnThisLevel();	
+		
 	}
 
 	public void SetTimer(){
@@ -151,13 +153,12 @@ public class GameControlleur : MonoBehaviour {
 
 	public string BestScoreOnThisLevel(){
 		string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().buildIndex;
-		//print("Game Controlleur = " + indexSaveTime);
 		float BestTimeFloat = PlayerPrefs.GetFloat(indexSaveTime, 0f);
 		return FormatTime(BestTimeFloat);
 	}
 
 	public string ActualTimeOnThisLevel(){
-		float actualtime = Speedrun.GetComponent<SpeedRun>().timeLevel;
+		float actualtime = Time.timeSinceLevelLoad;
 		return FormatTime(actualtime);
 	}
 

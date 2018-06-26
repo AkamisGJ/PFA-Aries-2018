@@ -199,7 +199,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
 
                 //Fait glisser le perssonnage
-                if(hitinfo.collider.tag == "Rampe"){
+                if(hitinfo.collider.tag == "Rampe" && hitinfo.collider.GetComponent<Pente>()){
                     slideSpeed = hitinfo.collider.GetComponent<Pente>().penteValue;
                     Vector3 hitNormal = hitinfo.normal;
                     Vector3 moveDirection = new Vector3(hitNormal.x, -hitNormal.y, hitNormal.z);
@@ -413,7 +413,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                                 CameraShakeInstance m_CameraPresset = new CameraShakeInstance(15f, 20f);
                                 cam.ShakeOnce(m_CameraPresset.Magnitude , m_CameraPresset.Roughness , 0.5f, 1.5f);
                             }
-                            print(CameraShake.gameObject.name);
                         }
                         m_trail.time = 4;
                         break;

@@ -117,10 +117,10 @@ public class Raygun : MonoBehaviour {
 					if(hit_info.collider.GetComponentInParent<Teleporteur>()){
 						hit_info.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
 					}
-					print("Téléporte a : " + hit_info.transform.gameObject.name);
+					//print("Téléporte a : " + hit_info.transform.gameObject.name);
 				}
 				else{
-					print("Tir sur : " + hit_info.transform.gameObject.name);
+					//print("Tir sur : " + hit_info.transform.gameObject.name);
 				}
 
 				//Si le joueur tir sur un miroir
@@ -373,7 +373,6 @@ public class Raygun : MonoBehaviour {
 		yield return null;
 	}
 	void SlowMotion(bool state){
-		print("Slow Motion = " + state.ToString());
 		if(state == true){
 			player.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
 			while(Time.timeScale > m_timeScaleFactor){

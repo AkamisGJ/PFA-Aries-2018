@@ -24,7 +24,6 @@ public class Teleporteur : MonoBehaviour {
 	public void ChangeMaterial()
 	{
 		m_mesh.material = surface_bleu;
-		print("Change Material");
 	}
 
 	void Update()

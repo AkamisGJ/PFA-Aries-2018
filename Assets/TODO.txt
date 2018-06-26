@@ -1,4 +1,9 @@
 ﻿En cours : 
+
+    Enlever les miroirs en trop
+    Fix calcul de temps
+    Culling mask ?
+
     Faire retomber le joueur tout de suite quand il touche le plafond avec sa tête
     Ajouter la grande colonne dans le niveau d'Alex
     Ajouter le son des pressoir
