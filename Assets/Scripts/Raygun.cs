@@ -5,6 +5,7 @@ using UnityEngine.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
 using VolumetricLines;
+using Rewired;
 public class Raygun : MonoBehaviour {
 	
 	public Transform player;
@@ -30,8 +31,9 @@ public class Raygun : MonoBehaviour {
 	private PostProcessingBehaviour PostProd;
 	private Animator m_animator;
 	private bool OnTeleporation = false;
-
 	public LineRenderer m_lineRendererPrefab;
+	private int playerID = 0;
+	private Player playerRewired;
 
 	[Header("Audio")]
 	[Range(0f, 1f)] public float volumeFiring1 = 1f;
@@ -52,6 +54,7 @@ public class Raygun : MonoBehaviour {
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
 		m_animator = GetComponentInChildren<Animator>();
 		m_audioSource = GetComponent<AudioSource>();
+		playerRewired = ReInput.players.GetPlayer(playerID);
 
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
@@ -84,7 +87,7 @@ public class Raygun : MonoBehaviour {
 		cooldown_2 += Time.deltaTime;
 
 		//Tir Principalle
-		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
+		if((playerRewired.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
 			
 			//Animation and Sound
 			m_animator.SetTrigger("Shoot");
@@ -160,7 +163,7 @@ public class Raygun : MonoBehaviour {
 		}
 
 		//Tir Secondaire
-		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
+		if( (playerRewired.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
 			
 			//Animation
 			m_animator.SetTrigger("Shoot");

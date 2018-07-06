@@ -17,13 +17,9 @@ public class MenuOptions : GameControlleur {
 		SetTimer();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-		public void SetTimer(){
-		PlayerPrefs2.SetBool("Timer", TimerToogle.isOn);
+	public void SetTimer(){
+	PlayerPrefs2.SetBool("Timer", TimerToogle.isOn);
 	}
 
 	public void SetTrail(){
@@ -32,9 +28,5 @@ public class MenuOptions : GameControlleur {
 
 	public void SetSensibility(){
 		PlayerPrefs.SetFloat("Sensibility", sensibility.value);
-	}
-
-	public void SetVolume(){
-		
 	}
 }

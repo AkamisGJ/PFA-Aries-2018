@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using EZCameraShake;
+using Rewired;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -60,6 +61,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Transform m_platform;
         private float SaveJumpPower;
 
+        //Rewired variable
+        private int playerID = 0;
+        private Player playerRewired;
+
         [Header("Sound")]
         [Range(0f, 1f)] public float volume_deaths;
             public AudioClip[] deaths;
@@ -91,6 +96,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //Init Checkpoint
             lastCheckPoint = 1;
             lastRotation = Quaternion.identity;
+
+            //Rewired
+            playerRewired = ReInput.players.GetPlayer(playerID);
         }
 
 
@@ -108,7 +116,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump && !m_Jumping)
                 {
-                    m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                    //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                    m_Jump = playerRewired.GetButtonDown("Jump");
                 }
 
                 if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -312,8 +321,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void GetInput(out float speed)
         {
             // Read input
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            float horizontal = playerRewired.GetAxis("Horizontal");
+            float vertical = playerRewired.GetAxis("Vertical");
 
             bool waswalking = m_IsWalking;
 
@@ -321,7 +330,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
             if(m_CharacterController.isGrounded){
-                m_IsWalking = !Input.GetButton("Running");
+                m_IsWalking = !playerRewired.GetButton("Running");
             }
 #endif
             // set the desired speed to be walking or running

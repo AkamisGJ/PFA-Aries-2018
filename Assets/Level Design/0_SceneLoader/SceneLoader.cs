@@ -45,7 +45,7 @@ public class SceneLoader : MonoBehaviour
     public void FadeToLevel(int Index) 
     {
         animator.SetTrigger("FadeOut");
-        SceneManager.LoadSceneAsync(Index, LoadSceneMode.Single);
+        SceneManager.LoadScene(Index);
     }
 
     void OnDrawGizmos()
