@@ -15,6 +15,7 @@ public class Eboulement_alex : MonoBehaviour
     {
         if(active == true){
         int nb_child = transform.GetChildCount();
+        print("Nombre object : " + nb_child);
 
         for(int i = 0; i < nb_child; i++)
         {
@@ -25,6 +26,8 @@ public class Eboulement_alex : MonoBehaviour
             transform.GetChild(i).GetComponent<Rigidbody>().mass = m_mass;
             transform.GetChild(i).GetComponent<Rigidbody>().drag = random_angular;
             transform.GetChild(i).GetComponent<Rigidbody>().angularDrag = m_angulardrag;
+
+            print(transform.GetChild(i).name);
             if(Addforce){
                 Vector3 direction = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
                 transform.GetChild(i).GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);

@@ -5,7 +5,6 @@ using UnityEngine.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
 using VolumetricLines;
-using Rewired;
 public class Raygun : MonoBehaviour {
 	
 	public Transform player;
@@ -31,8 +30,8 @@ public class Raygun : MonoBehaviour {
 	private PostProcessingBehaviour PostProd;
 	private Animator m_animator;
 	private bool OnTeleporation = false;
-<<<<<<< HEAD
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	public LineRenderer m_lineRendererPrefab;
@@ -42,6 +41,8 @@ public class Raygun : MonoBehaviour {
 =======
 	public LineRenderer m_lineRendererPrefab;
 >>>>>>> parent of b3e95d4... Gun effect
+=======
+>>>>>>> parent of e2eb2da... Merge branch 'master' of https://github.com/AkamisGJ/PFA-Aries-2018
 
 	[Header("Audio")]
 	[Range(0f, 1f)] public float volumeFiring1 = 1f;
@@ -62,7 +63,6 @@ public class Raygun : MonoBehaviour {
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
 		m_animator = GetComponentInChildren<Animator>();
 		m_audioSource = GetComponent<AudioSource>();
-		playerRewired = ReInput.players.GetPlayer(playerID);
 
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
@@ -96,6 +96,7 @@ public class Raygun : MonoBehaviour {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//Tir Principal
 		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown_Primary > cooldown_delay_Primary && OnTeleporation == false){
 =======
@@ -106,6 +107,10 @@ public class Raygun : MonoBehaviour {
 		//Tir Principalle
 		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
 >>>>>>> parent of b3e95d4... Gun effect
+=======
+		//Tir Principal
+		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown_Primary > cooldown_delay_Primary && OnTeleporation == false){
+>>>>>>> parent of e2eb2da... Merge branch 'master' of https://github.com/AkamisGJ/PFA-Aries-2018
 			
 			//Animation and Sound
 			m_animator.SetTrigger("Shoot");
@@ -183,6 +188,7 @@ public class Raygun : MonoBehaviour {
 		//Tir Secondaire
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_Secondary > cooldown_delay_Secondary && OnTeleporation == false) ){
 =======
 		if( (playerRewired.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
@@ -190,6 +196,9 @@ public class Raygun : MonoBehaviour {
 =======
 		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
 >>>>>>> parent of b3e95d4... Gun effect
+=======
+		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_Secondary > cooldown_delay_Secondary && OnTeleporation == false) ){
+>>>>>>> parent of e2eb2da... Merge branch 'master' of https://github.com/AkamisGJ/PFA-Aries-2018
 			
 			//Animation
 			m_animator.SetTrigger("Shoot");
@@ -404,12 +413,16 @@ public class Raygun : MonoBehaviour {
 	void SlowMotion(bool state){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//print("Slow Motion = " + state.ToString());
 =======
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
 =======
 		print("Slow Motion = " + state.ToString());
 >>>>>>> parent of b3e95d4... Gun effect
+=======
+		//print("Slow Motion = " + state.ToString());
+>>>>>>> parent of e2eb2da... Merge branch 'master' of https://github.com/AkamisGJ/PFA-Aries-2018
 		if(state == true){
 			player.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
 			while(Time.timeScale > m_timeScaleFactor){

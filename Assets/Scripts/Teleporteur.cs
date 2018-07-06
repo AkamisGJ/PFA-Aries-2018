@@ -26,12 +26,16 @@ public class Teleporteur : MonoBehaviour {
 		m_mesh.material = surface_bleu;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//print("Change Material");
 =======
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
 =======
 		print("Change Material");
 >>>>>>> parent of b3e95d4... Gun effect
+=======
+		//print("Change Material");
+>>>>>>> parent of e2eb2da... Merge branch 'master' of https://github.com/AkamisGJ/PFA-Aries-2018
 	}
 
 	void Update()

@@ -15,8 +15,6 @@ TagManager:
   - Sol Dome
   - Platforme Dome
   - AlarmeLight
-  - ControlMapper
-  - CanvasControlMapper
   layers:
   - Default
   - TransparentFX
