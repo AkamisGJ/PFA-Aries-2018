@@ -45,7 +45,7 @@ public class Fx_Forward : MonoBehaviour
 					}
 				}
 				
-				Instantiate( hitfx, other.contacts[0].point + (other.contacts[0].normal), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));
+				Instantiate( hitfx, other.contacts[0].point + (other.contacts[0].normal * 0.1f), Quaternion.LookRotation(GameObject.FindWithTag("Player").transform.position - transform.position));
 				Destroy(gameObject, 0.1f);
 			}
 		}

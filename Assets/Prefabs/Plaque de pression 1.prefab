@@ -325,6 +325,7 @@ MonoBehaviour:
   - {fileID: 0}
   Dropdown: 2
   delay_cooldown: 5
+  cooldown: 0
   volume_buttonActivate: 1
   BoutonActivate: {fileID: 8300000, guid: fc6ff32b780c92248ad043bc62436777, type: 3}
   volume_buttonDeactivate: 1
