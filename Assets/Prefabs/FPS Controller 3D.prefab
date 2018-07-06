@@ -7049,8 +7049,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361554968109750}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 18.5, y: 1.32, z: -24.71}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -373.42297, y: -61.44, z: -595.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4522386585262408}
@@ -14257,7 +14257,7 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 114275851470397520}
-          m_ObjectArgumentAssemblyTypeName: Rewired.UI.ControlMapper.ButtonInfo, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: Rewired.UI.ControlMapper.ButtonInfo, Assembly-CSharp-firstpass
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18596,7 +18596,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Trace du joueur
+  m_text: Player's trace
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a712652f5753e049906f43e6abd9a1e, type: 2}
   m_sharedMaterial: {fileID: 21487887001069702, guid: 9a712652f5753e049906f43e6abd9a1e,
@@ -19425,7 +19425,7 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 114421588903620816}
-          m_ObjectArgumentAssemblyTypeName: Rewired.UI.ControlMapper.ButtonInfo, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: Rewired.UI.ControlMapper.ButtonInfo, Assembly-CSharp-firstpass
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
