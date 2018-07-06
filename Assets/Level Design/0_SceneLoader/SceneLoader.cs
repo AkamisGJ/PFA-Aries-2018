@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class SceneLoader : MonoBehaviour
 { 
@@ -34,9 +35,12 @@ public class SceneLoader : MonoBehaviour
                 PlayerPrefs.SetFloat(indexSaveTime, finishTime);
             }
 
+            
+
             //Load Next Scene
             Scene current = SceneManager.GetActiveScene();
             Index = current.buildIndex;
+            AnalyticsEvent.LevelComplete(Index);
             Index++;
             FadeToLevel(Index);
         }

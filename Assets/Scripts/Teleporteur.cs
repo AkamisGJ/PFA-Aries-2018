@@ -25,9 +25,13 @@ public class Teleporteur : MonoBehaviour {
 	{
 		m_mesh.material = surface_bleu;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//print("Change Material");
 =======
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
+=======
+		print("Change Material");
+>>>>>>> parent of b3e95d4... Gun effect
 	}
 
 	void Update()

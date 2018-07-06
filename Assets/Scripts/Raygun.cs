@@ -9,43 +9,39 @@ using Rewired;
 public class Raygun : MonoBehaviour {
 	
 	public Transform player;
-    private FirstPersonController m_FPS_script;
-    public Camera Guncamera;
-    public Camera MainCamera;
 
-    [Header("RayCast")]
-    public LayerMask RaygunLayer;
-    public Transform firepoint;
-    public Transform cursor;
+	[Header("RayCast")]
+	public Transform firepoint;
+	public Transform firepoint_FX;
+	public Transform cursor;
 	public float maxDistance;
-    [SerializeField] [Range(0f, 20f)] private float m_lineDuration = 0.5f;
+	public float cooldown_delay = 0.4f;
 
-    [Header("Cooldowns")]
-    public float cooldown_delay_Primary = 0.15f;
-    private float cooldown_Primary = 0;
-    public float cooldown_delay_Secondary = 0.3f;
-	private float cooldown_Secondary = 0;
+	public float cooldown_delay_2 = 1f;
+	private float cooldown = 0;
+	private float cooldown_2 = 0;
+	public float m_timeScaleFactor = 0.5f;
+	private FirstPersonController m_FPS_script;
+	public Camera Guncamera;
+	public Camera MainCamera;
+	public LayerMask RaygunLayer;
+	public GameObject m_FXShoot;
+	public GameObject m_Sparck_shoot;
 
-    [Header("Slow-Mo mode")]
-    public float m_timeScaleFactor = 0.1f;
-
-    [Header("FX")]
-    public GameObject m_secondaryProjectile;
-    public ParticleSystem m_SparkPrim_shoot;
-    public ParticleSystem m_SparkSec_shoot;
-    public GameObject m_LineEffect_shoot;
-    public LineRenderer m_lineRendererPrefab;
-
-    private PostProcessingBehaviour PostProd;
+	private PostProcessingBehaviour PostProd;
 	private Animator m_animator;
 	private bool OnTeleporation = false;
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 	public LineRenderer m_lineRendererPrefab;
 	private int playerID = 0;
 	private Player playerRewired;
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
+=======
+	public LineRenderer m_lineRendererPrefab;
+>>>>>>> parent of b3e95d4... Gun effect
 
 	[Header("Audio")]
 	[Range(0f, 1f)] public float volumeFiring1 = 1f;
@@ -70,8 +66,7 @@ public class Raygun : MonoBehaviour {
 
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
-		if(m_laser == null)
-        {
+		if(m_laser == null){
 			LineRenderer laser = Instantiate(m_lineRendererPrefab, Vector3.zero, Quaternion.identity);
 			m_lineRendererPrefab = laser;
 		}
@@ -83,31 +78,23 @@ public class Raygun : MonoBehaviour {
 	}
 
 	void HideLineRenderer(){
-
-        //Line renderer
-        if(m_lineRendererPrefab.transform.childCount > 0)
-        {
-            foreach (Transform child in m_lineRendererPrefab.transform)
-            {
-                Destroy(child.gameObject);
-            }
-        }
-
-        Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
+		//Line renderer
+		Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
 		Vector3[] posLineRenderer = new []{
 			hide,
 			hide,
 			hide
 		};
 		m_lineRendererPrefab.SetPositions(posLineRenderer);
-    }
+	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        cooldown_Primary += Time.deltaTime;
-        cooldown_Secondary += Time.deltaTime;
+		cooldown += Time.deltaTime;
+		cooldown_2 += Time.deltaTime;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		//Tir Principal
 		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown_Primary > cooldown_delay_Primary && OnTeleporation == false){
@@ -115,40 +102,33 @@ public class Raygun : MonoBehaviour {
 		//Tir Principalle
 		if((playerRewired.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
+=======
+		//Tir Principalle
+		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
+>>>>>>> parent of b3e95d4... Gun effect
 			
 			//Animation and Sound
-			m_animator.SetTrigger("PrimaryShoot");
-            m_animator.SetBool("IsShooting", true);
-            StopAllCoroutines();
-            StartCoroutine(Shooting());
-            m_audioSource.Stop();
+			m_animator.SetTrigger("Shoot");
+			m_audioSource.Stop();
 			m_audioSource.volume = volumeFiring1;
 			int index = Random.Range(0, Fire1.Length);
 			m_audioSource.PlayOneShot(Fire1[index]);
 
-            //Effet de particule
-            HideLineRenderer();
-            m_SparkPrim_shoot.Play();
-
-            cooldown_Primary = 0; //Reset le cooldown
+			cooldown = 0; //Reset le cooldown
 
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
+				
 
-                //Debug
-                //Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
+				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 
-                //Line renderer
-                firepoint.transform.LookAt(hit_info.point);
-                Instantiate(m_LineEffect_shoot, firepoint.position, Quaternion.LookRotation(firepoint.forward), m_lineRendererPrefab.transform);
-                Vector3[] posLineRenderer = new []
-                {
-                    firepoint.position,
+				//Line renderer
+				Vector3[] posLineRenderer = new []{
+					firepoint.position,
 					hit_info.point,
 					hit_info.point
 				};
 				m_lineRendererPrefab.SetPositions(posLineRenderer);
-                StartCoroutine(HideLineDelay());
 
 
 				//Si le joueur tir sur une surface téléportable
@@ -158,10 +138,10 @@ public class Raygun : MonoBehaviour {
 					if(hit_info.collider.GetComponentInParent<Teleporteur>()){
 						hit_info.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
 					}
-					//print("Téléporte a : " + hit_info.transform.gameObject.name);
+					print("Téléporte a : " + hit_info.transform.gameObject.name);
 				}
 				else{
-					//print("Tir sur : " + hit_info.transform.gameObject.name);
+					print("Tir sur : " + hit_info.transform.gameObject.name);
 				}
 
 				//Si le joueur tir sur un miroir
@@ -170,11 +150,11 @@ public class Raygun : MonoBehaviour {
 
 					Vector3 reflexion = Vector3.Reflect(cursor.forward, hit_info.normal);
 					float angleY = Vector3.SignedAngle(cursor.forward, reflexion, Vector3.up);
-                    //print("AngleY = " + angleY);
+					//print("AngleY = " + angleY);
 
-                    //Line renderer
-                    posLineRenderer = new []{
-                        firepoint.position,
+					//Line renderer
+					posLineRenderer = new []{
+						firepoint.position,
 						hit_info.point,
 						reflexion * 100f,
 					};
@@ -189,59 +169,47 @@ public class Raygun : MonoBehaviour {
 							if(hit_info_reflexion.collider.GetComponentInParent<Teleporteur>()){
 								hit_info_reflexion.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
 							}
-                            cooldown_Primary = 0; //Reset le cooldown
+							cooldown = 0; //Reset le cooldown
 							StartCoroutine(Teleportation(player.position ,hit_info.point, hit_info_reflexion.point, angleY));
 						}
 					}
 				}
 				
 			}else{
-                Debug.DrawRay(cursor.position, cursor.forward * 1000, Color.black, 2.0f);
+				Debug.DrawRay(cursor.position, cursor.forward * 1000, Color.black, 2.0f);
 			}
 		}
 
 		//Tir Secondaire
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_Secondary > cooldown_delay_Secondary && OnTeleporation == false) ){
 =======
 		if( (playerRewired.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
+=======
+		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
+>>>>>>> parent of b3e95d4... Gun effect
 			
 			//Animation
-			m_animator.SetTrigger("SecondaryShoot");
-            m_animator.SetBool("IsShooting", true);
-            StopAllCoroutines();
-            StartCoroutine(Shooting());
-            m_audioSource.Stop();
+			m_animator.SetTrigger("Shoot");
+			m_audioSource.Stop();
 			m_audioSource.volume = volumeFiring2;
 			m_audioSource.PlayOneShot(Fire2);
 
-            //Effect de particule         
-            m_SparkSec_shoot.Play();
-
-            cooldown_Secondary = 0; //Reset le cooldown
+			//Effect de particule
+			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
+			cooldown_2 = 0; //Reset le cooldown
 			
 			RaycastHit hit_info;
 			bool Raycast = Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value);
 			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
 			float additionalRoot = Vector3.SignedAngle(firepoint.position, cursor.position, cursor.forward);
-			Instantiate(m_secondaryProjectile, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
+			Instantiate(m_FXShoot, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
 		}
 	}
 
-    IEnumerator Shooting()
-    {
-        yield return new WaitForSeconds(1f);
-        m_animator.SetBool("IsShooting", false);
-    }
-
-    IEnumerator HideLineDelay()
-    {
-        yield return new WaitForSeconds(m_lineDuration);
-        HideLineRenderer();
-    }
-
-    private float m_point_TP_court = 10f;
+	private float m_point_TP_court = 10f;
 	private float m_point_TP_long = 21f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
 
@@ -271,7 +239,7 @@ public class Raygun : MonoBehaviour {
 			point = m_point_TP_long; //La distance est longue 30
 		}
 
-		//Aberration Chromatique
+		//Aberation Chromatique
 		float value = 1f;
 		setting.intensity = value;
 		PostProd.profile.chromaticAberration.settings = setting;
@@ -433,12 +401,15 @@ public class Raygun : MonoBehaviour {
 
 		yield return null;
 	}
-
 	void SlowMotion(bool state){
+<<<<<<< HEAD
 <<<<<<< HEAD
 		//print("Slow Motion = " + state.ToString());
 =======
 >>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
+=======
+		print("Slow Motion = " + state.ToString());
+>>>>>>> parent of b3e95d4... Gun effect
 		if(state == true){
 			player.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
 			while(Time.timeScale > m_timeScaleFactor){

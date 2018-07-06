@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class MenuOptions : GameControlleur {
 
@@ -15,6 +16,8 @@ public class MenuOptions : GameControlleur {
 		
 		TimerToogle.isOn = PlayerPrefs2.GetBool("Timer");
 		SetTimer();
+
+		AnalyticsEvent.GameStart();
 	}
 	
 
