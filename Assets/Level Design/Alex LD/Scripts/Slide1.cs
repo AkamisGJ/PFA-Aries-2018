@@ -17,7 +17,6 @@ public class Slide1 : MonoBehaviour
         if (other.tag=="Player")
         {
             animator.SetBool("Turn", true);
-            print("Lol");
         }
 
     }

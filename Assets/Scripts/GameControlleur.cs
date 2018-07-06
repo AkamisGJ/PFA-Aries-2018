@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Rewired;
+using UnityEngine.PostProcessing;
 
 public class GameControlleur : MonoBehaviour {
 
@@ -28,10 +30,13 @@ public class GameControlleur : MonoBehaviour {
 	public TrailRenderer Trail;
 	public Toggle TimerToogle;
 	public TextMeshProUGUI TimerText;
+	public GameObject Canvas_ControlleurMapper;
+	public GameObject Looper_model3D;
 	
-
 	void Start()
 	{
+		//Looper_model3D.SetActive(GameObject.FindGameObjectWithTag("Looper").activeSelf);
+
 		Player = GameObject.FindGameObjectWithTag("Player");
 
 		if(GameObject.FindGameObjectWithTag("PauseMenu") == null){
@@ -39,7 +44,6 @@ public class GameControlleur : MonoBehaviour {
 			//Debug.Break();	
 		}
 		PauseMenu.enabled = PauseMenuState;
-
 
 		//Setup Options Menu
 		if(PlayerPrefs.GetFloat("Sensibility") == 0f){
@@ -57,11 +61,11 @@ public class GameControlleur : MonoBehaviour {
 		TimerToogle.isOn = PlayerPrefs2.GetBool("Timer");
 		SetTimer();
 
-		
+		BestTime.text = "Best Time = " + BestScoreOnThisLevel();
 	}
 	void Update () {
 
-		if(Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Escape)){
+		if((Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Escape)) && Canvas_ControlleurMapper.activeSelf == false){
 			Pause();
 		}
 
@@ -72,10 +76,12 @@ public class GameControlleur : MonoBehaviour {
 		else{
 			Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+			string timeSinceStart = ActualTimeOnThisLevel();
+			ActualTime.text = "Actual Time = " + timeSinceStart;
+			TimerText.text = "Time : " + timeSinceStart;
 		}
 
-		BestTime.text = "Best Time = " + BestScoreOnThisLevel();
-		ActualTime.text = "Actual Time = " + ActualTimeOnThisLevel();	
+		
 	}
 
 	public void SetTimer(){
@@ -111,6 +117,10 @@ public class GameControlleur : MonoBehaviour {
 		PauseMenuState = !PauseMenuState;
 		PauseMenu.enabled = PauseMenuState;
 
+		//Reset PauseMenu
+		OptionMenu.SetActive(false);
+		MainPauseMenu.SetActive(true);
+
 		//Desactive le compteur de speedrun dans le menu
 		Speedrun.GetComponent<TextMeshProUGUI>().text = "";
 
@@ -132,6 +142,14 @@ public class GameControlleur : MonoBehaviour {
 
 	public void Restart(){
 		Pause();
+		Destroy(Player);
+
+		Camera MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+		PostProcessingBehaviour PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
+		ChromaticAberrationModel.Settings setting = PostProd.profile.chromaticAberration.settings;
+		setting.intensity = 0f;
+		PostProd.profile.chromaticAberration.settings = setting;
+
 		int indexCurrentScene = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene(indexCurrentScene);
 	}
@@ -151,13 +169,12 @@ public class GameControlleur : MonoBehaviour {
 
 	public string BestScoreOnThisLevel(){
 		string indexSaveTime = "BestTime_" + SceneManager.GetActiveScene().buildIndex;
-		//print("Game Controlleur = " + indexSaveTime);
 		float BestTimeFloat = PlayerPrefs.GetFloat(indexSaveTime, 0f);
 		return FormatTime(BestTimeFloat);
 	}
 
 	public string ActualTimeOnThisLevel(){
-		float actualtime = Speedrun.GetComponent<SpeedRun>().timeLevel;
+		float actualtime = Time.timeSinceLevelLoad;
 		return FormatTime(actualtime);
 	}
 

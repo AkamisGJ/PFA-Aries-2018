@@ -25,7 +25,9 @@ public class Propulleurs : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		GetComponent<AudioSource>().Play();
+		if(other.tag == "Player"){
+			GetComponent<AudioSource>().Play();
+		}
 	}
 
 	void FixedUpdate()

@@ -24,7 +24,6 @@ public class TriggerMirror : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print("Babidpzkdlazk");
             MirrorToRemove.SetActive(true);
             MirrorToRemove2.SetActive(true);
             MirrorToRemove3.SetActive(true);

@@ -14,7 +14,6 @@ public class TriggerArrow : MonoBehaviour
         if (other.tag=="Player")
         {
             ArrowToRemove.SetActive(true);
-            print("test");
 
             if(ArrowToRemove2 != null){
                 ArrowToRemove2.SetActive(true);

@@ -31,7 +31,6 @@ public class SoundTrigger : MonoBehaviour
 				m_audiosource.PlayOneShot(explosion);
 			}
 			OnceOnly += 1;
-			print (OnceOnly);
 			TriggerZone.enabled = false;
 		}
 	}

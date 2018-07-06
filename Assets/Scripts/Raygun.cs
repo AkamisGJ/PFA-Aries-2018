@@ -5,6 +5,7 @@ using UnityEngine.PostProcessing;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
 using VolumetricLines;
+using Rewired;
 public class Raygun : MonoBehaviour {
 	
 	public Transform player;
@@ -38,7 +39,13 @@ public class Raygun : MonoBehaviour {
     private PostProcessingBehaviour PostProd;
 	private Animator m_animator;
 	private bool OnTeleporation = false;
+<<<<<<< HEAD
 
+=======
+	public LineRenderer m_lineRendererPrefab;
+	private int playerID = 0;
+	private Player playerRewired;
+>>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
 
 	[Header("Audio")]
 	[Range(0f, 1f)] public float volumeFiring1 = 1f;
@@ -59,6 +66,7 @@ public class Raygun : MonoBehaviour {
 		PostProd = MainCamera.GetComponent<PostProcessingBehaviour>();
 		m_animator = GetComponentInChildren<Animator>();
 		m_audioSource = GetComponent<AudioSource>();
+		playerRewired = ReInput.players.GetPlayer(playerID);
 
 		//Ajoute le laser si il n'es pas déja dans la scene
 		GameObject m_laser = GameObject.FindGameObjectWithTag("LaserTP");
@@ -100,8 +108,13 @@ public class Raygun : MonoBehaviour {
         cooldown_Primary += Time.deltaTime;
         cooldown_Secondary += Time.deltaTime;
 
+<<<<<<< HEAD
 		//Tir Principal
 		if((Input.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown_Primary > cooldown_delay_Primary && OnTeleporation == false){
+=======
+		//Tir Principalle
+		if((playerRewired.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
+>>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
 			
 			//Animation and Sound
 			m_animator.SetTrigger("PrimaryShoot");
@@ -188,7 +201,11 @@ public class Raygun : MonoBehaviour {
 		}
 
 		//Tir Secondaire
+<<<<<<< HEAD
 		if( (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_Secondary > cooldown_delay_Secondary && OnTeleporation == false) ){
+=======
+		if( (playerRewired.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
+>>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
 			
 			//Animation
 			m_animator.SetTrigger("SecondaryShoot");
@@ -418,7 +435,10 @@ public class Raygun : MonoBehaviour {
 	}
 
 	void SlowMotion(bool state){
+<<<<<<< HEAD
 		//print("Slow Motion = " + state.ToString());
+=======
+>>>>>>> 5ba77217119c19e80d6e63011008b1c5e55d8abf
 		if(state == true){
 			player.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
 			while(Time.timeScale > m_timeScaleFactor){

@@ -26,7 +26,7 @@ public class ReloadScene : MonoBehaviour {
     {
         if (other.tag=="Player")
         {
-           int index = SceneManager.GetActiveScene().buildIndex;
+            int index = SceneManager.GetActiveScene().buildIndex;
             m_Sceneloader.FadeToLevel(index);
         }
     }
