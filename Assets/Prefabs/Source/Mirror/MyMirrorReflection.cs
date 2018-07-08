@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
  
 // This is in fact just the Water script from Pro Standard Assets,
@@ -102,7 +103,11 @@ public class MyMirrorReflection : MonoBehaviour
 			m_ReflectionTexture = null;
 		}
 		foreach( DictionaryEntry kvp in m_ReflectionCameras )
-			DestroyImmediate( ((Camera)kvp.Value).gameObject );
+			if(EditorApplication.isPlaying){
+				Destroy( ((Camera)kvp.Value).gameObject );
+			}else{
+				DestroyImmediate( ((Camera)kvp.Value).gameObject );
+			}
 		m_ReflectionCameras.Clear();
 	}
  

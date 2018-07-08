@@ -3705,6 +3705,17 @@ MonoBehaviour:
           m_StringArgument: ScoreAnime
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1273292018}
+        m_MethodName: ScreenVisit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Score screen
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &183173489
@@ -6399,21 +6410,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  firepoint: {fileID: 310120782}
-  firepoint_FX: {fileID: 1892843384}
-  cursor: {fileID: 0}
-  maxDistance: 10000
-  cooldown_delay: 0.15
-  cooldown_delay_2: 0.3
-  m_timeScaleFactor: 0.1
   Guncamera: {fileID: 0}
   MainCamera: {fileID: 0}
   RaygunLayer:
     serializedVersion: 2
     m_Bits: 3891654655
-  m_FXShoot: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0, type: 2}
-  m_Sparck_shoot: {fileID: 1712580943309616, guid: 14a068f0f21474b4aad11ec38e316287,
-    type: 2}
+  firepoint: {fileID: 310120782}
+  cursor: {fileID: 0}
+  maxDistance: 10000
+  m_lineDuration: 0.5
+  cooldown_delay_Primary: 0.4
+  cooldown_delay_Secondary: 1
+  m_timeScaleFactor: 0.1
+  m_secondaryProjectile: {fileID: 0}
+  m_SparkPrim_shoot: {fileID: 0}
+  m_SparkSec_shoot: {fileID: 0}
+  m_LineEffect_shoot: {fileID: 0}
   m_lineRendererPrefab: {fileID: 120498225350249956, guid: daae7541c57186841bf0f565db9a62c3,
     type: 2}
   volumeFiring1: 1
@@ -6593,6 +6605,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1273292015}
         m_MethodName: startButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1273292018}
+        m_MethodName: GameStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19748,21 +19771,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  firepoint: {fileID: 2072529113}
-  firepoint_FX: {fileID: 478078434}
-  cursor: {fileID: 0}
-  maxDistance: 10000
-  cooldown_delay: 0.15
-  cooldown_delay_2: 0.3
-  m_timeScaleFactor: 0.1
   Guncamera: {fileID: 0}
   MainCamera: {fileID: 0}
   RaygunLayer:
     serializedVersion: 2
     m_Bits: 3891654655
-  m_FXShoot: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0, type: 2}
-  m_Sparck_shoot: {fileID: 1712580943309616, guid: 14a068f0f21474b4aad11ec38e316287,
-    type: 2}
+  firepoint: {fileID: 2072529113}
+  cursor: {fileID: 0}
+  maxDistance: 10000
+  m_lineDuration: 0.5
+  cooldown_delay_Primary: 0.4
+  cooldown_delay_Secondary: 1
+  m_timeScaleFactor: 0.1
+  m_secondaryProjectile: {fileID: 0}
+  m_SparkPrim_shoot: {fileID: 0}
+  m_SparkSec_shoot: {fileID: 0}
+  m_LineEffect_shoot: {fileID: 0}
   m_lineRendererPrefab: {fileID: 120498225350249956, guid: daae7541c57186841bf0f565db9a62c3,
     type: 2}
   volumeFiring1: 1
@@ -21356,6 +21380,7 @@ GameObject:
   - component: {fileID: 1273292015}
   - component: {fileID: 1273292016}
   - component: {fileID: 1273292017}
+  - component: {fileID: 1273292018}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21482,6 +21507,8 @@ MonoBehaviour:
   Trail: {fileID: 0}
   TimerToogle: {fileID: 687926206}
   TimerText: {fileID: 0}
+  Canvas_ControlleurMapper: {fileID: 0}
+  Looper_model3D: {fileID: 0}
 --- !u!114 &1273292017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21494,6 +21521,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: bdd38a52f9608614ca963852c365560f, type: 2}
+--- !u!114 &1273292018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273292009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b73f779f9ce7224d82d565a8ee95580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275945424
 GameObject:
   m_ObjectHideFlags: 0
@@ -26275,6 +26313,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1273292018}
+        m_MethodName: ScreenVisit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Settings Screen
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -34972,6 +35021,17 @@ MonoBehaviour:
           m_StringArgument: CreditsAnime
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1273292018}
+        m_MethodName: ScreenVisit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credit Screen
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1999008736
@@ -35385,6 +35445,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: LevelAnime
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1273292018}
+        m_MethodName: ScreenVisit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level screen
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

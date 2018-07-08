@@ -14,7 +14,7 @@ public class Eboulement_alex : MonoBehaviour
     void Update()
     {
         if(active == true){
-        int nb_child = transform.GetChildCount();
+        int nb_child = transform.childCount;
 
         for(int i = 0; i < nb_child; i++)
         {

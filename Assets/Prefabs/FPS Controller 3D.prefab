@@ -2375,6 +2375,7 @@ GameObject:
   - component: {fileID: 114297593637453986}
   - component: {fileID: 114092650367057070}
   - component: {fileID: 114993672421256454}
+  - component: {fileID: 114282550683874436}
   m_Layer: 17
   m_Name: FPS Controller 3D
   m_TagString: Player
@@ -7160,8 +7161,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361554968109750}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.989, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5068438, y: 1.62, z: -38.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4522386585262408}
@@ -16335,6 +16336,19 @@ MonoBehaviour:
   identifier: Done
   intData: 0
   text: {fileID: 114660600758418654}
+--- !u!114 &114282550683874436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361554968109750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b73f779f9ce7224d82d565a8ee95580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameover: 0
+  levelstart: 1
 --- !u!114 &114282659246032058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16481,6 +16495,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114092650367057070}
         m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114282550683874436}
+        m_MethodName: LevelQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18053,6 +18078,17 @@ MonoBehaviour:
         _elementIdentifierId: -1
         _axisRange: 0
         _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 119
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 2
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
         _axisContribution: 1
         _keyboardKeyCode: 115
         _modifierKey1: 0
@@ -18077,6 +18113,17 @@ MonoBehaviour:
         _invert: 0
         _axisContribution: 1
         _keyboardKeyCode: 113
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 0
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 1
+        _keyboardKeyCode: 97
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
@@ -19043,7 +19090,7 @@ MonoBehaviour:
   maxDistance: 10000
   m_lineDuration: 0.5
   cooldown_delay_Primary: 0.4
-  cooldown_delay_Secondary: 1
+  cooldown_delay_Secondary: 0.7
   m_timeScaleFactor: 0.1
   m_secondaryProjectile: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0,
     type: 2}

@@ -32,7 +32,7 @@ public class FinalExplosion : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(m_Timer.gameObject.active == true){
+		if(m_Timer.gameObject.activeSelf == true){
 			timeExplosion -= Time.deltaTime;
 
 			string niceTime = string.Format("{0:0}:{1:00}.{2:000}",
