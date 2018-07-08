@@ -19043,7 +19043,7 @@ MonoBehaviour:
   maxDistance: 10000
   m_lineDuration: 0.5
   cooldown_delay_Primary: 0.4
-  cooldown_delay_Secondary: 1
+  cooldown_delay_Secondary: 0.7
   m_timeScaleFactor: 0.1
   m_secondaryProjectile: {fileID: 1894705366515160, guid: e87bc2beb780f564ca8f0d866b071cf0,
     type: 2}

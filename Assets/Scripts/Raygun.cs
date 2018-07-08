@@ -204,7 +204,8 @@ public class Raygun : MonoBehaviour {
 			m_audioSource.volume = volumeFiring2;
 			m_audioSource.PlayOneShot(Fire2);
 
-            //Effect de particule         
+            //Effect de particule
+            HideLineRenderer();
             m_SparkSec_shoot.Play();
             cooldown_Secondary = 0; //Reset le cooldown
 			
