@@ -103,11 +103,14 @@ public class MyMirrorReflection : MonoBehaviour
 			m_ReflectionTexture = null;
 		}
 		foreach( DictionaryEntry kvp in m_ReflectionCameras )
+		#if UNITY_EDITOR
 			if(EditorApplication.isPlaying){
 				Destroy( ((Camera)kvp.Value).gameObject );
-			}else{
+			}else
+		#endif
 				DestroyImmediate( ((Camera)kvp.Value).gameObject );
-			}
+			
+		
 		m_ReflectionCameras.Clear();
 	}
  

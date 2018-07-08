@@ -16,6 +16,13 @@ public class MenuOptions : GameControlleur {
 		TimerToogle.isOn = PlayerPrefs2.GetBool("Timer");
 		SetTimer();
 	}
+	/// <summary>
+	/// Update is called every frame, if the MonoBehaviour is enabled.
+	/// </summary>
+	void Update()
+	{
+		
+	}
 	
 
 	public void SetTimer(){
