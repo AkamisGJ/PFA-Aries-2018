@@ -178,7 +178,9 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114676140217632076, guid: ee59274a9c261ee4084168a9f1a062de, type: 2}
+    - {fileID: 114049264957122624, guid: ee59274a9c261ee4084168a9f1a062de, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ee59274a9c261ee4084168a9f1a062de, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &11106407 stripped
@@ -186,24 +188,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1848872579230304, guid: ee59274a9c261ee4084168a9f1a062de,
     type: 2}
   m_PrefabInternal: {fileID: 11106406}
---- !u!95 &11106408
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 11106407}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &14736608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1180,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 325961770}
-  m_LocalRotation: {x: 0.0014459444, y: 0.9969295, z: 0.07595458, w: -0.0189825}
+  m_LocalRotation: {x: 0.0014459427, y: 0.9969295, z: 0.0759545, w: -0.0189825}
   m_LocalPosition: {x: -1.6330824, y: 5.393628, z: 51.71661}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3764,6 +3748,7 @@ GameObject:
   - component: {fileID: 922956654}
   - component: {fileID: 922956658}
   - component: {fileID: 922956659}
+  - component: {fileID: 922956660}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3882,6 +3867,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 8f478db5914903146afc4e4315d310e4, type: 2}
+--- !u!114 &922956660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922956653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b73f779f9ce7224d82d565a8ee95580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameover: 1
+  levelstart: 0
 --- !u!1001 &951899980
 Prefab:
   m_ObjectHideFlags: 0

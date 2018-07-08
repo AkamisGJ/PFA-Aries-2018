@@ -60,6 +60,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 LastMovePos;
         private Transform m_platform;
         private float SaveJumpPower;
+        private AnalyticStandartEventSender analytics;
 
         //Rewired variable
         private int playerID = 0;
@@ -92,6 +93,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
             SaveJumpPower = m_JumpSpeed;
+            analytics = GetComponent<AnalyticStandartEventSender>();
 
             //Init Checkpoint
             lastCheckPoint = 1;
@@ -398,6 +400,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_AudioSource.volume = volume_deaths;
                 m_AudioSource.clip = deaths[index];
                 m_AudioSource.Play();
+
+                //Data Analyse
+                analytics.LevelFail();
 
                 foreach (var checkpoins in GameObject.FindGameObjectsWithTag("Checkpoint"))
                 {

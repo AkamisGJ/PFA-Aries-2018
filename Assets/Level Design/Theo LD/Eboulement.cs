@@ -11,8 +11,6 @@ public class Eboulement : MonoBehaviour
     private bool Tédjapassé = false;
     public float m_magnitude = 1f;
     public float m_roughness = 12f;
-   // public AudioSource m_audiosource;
-    //public AudioClip m_sonEboulement;
 
     private void Start()
     {
@@ -21,7 +19,7 @@ public class Eboulement : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        int nb_child = transform.GetChildCount();
+        int nb_child = transform.childCount;
         if(Tédjapassé == false)
         {
             for (int i = 0; i < nb_child; i++)
@@ -34,38 +32,8 @@ public class Eboulement : MonoBehaviour
 
                 CameraShakeInstance m_CameraPresset = new CameraShakeInstance(m_magnitude, m_roughness);
                 m_Player.GetComponentInChildren<CameraShaker>().ShakeOnce(m_CameraPresset.Magnitude, m_CameraPresset.Roughness, timeShaking, timeShaking);
-
-              //  m_audiosource.PlayOneShot(m_sonEboulement);
-
-
-
-
-
-
-
-
-
-
-
-
-                /* 
-                int n = Random.Range(1, m_sonEboulement.Length);
-
-                m_AudioSource.clip = m_sonEboulement[n];
-                m_AudioSource.PlayOneShot(m_AudioSource.clip);
-                // move picked sound to index 0 so it's not picked next time
-                m_sonEboulement[n] = m_sonEboulement[0];
-                m_sonEboulement[0] = m_AudioSource.clip;
-                m_AudioSource.PlayOneShot(m_AudioSource.clip);
-                m_sonEboulement[n] = m_sonEboulement[0];
-                m_sonEboulement[0] = m_AudioSource.clip;
-             */
             }
         }
 
     }
-/////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
