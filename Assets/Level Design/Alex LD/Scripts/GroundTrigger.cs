@@ -19,10 +19,9 @@ public class GroundTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             animator.SetBool("Fall", true);
-            DeathZone.SetActive(true);
-
+            if(DeathZone != null)
+                DeathZone.SetActive(true);
         }
-
     }
 }
     

@@ -6,34 +6,44 @@ using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
 using VolumetricLines;
 using Rewired;
+
 public class Raygun : MonoBehaviour {
 	
 	public Transform player;
+    private FirstPersonController m_FPS_script;
+    public Camera Guncamera;
+    public Camera MainCamera;
 
-	[Header("RayCast")]
-	public Transform firepoint;
-	public Transform firepoint_FX;
+    private int playerID = 0;
+    private Player playerRewired;
+
+    [Header("RayCast")]
+    public LayerMask RaygunLayer;
+    public Transform firepoint;
+	//public Transform firepoint_FX;
 	public Transform cursor;
 	public float maxDistance;
-	public float cooldown_delay = 0.4f;
+    [SerializeField] [Range(0f, 20f)] private float m_lineDuration = 0.5f;
 
-	public float cooldown_delay_2 = 1f;
-	private float cooldown = 0;
-	private float cooldown_2 = 0;
-	public float m_timeScaleFactor = 0.5f;
-	private FirstPersonController m_FPS_script;
-	public Camera Guncamera;
-	public Camera MainCamera;
-	public LayerMask RaygunLayer;
-	public GameObject m_FXShoot;
-	public GameObject m_Sparck_shoot;
+    [Header("Cooldowns")]
+    public float cooldown_delay_Primary = 0.4f;
+	public float cooldown_delay_Secondary = 1f;
+	private float cooldown_Primary = 0;
+	private float cooldown_Secondary = 0;
 
-	private PostProcessingBehaviour PostProd;
+    [Header("Slow-Mo mode")]
+    public float m_timeScaleFactor = 0.5f;
+
+    [Header("FX")]
+    public GameObject m_secondaryProjectile;
+    public ParticleSystem m_SparkPrim_shoot;
+    public ParticleSystem m_SparkSec_shoot;
+    public GameObject m_LineEffect_shoot;
+    public LineRenderer m_lineRendererPrefab;
+
+    private PostProcessingBehaviour PostProd;
 	private Animator m_animator;
 	private bool OnTeleporation = false;
-	public LineRenderer m_lineRendererPrefab;
-	private int playerID = 0;
-	private Player playerRewired;
 
 	[Header("Audio")]
 	[Range(0f, 1f)] public float volumeFiring1 = 1f;
@@ -70,51 +80,70 @@ public class Raygun : MonoBehaviour {
 	}
 
 	void HideLineRenderer(){
-		//Line renderer
-		Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
-		Vector3[] posLineRenderer = new []{
-			hide,
-			hide,
-			hide
-		};
-		m_lineRendererPrefab.SetPositions(posLineRenderer);
-	}
+        //Line renderer
+        if (m_lineRendererPrefab.transform.childCount > 0)
+        {
+            foreach (Transform child in m_lineRendererPrefab.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        Vector3 hide = new Vector3(-5000f, -5000f, -5000f);
+        Vector3[] posLineRenderer = new[]{
+            hide,
+            hide,
+            hide
+        };
+        m_lineRendererPrefab.SetPositions(posLineRenderer);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-		cooldown += Time.deltaTime;
-		cooldown_2 += Time.deltaTime;
+        cooldown_Primary += Time.deltaTime;
+        cooldown_Secondary += Time.deltaTime;
 
-		//Tir Principalle
-		if((playerRewired.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown > cooldown_delay && OnTeleporation == false){
-			
-			//Animation and Sound
-			m_animator.SetTrigger("Shoot");
-			m_audioSource.Stop();
+		//Tir Principal
+		if((playerRewired.GetButtonDown("Fire1") || (bool)(Input.GetAxis("Fire1Joy") > 0.3f) )&& cooldown_Primary > cooldown_delay_Primary && OnTeleporation == false){
+
+            //Animation
+            m_animator.SetTrigger("PrimaryShoot");
+            m_animator.SetBool("IsShooting", true);
+            StopAllCoroutines();
+            StartCoroutine(Shooting());
+            //Audio
+            m_audioSource.Stop();
 			m_audioSource.volume = volumeFiring1;
 			int index = Random.Range(0, Fire1.Length);
 			m_audioSource.PlayOneShot(Fire1[index]);
 
-			cooldown = 0; //Reset le cooldown
+            //Effet de particule
+            HideLineRenderer();
+            m_SparkPrim_shoot.Play();
+
+            cooldown_Primary = 0; //Reset le cooldown
 
 			RaycastHit hit_info;
 			if(Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value)){
-				
 
-				Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
 
-				//Line renderer
-				Vector3[] posLineRenderer = new []{
+                //Debug.DrawRay(cursor.position, cursor.forward * hit_info.distance, Color.cyan, 2.0f);
+
+                //Line renderer
+                firepoint.transform.LookAt(hit_info.point);
+                Instantiate(m_LineEffect_shoot, firepoint.position, Quaternion.LookRotation(firepoint.forward), m_lineRendererPrefab.transform);
+                Vector3[] posLineRenderer = new []{
 					firepoint.position,
 					hit_info.point,
 					hit_info.point
 				};
 				m_lineRendererPrefab.SetPositions(posLineRenderer);
+                StartCoroutine(HideLineDelay());
 
 
-				//Si le joueur tir sur une surface téléportable
-				int layer = LayerMask.NameToLayer("CanTeleport");
+                //Si le joueur tir sur une surface téléportable
+                int layer = LayerMask.NameToLayer("CanTeleport");
 				if( hit_info.collider.gameObject.layer == layer){
 					StartCoroutine(Teleportation(player.position ,hit_info.point));
 					if(hit_info.collider.GetComponentInParent<Teleporteur>()){
@@ -151,39 +180,55 @@ public class Raygun : MonoBehaviour {
 							if(hit_info_reflexion.collider.GetComponentInParent<Teleporteur>()){
 								hit_info_reflexion.collider.GetComponentInParent<Teleporteur>().ChangeMaterial(); //Change le materiaux
 							}
-							cooldown = 0; //Reset le cooldown
+                            cooldown_Primary = 0; //Reset le cooldown
 							StartCoroutine(Teleportation(player.position ,hit_info.point, hit_info_reflexion.point, angleY));
 						}
 					}
 				}
 				
 			}else{
-				Debug.DrawRay(cursor.position, cursor.forward * 1000, Color.black, 2.0f);
+				//Debug.DrawRay(cursor.position, cursor.forward * 1000, Color.black, 2.0f);
 			}
 		}
 
 		//Tir Secondaire
-		if( (playerRewired.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_2 > cooldown_delay_2 && OnTeleporation == false) ){
-			
-			//Animation
-			m_animator.SetTrigger("Shoot");
-			m_audioSource.Stop();
+		if( (playerRewired.GetButtonDown("Fire2") || Input.GetAxis("Fire2Joy") > 0.3f ) && (cooldown_Secondary > cooldown_delay_Secondary && OnTeleporation == false) ){
+
+            //Animation			
+            m_animator.SetTrigger("SecondaryShoot");
+            m_animator.SetBool("IsShooting", true);
+            StopAllCoroutines();
+            StartCoroutine(Shooting());
+            //Audio
+            m_audioSource.Stop();
 			m_audioSource.volume = volumeFiring2;
 			m_audioSource.PlayOneShot(Fire2);
 
-			//Effect de particule
-			Instantiate(m_Sparck_shoot, firepoint_FX.position, player.localRotation * MainCamera.transform.localRotation);
-			cooldown_2 = 0; //Reset le cooldown
+            //Effect de particule         
+            m_SparkSec_shoot.Play();
+            cooldown_Secondary = 0; //Reset le cooldown
 			
 			RaycastHit hit_info;
 			bool Raycast = Physics.Raycast(cursor.position, cursor.forward, out hit_info ,maxDistance, RaygunLayer.value);
 			Quaternion rotation = Quaternion.LookRotation(cursor.transform.forward, player.transform.up);
 			float additionalRoot = Vector3.SignedAngle(firepoint.position, cursor.position, cursor.forward);
-			Instantiate(m_FXShoot, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
+			Instantiate(m_secondaryProjectile, firepoint.position, rotation * Quaternion.Euler(0f, - additionalRoot, 0f));
 		}
 	}
 
-	private float m_point_TP_court = 10f;
+    IEnumerator Shooting()
+    {
+        yield return new WaitForSeconds(1f);
+        m_animator.SetBool("IsShooting", false);
+    }
+
+    IEnumerator HideLineDelay()
+    {
+        yield return new WaitForSeconds(m_lineDuration);
+        HideLineRenderer();
+    }
+
+    private float m_point_TP_court = 10f;
 	private float m_point_TP_long = 21f;
 	IEnumerator Teleportation(Vector3 StartPoint, Vector3 EndPoint){
 
