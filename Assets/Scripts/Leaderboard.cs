@@ -23,7 +23,6 @@ public class Leaderboard : MonoBehaviour {
 
 	public string BestScoreOnThisLevel(int scene){
 		string indexSaveTime = "BestTime_" + scene;
-		print(indexSaveTime);
 		float BestTimeFloat = PlayerPrefs.GetFloat(indexSaveTime, 0f);
 		return FormatTime(BestTimeFloat);
 	}

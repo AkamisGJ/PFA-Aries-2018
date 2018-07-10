@@ -6,7 +6,6 @@ public class DisableAllUsable : MonoBehaviour {
 
 	public Transform Parent;
 	public GameObject BlueLight;
-	public GameObject Bumper;
 
 	private Useable[] m_Useable;
 	private Useable_output[] m_UseableOutput;
@@ -16,7 +15,6 @@ public class DisableAllUsable : MonoBehaviour {
 
 	void Start()
 	{
-		Bumper.SetActive(false);
 		BlueLight.SetActive(false);
 	}
 
@@ -39,8 +37,7 @@ public class DisableAllUsable : MonoBehaviour {
 			item.enabled = false;
 		}
 
-
-		Bumper.SetActive(true);
+		
 		Parent.GetComponent<Animator>().SetTrigger("Active"); //Cache les Téléporteur
 	}
 }
